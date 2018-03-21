@@ -1,4 +1,4 @@
-#Individuell reflektion
+## Individuell reflektion
 
 **What do I want to learn or understand better?**
 *Vart jag är:*
@@ -25,4 +25,4 @@ Jag måste både läsa in mig mer på vilka moment som är vitala i scrum samt a
 *Lärandemål: (Vart jag vill)*
 Jag vill lära mig att använda github för att organisera projekt. I dagsläget är min kunskap knaper. Jag känner att detta lärande är något som jag skulle kunna använda mig av i framtiden.
 *Hur skall jag komma dit:*
-Jag kommer behöva sätta mig in mer i hur det fungerar, både ensam och tillsammans med mina lagmedlemmar. 
+Jag kommer behöva sätta mig in mer i hur det fungerar, både ensam och tillsammans med mina lagmedlemmar.
