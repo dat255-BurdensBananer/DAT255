@@ -4,7 +4,7 @@
 
 *Vart jag vill:* Jag vill förstå mer av Atom och få järnkoll på hur GitHub fungerar och versionshantering överhuvudtaget. Jag vill också kunna känna mig helt bekväm i scrum och få mer koll på vad en programvaras design har för konkvenser.
 
-*Hur skall jag komma dit:*
+*Hur skall jag komma dit:* Jag skall hänga med i tempot i kursen för att lära mig mer om scrum. Jag skall undersöka design, Atom och versionshantering på egen hand genom internet och dylikt.
 
 #### How can I help someone else, or the entire team, to learn something new?
 
