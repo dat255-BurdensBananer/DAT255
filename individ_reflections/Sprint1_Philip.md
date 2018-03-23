@@ -16,11 +16,11 @@
 
 #### What is my contribution towards the team’s application of scrum?
 
-*Vart jag är:* Mitt bidrag till gruppen vad gäller scrum är inte explict såsom scrum-master eller liknande. Jag är dock engagerad i gruppen i frågor kring hur vi skall göra och närvarar på möten. Detta är updateraupdaterade  
+*Vart jag är:* Mitt bidrag till gruppen vad gäller scrum är inte explict såsom scrum-master eller liknande. Jag är dock engagerad i gruppen i frågor kring hur vi skall göra och närvarar på möten. Försöker att få gruppen att följa det vi sagt och stödja tankesättet i scrum de tillfällen det behövs.
 
-*Vart jag vill:*
+*Vart jag vill:* Vill vara den jag är idag, men jag vet med mig själv att jag har en tendens att skjuta upp arbete till sista sekund. Jag vill vara den som gör saker i tid, men också den som kan fungera dagen efter en deadline. För att scrum skall fungera så bra som möjligt är detta viktigt för gruppen, likväl för mig.
 
-*Hur skall jag komma dit:*
+*Hur skall jag komma dit:* Jag skall jobba på att försöka påbörja jobb tidigare och hålla uppe intra-sprint velocity:n.
 
 #### What is my contribution towards the team’s deliveries? That means that for the personal learning objective you will each week write down what you have achieved in relation to last week's ambition (technologies, concepts and skills learnt as well as how this was achieved), what you would like to achieve for the next week and how to make the change happen. The first week of the course you describe the current situation by motivating a learning objective. It is perfectly fine to change objective/s each week as long as you can motivate the change and you evaluate the outcome of the previous week (e.g. describing the current situation).
 
