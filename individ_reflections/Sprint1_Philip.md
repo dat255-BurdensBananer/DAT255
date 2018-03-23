@@ -1,6 +1,6 @@
 #### What do I want to learn or understand better?
 
-*Vart jag är:*
+*Vart jag är:* hej
 *Vart jag vill:*
 *Hur skall jag komma dit:*
 
