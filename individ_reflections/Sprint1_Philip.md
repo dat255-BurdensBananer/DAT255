@@ -8,15 +8,15 @@
 
 #### How can I help someone else, or the entire team, to learn something new?
 
-*Vart jag är:*
+*Vart jag är:* Jag känner att jag kan dela med mig av den lilla kunskapen jag ändå har inom området. Jag gör också det ifall jag får möjlighet, kanske lite för ofta. Jag tipsar om andra IDE:r, om tankesätt som har underlättat för mig själv.
 
-*Vart jag vill:*
+*Vart jag vill:* Jag vill kunna fortsätta på det spår jag är, då jag tycker att jag är väldigt medhjälplig. Ibland kanske jag bör ta det lugnt och inte tycka till och "hjälpa" för mycket. Det finns en tendens till att folk inte uppskattar överdriven hjälp som snarare gör saker mer svårförstådda.
 
-*Hur skall jag komma dit:*
+*Hur skall jag komma dit:* Jag skall jobba på min självdiciplin och inte alltid hjälpa utan också vara öppen för att ta emot hjälp från andra i större utstäckning.
 
 #### What is my contribution towards the team’s application of scrum?
 
-*Vart jag är:*
+*Vart jag är:* Mitt bidrag till gruppen vad gäller scrum är inte explict såsom scrum-master eller liknande. Jag är dock engagerad i gruppen i frågor kring hur vi skall göra och närvarar på möten. Detta är updateraupdaterade  
 
 *Vart jag vill:*
 
