@@ -1,8 +1,6 @@
 
 <h1>..:Sprint 1:..</h1>
 
-As a team you should reflect on the following topics:
-
 <h2>The chosen scope of the application under development including priority of features and for whom you are creating value</h2>
 
 
