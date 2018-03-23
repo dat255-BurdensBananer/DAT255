@@ -24,6 +24,6 @@
 
 #### What is my contribution towards the team’s deliveries? That means that for the personal learning objective you will each week write down what you have achieved in relation to last week's ambition (technologies, concepts and skills learnt as well as how this was achieved), what you would like to achieve for the next week and how to make the change happen. The first week of the course you describe the current situation by motivating a learning objective. It is perfectly fine to change objective/s each week as long as you can motivate the change and you evaluate the outcome of the previous week (e.g. describing the current situation).
 
-*Lärandemål(Vart jag vill):*
+*Lärandemål(Vart jag vill):* Jag vill lära mig grundläggande versionshantering och utvecklingsmiljön Atom eftersom detta ligger till grund för allt följande arbete. Detta möjliggör också att fokus kan läggas på utveckling och inte på att försöka få samordning av arbete att fungera.
 
-*Hur skall jag komma dit:*
+*Hur skall jag komma dit:* Jag skall sätta mig ner och titta närmare på instruktionsmanualer och framförallt testa mig fram i de olika systemen för att öka min kunskap.
