@@ -6,7 +6,7 @@
 
 Var vi är:
 
-För själva applikationen har vi inte valt något scope eftersom denna ännu inte är känd, men gruppen har satt ett relativt högt scope på kursen. Med detta menas att flera av gruppmedlemmarna är taggade och beredda att lägga ner mer tid än vad de vanligtvis lägger ner på en kurs : ) ? 
+För själva applikationen har vi inte valt något scope eftersom denna ännu inte är känd, men gruppen har satt ett relativt högt scope på kursen. Med detta menas att flera av gruppmedlemmarna är taggade och beredda att lägga ner mer tid än vad de vanligtvis lägger ner på en kurs
 
 Var vi vill vara:
 
