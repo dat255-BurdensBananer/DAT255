@@ -2,7 +2,7 @@
 
 *Vart jag är:* Jag förstår grunderna i själva programmeringen ganska väl. Däremot kan jag inte Atom och interaktionen med GitHub särskilt väl, då jag mestadels suttit i ItelliJ och utvecklat. Scrum kan jag nu grunderna till också, men det kan definitivt bli klarare. Då jag skall ha lite extra koll på designen på programvaran (i och med att jag har hand om denna fråga i "teamreflection") kan jag inte detta tillräckligt väl heller.
 
-*Vart jag vill:* Jag vill förstå mer av Atom och få järnkoll på hur GitHub fungerar och versionshantering överhuvudtaget. Jag vill också kunna känna mig helt bekväm i scrum och få mer koll på vad en programvaras design har för konkvenser.
+*Vart jag vill:* Jag vill förstå mer av Atom och få järnkoll på hur GitHub fungerar och versionshantering överhuvudtaget. Jag vill också kunna känna mig helt bekväm i scrum och få mer koll på vad en programvaras design har för konkvenser
 
 *Hur skall jag komma dit:*
 
