@@ -1,5 +1,5 @@
 **what do I want to learn or understand better?**
-*Vart jag är:*
+*Vart jag är:*X
 Jag vill lära mig mer om scrum och få en bättre uppfattning om hur vi i gruppen bäst tillämpar det inom vårt projekt. Jag skulle vilja få bättre kunskap om olika begrepp inom scrum och få en bättre uppfattning och hur rollerna samspelar. Utöver det vill jag bli mer insatt i github och atom som är de verktyg som vi ser ut att använda oss mest utav.
 *Vart jag vill:*
 Förstå ovanstående bättre.
@@ -15,7 +15,7 @@ Jag vill att jag och de andra gruppmedlemmarna ökar kunskapsnivån i gruppen s�
 Jag behöver alltid försöka leta ny kunskap och förstå vad det är som jag behöver lära mig. För att kunna dela med mig av min kunskap behöver jag vara lyhörd för att kunna se vem/vilka i gruppen som kan behöva de kunskaper jag har.
 
 **what is my contribution towards the team’s application of scrum?**
-Vi har ännu inte börjat med vår application. 
+Vi har ännu inte börjat med vår application.
 
 
 **what is my contribution towards the team’s deliveries? That means that for the personal learning objective you will each week write down what you have achieved in relation to last week's ambition (technologies, concepts and skills learnt as well as how this was achieved), what you would like to achieve for the next week and how to make the change happen. The first week of the course you describe the current situation by motivating a learning objective. It is perfectly fine to change objective/s each week as long as you can motivate the change and you evaluate the outcome of the previous week (e.g. describing the current situation).**
