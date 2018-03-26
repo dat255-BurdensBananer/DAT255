@@ -185,7 +185,9 @@ Vart vi är:
 
 Vi har under den senaste, och första, veckan på kursen spenderat tid med att börja navigera oss igenom det hav av möjlig utvecklingsverktyg som finns. Detta var en tidskrävande aktivitet som gjorde att mycket tid lades utan att egentligen resultera i något konkret värde, förutom ökad kunskap och kännedom om verktyg osv. Vi har även satt upp mallar kring möten och utfört formaliteter såsom socialt kontrakt. För exakt tid som lagts denna sprint, se diagram nedan.
 
-INFOGA DIAGRAM SOM LIGGER UNDER FLIKEN TEAM FRÅN EXCEL
+SPRINT			       1	    2	  3	  4	  5	  6	  7	  8
+TEAM TIME		       121,5	0	  0	  0	  0	  0	  0	  0
+GOAL LEVEL (160h)	 160	  160	160	160	160	160	160	160
 
 Vart vi vill:
 
