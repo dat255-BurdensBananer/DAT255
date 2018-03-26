@@ -1,5 +1,6 @@
-# GroupReflection
-Weekly reflections from group BurdensBananer.
+# DAT255, group BurdensBananer.
+
+## Directory
 
 Ändring!
 testbranch
