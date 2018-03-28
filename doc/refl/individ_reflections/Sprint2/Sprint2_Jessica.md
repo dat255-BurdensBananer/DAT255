@@ -1,17 +1,17 @@
 **What do I want to learn or understand better?**
 
-*Vart jag är:*
+*Vart jag är:* Förstår hur scrum fungerar teoretiskt, samt syftet med vårt projekt. Dock har jag dålig teknisk förståelse för det system vi kommer att utgå ifrån.
 
 
-*Vart jag vill:*
+*Vart jag vill:* Jag vill förstå uppbyggnaden av den kod och det system som vi kommer att arbeta utifrån bättre. Vi har fått en introduktion till detta, men jag skulle gärna förstå det ännu bättre. Vill även lära mig hur uppkoppling till PostCDM görs, vilket jag förstår att vi kommer behöva vid testning. 
 
 
-*Hur skall jag komma dit:*
+*Hur skall jag komma dit:* Genom att testa de steg och besöka de länkar som gås igenom på slidesen kan jag få bättre förståelse för hur allt hänger ihop och kan användas. Att föra diskussion inom gruppen är ett annat sätt att tillgodogöra sig informationen. 
 
 
 **How can I help someone else, or the entire team, to learn something new?**
 
-*Vart jag är:*
+*Vart jag är:* 
  
 
 *Vart jag vill:*
