@@ -1,4 +1,5 @@
 **1 the chosen scope of the application under development including priority of features and for whom you are creating value**
+
 *Var vi är:* Vi har precis blivit introducerade till projektet och ännu inte hunnit prata med uppdragsgivaren för att skapa user stories. Detta måste vi dock ta tag i snart eftersom de lägger grunden för mycket av arbetet samt ger uppfattning av scopet och prioritet.
 
 *Var vi vill vara:* Vill börja skapa user stories och gärna ha klart dem å snart som möjligt eftersom det underlättar planering, prioritering och uppfattning av scope. Vill ha en del klara till nästa övning.
