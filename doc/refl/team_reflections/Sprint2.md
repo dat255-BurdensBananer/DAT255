@@ -1,8 +1,9 @@
 **1 the chosen scope of the application under development including priority of features and for whom you are creating value**
-*Var vi är*
-*Var vi vill vara*
-*Hur vi ska ta oss dit*
+*Var vi är:* Vi har precis blivit introducerade till projektet och ännu inte hunnit prata med uppdragsgivaren för att skapa user stories. Detta måste vi dock ta tag i snart eftersom de lägger grunden för mycket av arbetet samt ger uppfattning av scopet och prioritet.
 
+*Var vi vill vara:* Vill börja skapa user stories och gärna ha klart dem å snart som möjligt eftersom det underlättar planering, prioritering och uppfattning av scope. Vill ha en del klara till nästa övning.
+
+*Hur vi ska ta oss dit:* Genom att direkt ta kontakt med uppdragsgivaren efter ledigheten (början av nästa sprint) kan vi börja arbeta med user stories och därefter få en klarare bild av scope, prioriteringar etc.
 
 **2 your social contract, which means you should create one in the first week**
 *Var vi är*
@@ -30,12 +31,14 @@ Vi har fått projektet idag och tilldelats Terminal 2, därmed ska vi nog ha all
 *Var vi vill vara*
 Vi vill till fullo förstå interaktionan av applikationen och vår användares behov tillsammans med andra aktörer.
 *Hur vi ska ta oss dit*
-Genom att rita upp ett interaktion diagram eller en metro map över de aktörer som berör oss samt definiera anvädnarsenarion. 
+Genom att rita upp ett interaktion diagram eller en metro map över de aktörer som berör oss samt definiera anvädnarsenarion.
 
 **7 the structural overview of your application (such as class diagrams, domain models or component diagrams)**
-*Var vi är*
-*Var vi vill vara*
-*Hur vi ska ta oss dit*
+*Var vi är:*  Vi har ännu inte börjat utveckla något eget, men blivit introducerade till det system vi kommer att utgå ifrån. Det inkluderar bland annat strukturer för ett PortCallMessage och API:er, se slides(https://github.com/hburden/DAT255/blob/master/Slides/L6-ProjectSystem.pdf) för fullständig insikt i det system vi har att utgå ifrån.
+
+*Var vi vill vara:* Målet är att utveckla egna påbyggnader till den existerande applikationen. Då vi kommit så långt att vi har en bra förståelse och kunskap om vad det är vi ska göra kan applikationens strukturer börja skissas upp, men innan dess återstår en del arbete. Exempelvis att förstå den existerande strukturen bättre och förstå vad det är vi behöver utveckla.  
+
+*Hur vi ska ta oss dit:* Det första steget är att sätta sig in i den existerande strukturen och förstå den bättre så att vi vet hur vi kan bygga på den. Detta kan göras genom att dela upp de olika områdena som tas upp under introduktionen och fördjupa oss i dem, för att sedan informera och lära varandra om de olika delarna i gruppen. På så vis kan vi ta del av informationen på ett effektivt sätt.
 
 **8 your user stories in terms of using a standard pattern, acceptance criteria, task breakdown and effort estimation**
 *Var vi är*
