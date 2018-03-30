@@ -1,6 +1,6 @@
 # DAT255, group BurdensBananer.
 ### TO DO:
-- Fixa denna sidan
+- Läsa på om vårt scenario (Terminal 2) och ta med våra user stories till övningen. 
 #### Lägg alla era tester här:
 Ändring!
 testbranch
