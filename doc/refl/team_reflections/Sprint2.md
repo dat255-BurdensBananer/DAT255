@@ -14,6 +14,7 @@ Eftersom vi inte hunnit jobba något större med projektet denna veckan så kvar
 
 **3 the success criteria for the team in terms of what you want to achieve with your application**
 *Var vi är*
+Vi blev tilldelade aktör nyss, men har inte hunnit gå igenom några kriterier för framgång än. Vi har därför inte kommit längre än förra veckan. 
 *Var vi vill vara*
 *Hur vi ska ta oss dit*
 
@@ -59,12 +60,12 @@ Kolla på senariot vi fått och den roll vår aktör har. Vilka interagerar den 
 
 *Var vi är:*
 Vi pratade lite om defects (en av våra tre KPI:er) under föreläsningen i måndags. Bara frågan om vad som definierar en defect är lite otydligt, vilket Håkan kopplade till läromålet om att förstå komplexiteten med mjukvaruutveckling. Vi pratade även under förra veckan om att det gruppen mäter prestation i kan påverka hur gruppen presterar. Om prestationen mäts i exempelvis defects så kan ju gruppen helt skippa att skriva kod, och vips så existerar inga defects längre. Det gäller därför att hålla fokus på vad vi faktiskt vill åstadkomma, och inte låsa oss vid våra KPI:er.
-Jag, Anton och Philip (KPI-gruppen) satte ihop ett excel-dokument där vi kan fylla i KPI:er och stressnivå, där resultaten gav grafer och tabeller som sedan kopplades till en powerpoint-presentation. Vi har dock inte gjort detta för vårt Burn Up-chart än.
+Erik, Anton och Philip (KPI-gruppen) satte ihop ett excel-dokument där vi kan fylla i KPI:er och stressnivå, där resultaten gav grafer och tabeller som sedan kopplades till en powerpoint-presentation. Vi har dock inte gjort detta för vårt Burn Up-chart än.
 *Vart vi vill:*
 Vi vill ha ett scope till vårt Burn up-chart. Vi vill även ha med vårt Burn Up-chart i samma exceldokument och presentation som de andra KPI:erna.
 För att koppla till vad som sagts i föreläsningarna vill vi såklart även se till att vi inte styrs blint av KPI:erna, utan att fokus fortfarande ligger på att få till en så bra produkt som möjligt för kunden.
 *Hur vi ska ta oss dit:*
-
+Nu i onsdags blev vi tilldelade aktör, och nu hoppas vi snart kunna sätta oss och snacka igenom vårt scope. När vi gemensamt har diskuterat igenom vad vårt scope består av och hur vi ska lägga upp vårt Burn Up-Chart borde KPI-gruppen kunna sätta in det i samma excel-dokument som övriga KPI:er. 
 **10 code quality using a tool such as Findbugs (1 point if your code includes issues concerning correctness or bad style, 2 points if you have dodgy or performance issues and 3 points if the code is fine), only asses the code you have written yourself**
 
 *Var vi är* Vi har inte fått findbugs att fungera på egenhand utanför IntelliJ och i samband med atom. Inte heller har vi hittat någon likvärdig plugin till atom. Det fungerar dock bra genom att "pull" i IntelliJ och testa därigenom tills vidare.
