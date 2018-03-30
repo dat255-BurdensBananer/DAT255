@@ -11,6 +11,7 @@
 Då denna veckan blir extra kort så har vi endast hunnit ha två möten. Under dessa möten har vi följt samarbetsreglerna och alla har skött sina ansvarsområden.
 Vart vi vill, hur vi ska ta oss dit
 Eftersom vi inte hunnit jobba något större med projektet denna veckan så kvarstår förra veckans utvärdering.
+
 **3 the success criteria for the team in terms of what you want to achieve with your application**
 *Var vi är*
 *Var vi vill vara*
@@ -60,23 +61,42 @@ För att koppla till vad som sagts i föreläsningarna vill vi såklart även se
 *Hur vi ska ta oss dit:*
 
 **10 code quality using a tool such as Findbugs (1 point if your code includes issues concerning correctness or bad style, 2 points if you have dodgy or performance issues and 3 points if the code is fine), only asses the code you have written yourself**
+
 *Var vi är*
 *Var vi vill vara*
 *Hur vi ska ta oss dit*
 
 **11 the roles you have used within the team**
+*Vart vi är:*
+
+Uppdelningen känns fortfarande rimlig i förhållande till de olika arbetsuppgifternas svårighetsgrad och den tid som krävs för att utföra uppgiften. Rollerna har fungerat bra och alla i laget känner sig nöjda med fördelningen av arbetsuppgifter och ansvarsområden. 
+
+*Vart vi vill vara:*
+
+Vi vill ha en välfungerande grupp med tydliga roller där arbetsfördelningen är tydligt. Det är då viktigt att alla gör det som är överenskommet och om man inte kan utföra sin arbetsuppgift måste detta kommuniceras till hela gruppen.
+
+*Hur vi skall komma dit:*
+
+För att skapa en miljö där alla trivs krävs att kommunikationen inom gruppen är god samt att alla sköter de roller som har vi har kommit överens om. Detta inkluderar även att eventuella missnöjen kommuniceras och tas upp med hela gruppen. Högt till tak kommer vara viktigt för att nå fram till målet som en välfungerande och tydlig grupp.
+
+
+**12 the agile practices you have used for the current sprint**
+
 *Var vi är*
 *Var vi vill vara*
 *Hur vi ska ta oss dit*
 
-**12 the agile practices you have used for the current sprint**
-*Var vi är*
-*Var vi vill vara*
-*Hur vi ska ta oss dit*
 **13 the time you have spent on the course (so keep track of your hours so you can describe the current situation)**
-*Var vi är*
-*Var vi vill vara*
-*Hur vi ska ta oss dit*
+
+*Vart vi är:*
+Denna veckan blev lite speciell med både färre skoldagar och många som åkt på semester/hem till påsk. Detta har gjort att tiden som spenderats på projektet varit relativt låg men detta är något som vi kommer att ta igen i de kommande veckorna. Det är även då som projektet drar igång på riktigt vilket. Det kan då vara en fördel med en insparad buffert.
+
+*Vart vi vill:*
+Vi vill komma till en situation där vi jobbar effektivt och självständigt mot gemensamma mål. Vi vill hålla möten kortfattade och informativa med målet att se till att allas individuella arbetsuppgifter går smidigt.
+
+*Hur vi ska ta oss dit:*
+För att nå denna situation behöver vi tydliga mallar och ett tydligt arbetssätt. Detta har vi genom denna veckans föreläsningar och våra möten fått ökat förståelse för. 
+
 **14 the sprint review (either in terms of outcome of the current week's exercise or meeting the product owner)**
 *Var vi är*
 Vi har fortfarande inte haft en sprint review och heller inte fått några utökade kunskaper om sprint review så förra veckans utvärdering kvarstår.
@@ -85,6 +105,7 @@ Vi har fortfarande inte haft en sprint review och heller inte fått några utök
 *Var vi är*
 *Var vi vill vara*
 *Hur vi ska ta oss dit*
+
 **16 relation to literature and guest lectures (how do your reflections relate to what others have to say?)**
 *Var vi är*
 *Var vi vill vara*
