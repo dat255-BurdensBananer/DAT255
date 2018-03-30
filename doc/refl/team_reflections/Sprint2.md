@@ -21,8 +21,15 @@ Eftersom vi inte hunnit jobba något större med projektet denna veckan så kvar
 
 **4 your acceptance tests, such as how they were performed and with whom**
 *Var vi är*
+Vi har nu gått igenom acceptance tests och har fått en initial förståelse över vad begreppet innebär.
+Projektet är ännu inte igång och vi har inte bestämt ännu hur testen ska utföras.
+
 *Var vi vill vara*
+Vi vill komma så långt i planerandet och utförandet av projektet att vi kan strukturera upp tydliga test.
+Det är viktigt att vi gemensamt definierar vilka test som ska utföras och hur testen ska utföras i ett tidigt skede av projektet.
+
 *Hur vi ska ta oss dit*
+Just nu krävs att alla läser på om testerna och arbetet för att vi sedan ska kunna diskutera fram hur vi ska gå tillväga.
 
 **5 the design of your application (choice of APIs, architecture patterns etc)**
 
@@ -93,8 +100,13 @@ För att skapa en miljö där alla trivs krävs att kommunikationen inom gruppen
 **12 the agile practices you have used for the current sprint**
 
 *Var vi är*
+Vi har inte kommit igång med projektet ännu, dessutom har det varit svårt att samla gruppen denna halv-veckan. Vi har diskuterat lite hur vi ska lägga upp det framöver dock.
+
 *Var vi vill vara*
+Vi har planerat in och kommer utföra korta stand-up meetings för att hålla oss uppdaterade, även under sprintens gång. Vi vill också följa de olika agila tillämpningarna som nämns i kursen.
+
 *Hur vi ska ta oss dit*
+Genom en tydlig planering och struktur på arbetet och kontinuerlig uppföljning.
 
 **13 the time you have spent on the course (so keep track of your hours so you can describe the current situation)**
 
