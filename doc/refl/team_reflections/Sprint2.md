@@ -23,9 +23,14 @@ Eftersom vi inte hunnit jobba något större med projektet denna veckan så kvar
 *Hur vi ska ta oss dit*
 
 **5 the design of your application (choice of APIs, architecture patterns etc)**
-*Var vi är*
-*Var vi vill vara*
-*Hur vi ska ta oss dit*
+
+*Var vi är* Vi har fortfarande en basal förståelse för design och API. Vi har inte hunnit sätta oss in i vad exakt vi ska göra och hur den existerande appen är uppbyggd. Därmed kvarstår föregående osäkerhet kring vilka programmeringsspråk och interaktion som kommer förekomma.
+
+*Var vi vill vara* Vi vill fortfarande ha en djupare förståelse och nu kan vi även rikta denna föreståelse. Vi vill veta vilka designval som gjorts i den existerande appen och hur vi skall kunna bygga ut denna på ett modulärt vis. Vi vill kunna använda samma programmeringsspråk och anrop som i appen, så själva java-koden måste förstås
+också.
+
+*Hur vi ska ta oss dit* Vi skall undersöka hur appen fungerar i nuläget och försöka förstå val av design och hur vi kan bygga vidare på denna mer exakt. Det kommer också naturligt när vi har mer information om vad tanken är att appen skall göra.
+
 
 **6 the behavioural overview of your application (for instance through use cases, interaction diagrams or similar)**
 *Var vi är*
@@ -62,14 +67,17 @@ För att koppla till vad som sagts i föreläsningarna vill vi såklart även se
 
 **10 code quality using a tool such as Findbugs (1 point if your code includes issues concerning correctness or bad style, 2 points if you have dodgy or performance issues and 3 points if the code is fine), only asses the code you have written yourself**
 
-*Var vi är*
-*Var vi vill vara*
-*Hur vi ska ta oss dit*
+*Var vi är* Vi har inte fått findbugs att fungera på egenhand utanför IntelliJ och i samband med atom. Inte heller har vi hittat någon likvärdig plugin till atom. Det fungerar dock bra genom att "pull" i IntelliJ och testa därigenom tills vidare.
+
+*Var vi vill vara* Vi vill kunna köra Findbugs standalone eller hitta en likvärdig testapplikation som fungerar tillsammans med atom. Detta för att alla som inte har IntelliJ skall kunna testa effektivt.
+
+*Hur vi ska ta oss dit* §Vi skall fortsätta undersöka olika plugins till atom och standalone program. Under tiden kör vi eventuella tester genom IntelliJ som nämnt.
+
 
 **11 the roles you have used within the team**
 *Vart vi är:*
 
-Uppdelningen känns fortfarande rimlig i förhållande till de olika arbetsuppgifternas svårighetsgrad och den tid som krävs för att utföra uppgiften. Rollerna har fungerat bra och alla i laget känner sig nöjda med fördelningen av arbetsuppgifter och ansvarsområden. 
+Uppdelningen känns fortfarande rimlig i förhållande till de olika arbetsuppgifternas svårighetsgrad och den tid som krävs för att utföra uppgiften. Rollerna har fungerat bra och alla i laget känner sig nöjda med fördelningen av arbetsuppgifter och ansvarsområden.
 
 *Vart vi vill vara:*
 
@@ -95,7 +103,7 @@ Denna veckan blev lite speciell med både färre skoldagar och många som åkt p
 Vi vill komma till en situation där vi jobbar effektivt och självständigt mot gemensamma mål. Vi vill hålla möten kortfattade och informativa med målet att se till att allas individuella arbetsuppgifter går smidigt.
 
 *Hur vi ska ta oss dit:*
-För att nå denna situation behöver vi tydliga mallar och ett tydligt arbetssätt. Detta har vi genom denna veckans föreläsningar och våra möten fått ökat förståelse för. 
+För att nå denna situation behöver vi tydliga mallar och ett tydligt arbetssätt. Detta har vi genom denna veckans föreläsningar och våra möten fått ökat förståelse för.
 
 **14 the sprint review (either in terms of outcome of the current week's exercise or meeting the product owner)**
 *Var vi är*
