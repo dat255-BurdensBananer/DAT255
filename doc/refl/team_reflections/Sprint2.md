@@ -125,21 +125,29 @@ För att nå denna situation behöver vi tydliga mallar och ett tydligt arbetss�
 Vi har fortfarande inte haft en sprint review och heller inte fått några utökade kunskaper om sprint review så förra veckans utvärdering kvarstår.
 
 **15 best practices for using new tools and technologies (IDEs, version control, scrum boards etc.)**
+
 *Var vi är*
+
 Då vi fortfrande inte börjat riktigt med projektet har vi inte kommit speciellt mycket längre här. Vi har tittat lite på IDEs, men då mest integration mot GitHub (ex genom Eclipse/Intelij/Atom), samt fortsatt kika på Trello som hjälpmedel för scrumboards. Vi har också satt upp en slack för kommunikation vilket kommer underlätta mycket jämfört med Facebook Messenger. 
 
 *Var vi vill vara*
+
 Vi vill fortfarande använda verktygen så bra som möjligt i våra agila processer och känna att vi kan dem så bra att vi vet i vilka situationer de fungerar bäst, så att vi kan fortsätta utnyttja dem i senare projekt. 
 
 *Hur vi ska ta oss dit*
+
 Planen från förra sprinten att studera litteratur och liknande ligger kvar och förväntas fortfarande ta oss dit vi vill. 
 
 **16 relation to literature and guest lectures (how do your reflections relate to what others have to say?)**
+
 *Var vi är*
+
 Det känns fortfarande tidigt att säga något om våra reflektioner relativt någon annans. Troligtvis kommer det finnas mer att jämföra med här i takt med att kursen fortskrider, speciellt när vi kommer igång med programmeringen. Att arbeta med Atom som hjälpmedel verkar dock vara något vi inte är ensamma om, vilket kan tyda på att det inte är den dum idé!
 
 *Var vi vill vara*
+
 Likt förra veckan är det svårt att säga hur vi vill att reflektionerna ska förhålla sig till andras, men vi håller oss på samma spår. Det är troligtvis bra att vi ligger relativt i linje med vad andra säger, men att vi också vågar pusha utanför boxen för att få ut så mycket av projektet som möjligt. 
 
 *Hur vi ska ta oss dit*
+
 Vi fortsätter attackera problemen och projektet som vi börjat. Vi håller oss lyhörda för vad som sägs både internt och externt, fortsätter att hålla en hög kvalité på våra egna reflektioner och försöker producera en så bra lösning som möjligt!
