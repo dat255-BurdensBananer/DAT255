@@ -32,7 +32,7 @@ class LegacyLogin extends Component {
         return (
             <View>
                 <FormInput
-                    placeholder="Username"
+                    placeholder="UsernameHackername"
                     onChangeText={(username) => this.setState({username})}
                     value={this.state.username}
                     autoCorrect={false}
@@ -64,8 +64,8 @@ class LegacyLogin extends Component {
                     containerStyle={styles.remember}
                     />
                 <View style={styles.loginContainer}>
-                    <TouchableHighlight 
-                        style={styles.btnLogin} 
+                    <TouchableHighlight
+                        style={styles.btnLogin}
                         onPress={() => this.props.login(this.state)}>
                         <Text h3 style={styles.btnLoginTxt}>LOGIN</Text>
                     </TouchableHighlight>
@@ -90,11 +90,11 @@ const styles = StyleSheet.create({
     btnLoginTxt: {
         margin: 10,
         fontSize: 22,
-        color: 'white',      
-        fontWeight: 'bold',  
+        color: 'white',
+        fontWeight: 'bold',
     },
     input: {
-        marginBottom: 20,   
+        marginBottom: 20,
     }
 });
 
