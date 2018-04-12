@@ -32,7 +32,7 @@ class LegacyLogin extends Component {
         return (
             <View>
                 <FormInput
-                    placeholder="UsernameHackername"
+                    placeholder="Username"
                     onChangeText={(username) => this.setState({username})}
                     value={this.state.username}
                     autoCorrect={false}
