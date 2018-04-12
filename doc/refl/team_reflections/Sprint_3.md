@@ -4,7 +4,7 @@
 
 *Var vi vill vara:* Vore önskvärt att få alla user stories på plats så att vi kan skapa en tydlig prioritet, som även diskuterats med produktägaren, bland dessa.  
 
-*Hur vi ska ta oss dit:* Mötet imorgon kommer att vara till stor hjälp eftersom vi då kan få en tydligare bild av vad som behöver utvecklas, vilket prioritet dessa kan tänkas ha samt få en bättre uppfattning av vem vi skapar värde för. Därför är det viktigt att vi kommer väl förberedda imorgon med redan uttänkta frågor, samt antecknar ordentligt under mötet. Vi behöver även sätta oss ned för att utarbeta våra user stories ordentligt och möjligen få feedback på dessa, eftersom vi aldrig gjort något liknande tidigare och det är viktigt att få till bra user stories. 
+*Hur vi ska ta oss dit:* Mötet imorgon kommer att vara till stor hjälp eftersom vi då kan få en tydligare bild av vad som behöver utvecklas, vilket prioritet dessa kan tänkas ha samt få en bättre uppfattning av vem vi skapar värde för. Därför är det viktigt att vi kommer väl förberedda imorgon med redan uttänkta frågor, samt antecknar ordentligt under mötet. Vi behöver även sätta oss ned för att utarbeta våra user stories ordentligt och möjligen få feedback på dessa, eftersom vi aldrig gjort något liknande tidigare och det är viktigt att få till bra user stories.
 
 **2 your social contract, which means you should create one in the first week**
 
@@ -39,18 +39,17 @@
 
 
 **6 the behavioural overview of your application (for instance through use cases, interaction diagrams or similar)**
-*Var vi är*
-
-*Var vi vill vara*
-*Hur vi ska ta oss dit*
+*Var vi är:*
+*Var vi vill vara:*
+*Hur vi ska ta oss dit:*
 
 
 **7 the structural overview of your application (such as class diagrams, domain models or component diagrams)**
-*Var vi är:*  
+*Var vi är:*  Vi har ännu inte börjat utveckla något själva, utan arbetar fortfarande med att sätta in oss i den existerande koden och kunna köra den. Därmed är den strukturella överblicken densamma även denna vecka, se slides(https://github.com/hburden/DAT255/blob/master/Slides/L6-ProjectSystem.pdf).
 
-*Var vi vill vara:*  
+*Var vi vill vara:*  Idealt skulle vara att kunna börja utveckla koden och därmed kuna göra bidra till den strukturella övervyn, även om detta just nu verkar ligga långt fram i tiden.
 
-*Hur vi ska ta oss dit:*
+*Hur vi ska ta oss dit:* För att kunna börja utveckla koden måste vi få igång den existerande koden och se till att kunna köra den, förstå den existerande koden och sedan göra en plan för hur vi planerar att utveckla den. 
 
 **8 your user stories in terms of using a standard pattern, acceptance criteria, task breakdown and effort estimation**
 *Var vi är*
