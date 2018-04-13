@@ -49,7 +49,7 @@
 
 *Var vi vill vara:*  Idealt skulle vara att kunna börja utveckla koden och därmed kuna göra bidra till den strukturella övervyn, även om detta just nu verkar ligga långt fram i tiden.
 
-*Hur vi ska ta oss dit:* För att kunna börja utveckla koden måste vi få igång den existerande koden och se till att kunna köra den, förstå den existerande koden och sedan göra en plan för hur vi planerar att utveckla den. 
+*Hur vi ska ta oss dit:* För att kunna börja utveckla koden måste vi få igång den existerande koden och se till att kunna köra den, förstå den existerande koden och sedan göra en plan för hur vi planerar att utveckla den.
 
 **8 your user stories in terms of using a standard pattern, acceptance criteria, task breakdown and effort estimation**
 *Var vi är*
@@ -77,15 +77,13 @@
 
 
 **11 the roles you have used within the team**
-*Vart vi är:*
-
-
+*Vart vi är:* Våra roller har under denna veckan visat sig vara bra. Företagskontakten har tagits av ansvarig vilket underlättat kommunikationen. Detta ledde till att ett möte med Terminal 2 (Preem) bokades och genomfördes under veckan. Våra scrumansvariga har även haft ett scrum of scrums vilket fungerade bra.
 
 *Vart vi vill vara:*
-
+Vi vill ha en välfungerande grupp med tydliga roller där arbetsfördelningen är tydligt. Det är då viktigt att alla gör det som är överenskommet och om man inte kan utföra sin arbetsuppgift måste detta kommuniceras till hela gruppen.
 
 *Hur vi skall komma dit:*
-
+För att skapa en miljö där alla trivs krävs att kommunikationen inom gruppen är god samt att alla sköter de roller som har vi har kommit överens om. Detta inkluderar även att eventuella missnöjen kommuniceras och tas upp med hela gruppen. Högt till tak kommer vara viktigt för att nå fram till målet som en välfungerande och tydlig grupp.
 
 
 **12 the agile practices you have used for the current sprint**
@@ -117,24 +115,22 @@
 **15 best practices for using new tools and technologies (IDEs, version control, scrum boards etc.)**
 
 *Var vi är*
-Vi har nu kommit lite längre i arbetet av best practices. Vi har dels strukturerat upp vårt scrum board i Trello med backlogs, velocities och user stories, fortsatt att lära oss om och använda GitHub, samt installerat olika IDEs för själva utvecklingen. Här har vi dock fortfarande mycket att lära kring hur de används bäst och hur vi ska anpassa dem efter vårt projekt. 
+
 
 *Var vi vill vara*
-Återigen vill vi komma till en punkt där vi har koll på vad som är de bästa sätten att använda de nya teknikerna och verktygen vi använder i kursen så att vi kan fortsätta använda dem i senare projekt. Detta betyder alltså att vi behöver förstå dem så pass bra att vi också förstår när och varför olika verktyg passar, och när något annat skulle passsat bättre. 
+
 
 *Hur vi ska ta oss dit*
-Vi kommer fortfarande ta hjälp av litteratur på internet, samt den teori vi nu tagit del av från kurslitteratur och föreläsningar. Detta i kombination med inställningen av att verkligen få en grundlig förståelse av koncepten och dess best practices tror vi kommer ta oss till vårt mål. 
 
 
 **16 relation to literature and guest lectures (how do your reflections relate to what others have to say?)**
 
 *Var vi är*
-Vi har nu haft alla föreläsningar i kursen och även läst igenom mycket av kurslitteraturen från hemsidan. Därmed har vi nu fått upp lite teori att jämföra med, men har fortfarande inte så mycket erfarenheter av arbetet. Det är därför fortfarande ganska svårt att säga hur våra egna reflektioner relaterar till andra utsagor, men vi fortsätter på samma spår som tidigare. 
+
 
 
 *Var vi vill vara*
-Vi vill fortfarande vara i en position där vi kan ha en överblick över våra egna reflektioner och processer och jämföra dem med andra. 
+
 
 
 *Hur vi ska ta oss dit*
-När vi nu fått en större bas av teori och liknande att jämföra mot kommer vi gå vidare med att fortsätta ta våra reflektioner på allvar och nu och framöver även kunna jämföra dem med denna bas. Troligtvis kommer vi därmed ha mer att säga här efter nästa sprint. 
