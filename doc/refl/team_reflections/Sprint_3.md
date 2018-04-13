@@ -98,14 +98,13 @@ För att skapa en miljö där alla trivs krävs att kommunikationen inom gruppen
 
 **13 the time you have spent on the course (so keep track of your hours so you can describe the current situation)**
 
-*Vart vi är:*
-
+*Vart vi är:* Denna veckan har mycket tid lagts på att få appen att fungera på våra datorer, något som krävt mycket tid. Tiden har dock varit nödvändig eftersom detta var målet i denna veckan. Dock har inte måltiden på 160h nåtts denna veckan heller. Detta beror till stor del på manbortfall under sprinten beroende diverse resor, sjukdom eller andra projekt som har prioriterats högre. Detta förklarar den nuvarande situationen.
 
 *Vart vi vill:*
-
+Vi vill nå en stabil arbetsprocess där vi arbetar effektivt, men ändå kommer upp i våra 160h som ett team där alla jobbar lika mycket.
 
 *Hur vi ska ta oss dit:*
-
+Genom att sätta scrumprocessen med task och distrubera dessa på ett jämnt sätt över gruppen se till att alla har lika stor arbetsbelastning och drar sitt strå till stacken. 
 
 **14 the sprint review (either in terms of outcome of the current week's exercise or meeting the product owner)**
 
