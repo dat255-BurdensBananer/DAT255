@@ -9,7 +9,7 @@
 **2 your social contract, which means you should create one in the first week**
 
 *Var vi är*
-Var vi är:Håller oss till det vi satt upp. Vi har haft lite problem med att folk kommer sent till mötena men det har åtgärdats enligt kontraktet. Vi håller oss relativt bra till rollerna inom scrum men borde kunna jobba med detta på ett tydligare sätt. 
+Var vi är:Håller oss till det vi satt upp. Vi har haft lite problem med att folk kommer sent till mötena men det har åtgärdats enligt kontraktet. Vi håller oss relativt bra till rollerna inom scrum men borde kunna jobba med detta på ett tydligare sätt.
 
 *Vart vi vill*
 Jobba tydligare med rollerna inom scrum.
