@@ -77,7 +77,7 @@
 
 
 **11 the roles you have used within the team**
-*Vart vi är:* Våra roller har under denna veckan visat sig vara bra. Företagskontakten har tagits av ansvarig vilket underlättat kommunikationen. Detta ledde till att ett möte med Terminal 2 (Preem) bokades och genomfördes under veckan. Våra scrumansvariga har även haft ett scrum of scrums vilket fungerade bra.
+*Vart vi är:* Våra roller har under denna veckan visat sig vara bra. Företagskontakten har tagits av ansvarig vilket underlättat kommunikationen. Detta ledde till att ett möte med Terminal 2 (Preem) bokades och genomfördes under veckan. Våra scrumansvariga har även haft ett scrum of scrums vilket fungerade bra. Kommunkationen om ambitionen med arbetet kan dock behöva kommuniceras bättre inom gruppen. Rollerna i övrigt har dock passat och inga ändringar har behövt göras.
 
 *Vart vi vill vara:*
 Vi vill ha en välfungerande grupp med tydliga roller där arbetsfördelningen är tydligt. Det är då viktigt att alla gör det som är överenskommet och om man inte kan utföra sin arbetsuppgift måste detta kommuniceras till hela gruppen.
