@@ -9,9 +9,13 @@
 **2 your social contract, which means you should create one in the first week**
 
 *Var vi är*
+Var vi är:Håller oss till det vi satt upp. Vi har haft lite problem med att folk kommer sent till mötena men det har åtgärdats enligt kontraktet. Vi håller oss relativt bra till rollerna inom scrum men borde kunna jobba med detta på ett tydligare sätt. 
 
+*Vart vi vill*
+Jobba tydligare med rollerna inom scrum.
 
-*Vart vi vill, hur vi ska ta oss dit*
+*Hur vi ska ta oss dit*
+Mer strukturerade möten.
 
 
 **3 the success criteria for the team in terms of what you want to achieve with your application**
@@ -98,17 +102,25 @@ För att skapa en miljö där alla trivs krävs att kommunikationen inom gruppen
 
 **13 the time you have spent on the course (so keep track of your hours so you can describe the current situation)**
 
-*Vart vi är:* Denna veckan har mycket tid lagts på att få appen att fungera på våra datorer, något som krävt mycket tid. Tiden har dock varit nödvändig eftersom detta var målet i denna veckan. Dock har inte måltiden på 160h nåtts denna veckan heller. Detta beror till stor del på manbortfall under sprinten beroende diverse resor, sjukdom eller andra projekt som har prioriterats högre. Detta förklarar den nuvarande situationen.
+*Vart vi är:*
+
 
 *Vart vi vill:*
-Vi vill nå en stabil arbetsprocess där vi arbetar effektivt, men ändå kommer upp i våra 160h som ett team där alla jobbar lika mycket.
+
 
 *Hur vi ska ta oss dit:*
-Genom att sätta scrumprocessen med task och distrubera dessa på ett jämnt sätt över gruppen se till att alla har lika stor arbetsbelastning och drar sitt strå till stacken. 
+
 
 **14 the sprint review (either in terms of outcome of the current week's exercise or meeting the product owner)**
 
 *Var vi är*
+Vi har nu fått uppgiften och kontakt med kontaktpersonen och kan därför arbeta med sprint reviews på ett tydligare sätt. Vi träffade vår kontaktperson för ett inledande möte i fredags därav har vi inte haft möte denna veckan.
+
+*Vart vi vill*
+Jobba kontinuerligt med sprint reviews. En utmaning vi har inom detta är att kontaktpersonen inte har möjlighet att ha möten varje vecka utan vi får skicka mail istället. Detta är något som vi behöver reda ut hur vi ska hantera.  
+
+*Hur vi ska ta oss dit*
+Avsätta tid för sprint reviews och hitta en bra metod för att sköta kontakten med kontaktpersonen via mail.
 
 
 **15 best practices for using new tools and technologies (IDEs, version control, scrum boards etc.)**
