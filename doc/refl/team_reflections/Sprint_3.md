@@ -20,17 +20,24 @@ Mer strukturerade möten.
 
 **3 the success criteria for the team in terms of what you want to achieve with your application**
 *Var vi är*
+Vi har precis lyckats bygga applikationen och haft ett första möte med vår uppdragsgivare (Terminal 2 --> Preem). I nuläget har vi inget tydligt uttalat success criteria, mer än mer övergripande mål att "leverera en bra slutprodukt" och få bra betyg i kursen.
+
 *Var vi vill vara*
+När vi nu börjat greppa omfattningen på arbetet och vad som faktiskt krävs av oss vill vi ha tydligare success criteria där vi faktiskt har vår gemensamma success criteria svart på vitt.
+
 *Hur vi ska ta oss dit*
+När vi nu kommer igång och börjar producera så behöver vi sitta ner tidigt nästa vecka och sätta upp ett tydligare success criteria så att vi vet att vi jobbar mot samma mål.
+
 
 **4 your acceptance tests, such as how they were performed and with whom**
 *Var vi är*
-
+Vi har börjat diskutera lite grann hur testen ska utföras i sprinten, men vi har ännu inte kommit igång med någon produktion och det gemensamma scopet på arbetet är ännu inte helt klart. Hur testerna ska utföras är inte helt spikat. Det har funnits svårigheter i att skapa testerna innan vi har förstått vad som faktiskt ska göras.
 
 *Var vi vill vara*
-
+Vi vill ha tydligt planerade och uppstrukturerade acceptance tests som vi alla kan förhålla oss till och ställa oss bakom. Vi vill också veta vem/vilka som ska utföra olika tester.
 
 *Hur vi ska ta oss dit*
+Gruppen behöver läsa på mer om olika typer av tester på individnivå för att kunna bidra vid utformandet av testerna. En gemensam åtgärd för alla reflektionspunkterna i nuläget är att vi behöver ha ett möte i början av veckan för att initiera den nya sprinten och komma igång med själva programmeringen.
 
 
 **5 the design of your application (choice of APIs, architecture patterns etc)**
@@ -95,11 +102,13 @@ För att skapa en miljö där alla trivs krävs att kommunikationen inom gruppen
 **12 the agile practices you have used for the current sprint**
 
 *Var vi är*
+Det har ännu varit svårt att applicera tydliga agila practices i arbetet eftersom vi inte kommit igång helt med projektet. Den mesta tiden har nu lagts på att gemensamt förstå uppgiften vi står inför och att få igång utvecklingsmiljön. Vi har genomgående försökt använda scrum-metodik där vi haft möten och försökt planera processen vidare under arbetets gång.
 
 *Var vi vill vara*
-
+Vi vill inkorporera agila tillämpningar i projektet så att de blir en naturlig del av det kontinuerliga arbetet. Istället för att hela tiden följa olika tillämpningar mekaniskt hoppas vi att det blir en sjävklar del av proceseen.
 
 *Hur vi ska ta oss dit*
+Förutom att vi alla behöver läsa på litteraturen så pass väl att vi förstår vilka agila tillämpningar vi kan använda under arbetets gång så behöver vi återigen komma igång på riktigt. Detta tror vi är möjligt nu när utvecklingsmiljön är igång och vi har börjat strukturera upp arbetet med user stories.
 
 
 **13 the time you have spent on the course (so keep track of your hours so you can describe the current situation)**
