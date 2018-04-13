@@ -35,11 +35,11 @@ Mer strukturerade möten.
 
 **5 the design of your application (choice of APIs, architecture patterns etc)**
 
-*Var vi är*
+*Var vi är* Vi har återigen en basal förståelse för API och design. Nu har vi förstått att det handlar om att programmera mycket i javascript också, men fortfarande inte hur den är uppbyggd.
 
-*Var vi vill vara*
+*Var vi vill vara* Vi vill förstå appen och hur koden fungerar som sagt. Därefter kan vi tänka på hur den nya koden vi skriver skall interagera med den gamla och hur vi skall angripa detta problem.
 
-*Hur vi ska ta oss dit*
+*Hur vi ska ta oss dit* Vi måste först och främst förstå koden i appen och sedan kolla på specifika fall av tillämpningen av vissa arkitekturer för att förstå vad vi skall tillämpa i vårt fall.
 
 
 **6 the behavioural overview of your application (for instance through use cases, interaction diagrams or similar)**
@@ -73,12 +73,11 @@ Mer strukturerade möten.
 
 **10 code quality using a tool such as Findbugs (1 point if your code includes issues concerning correctness or bad style, 2 points if you have dodgy or performance issues and 3 points if the code is fine), only asses the code you have written yourself**
 
-*Var vi är*
+*Var vi är* Vi är kvar på samma ställe som förut. Det fungerar att använda IntelliJ som testplattform för FindBugs så länge.
 
-*Var vi vill vara*
+*Var vi vill vara* Vi vill fortfarande kunna köra FindBugs standalone eller hitta en likvärdig testapplikation som fungerar tillsammans med atom. Alla måste kunna testa  utan IntelliJ.
 
-*Hur vi ska ta oss dit*
-
+*Hur vi ska ta oss dit* Vi måste undersöka vilka program som kan vara aktuella att använda istället.
 
 **11 the roles you have used within the team**
 *Vart vi är:* Våra roller har under denna veckan visat sig vara bra. Företagskontakten har tagits av ansvarig vilket underlättat kommunikationen. Detta ledde till att ett möte med Terminal 2 (Preem) bokades och genomfördes under veckan. Våra scrumansvariga har även haft ett scrum of scrums vilket fungerade bra. Kommunkationen om ambitionen med arbetet kan dock behöva kommuniceras bättre inom gruppen. Rollerna i övrigt har dock passat och inga ändringar har behövt göras.
