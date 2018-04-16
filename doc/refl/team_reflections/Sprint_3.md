@@ -138,23 +138,29 @@ Avsätta tid för sprint reviews och hitta en bra metod för att sköta kontakte
 
 **15 best practices for using new tools and technologies (IDEs, version control, scrum boards etc.)**
 
-*Var vi är*
+ *Var vi är*
+-
++Vi har nu kommit lite längre i arbetet av best practices. Vi har dels strukturerat upp vårt scrum board i Trello med backlogs, velocities och user stories, fortsatt att lära oss om och använda GitHub, samt installerat olika IDEs för själva utvecklingen. Här har vi dock fortfarande mycket att lära kring hur de används bäst och hur vi ska anpassa dem efter vårt projekt.
+
+ *Var vi vill vara*
+-
++Återigen vill vi komma till en punkt där vi har koll på vad som är de bästa sätten att använda de nya teknikerna och verktygen vi använder i kursen så att vi kan fortsätta använda dem i senare projekt. Detta betyder alltså att vi behöver förstå dem så pass bra att vi också förstår när och varför olika verktyg passar, och när något annat skulle passsat bättre.
+
+ *Hur vi ska ta oss dit*
++Vi kommer fortfarande ta hjälp av litteratur på internet, samt den teori vi nu tagit del av från kurslitteratur och föreläsningar. Detta i kombination med inställningen av att verkligen få en grundlig förståelse av koncepten och dess best practices tror vi kommer ta oss till vårt mål.
 
 
-*Var vi vill vara*
+ **16 relation to literature and guest lectures (how do your reflections relate to what others have to say?)**
+
+ *Var vi är*
+-
++Vi har nu haft alla föreläsningar i kursen och även läst igenom mycket av kurslitteraturen från hemsidan. Därmed har vi nu fått upp lite teori att jämföra med, men har fortfarande inte så mycket erfarenheter av arbetet. Det är därför fortfarande ganska svårt att säga hur våra egna reflektioner relaterar till andra utsagor, men vi fortsätter på samma spår som tidigare.
 
 
-*Hur vi ska ta oss dit*
+ *Var vi vill vara*
+-
++Vi vill fortfarande vara i en position där vi kan ha en överblick över våra egna reflektioner och processer och jämföra dem med andra.
 
 
-**16 relation to literature and guest lectures (how do your reflections relate to what others have to say?)**
-
-*Var vi är*
-
-
-
-*Var vi vill vara*
-
-
-
-*Hur vi ska ta oss dit*
+ *Hur vi ska ta oss dit*
++När vi nu fått en större bas av teori och liknande att jämföra mot kommer vi gå vidare med att fortsätta ta våra reflektioner på allvar och nu och framöver även kunna jämföra dem med denna bas. Troligtvis kommer vi därmed ha mer att säga här efter nästa sprint. 
