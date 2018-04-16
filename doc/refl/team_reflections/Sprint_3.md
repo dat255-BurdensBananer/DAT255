@@ -73,14 +73,14 @@ Gruppen behöver läsa på mer om olika typer av tester på individnivå för at
 **9 the three KPIs you use for monitoring your progress**
 
 *Var vi är:*
-Burn up-chart - Erik, Agnes, och Julia satte upp på olika User Stories och bestämde velocities för dessa. 
-Stressnivån - veckovis enkät skickas ut och det flyter på. 
-Defekter - har grafer redo, men eftersom vi inte börjat med koden än har det inte hänt så mycket på den här fronten. 
+Burn up-chart - Erik, Agnes, och Julia satte upp på olika User Stories och bestämde velocities för dessa.
+Stressnivån - veckovis enkät skickas ut och det flyter på.
+Defekter - har grafer redo, men eftersom vi inte börjat med koden än har det inte hänt så mycket på den här fronten.
 *Vart vi vill:*
-Vi vill kunna använda våra nyligen satta User Stories och velocities till vårt Burn Up-chart. Vi måste dock fortfarande ha ett scope till vårt Burn up-chart. Vi vill även ha med vårt Burn Up-chart i samma exceldokument och presentation som de andra KPI:erna. 
+Vi vill kunna använda våra nyligen satta User Stories och velocities till vårt Burn Up-chart. Vi måste dock fortfarande ha ett scope till vårt Burn up-chart. Vi vill även ha med vårt Burn Up-chart i samma exceldokument och presentation som de andra KPI:erna.
 För att koppla till vad som sagts i föreläsningarna vill vi såklart även se till att vi inte styrs blint av KPI:erna, utan att fokus fortfarande ligger på att få till en så bra produkt som möjligt för kunden.
 *Hur vi ska ta oss dit:*
-Jag tror att vi gemensamt måste sätta oss och bestämma ett scope för hela projektet. 
+Jag tror att vi gemensamt måste sätta oss och bestämma ett scope för hela projektet.
 
 
 **10 code quality using a tool such as Findbugs (1 point if your code includes issues concerning correctness or bad style, 2 points if you have dodgy or performance issues and 3 points if the code is fine), only asses the code you have written yourself**
@@ -116,13 +116,13 @@ Förutom att vi alla behöver läsa på litteraturen så pass väl att vi först
 **13 the time you have spent on the course (so keep track of your hours so you can describe the current situation)**
 
 *Vart vi är:*
-
+ Denna veckan har mycket tid lagts på att få appen att fungera på våra datorer, något som krävt mycket tid. Tiden har dock varit nödvändig eftersom detta var målet i denna veckan. Dock har inte måltiden på 160h nåtts denna veckan heller. Detta beror till stor del på manbortfall under sprinten beroende diverse resor, sjukdom eller andra projekt som har prioriterats högre. Detta förklarar den nuvarande situationen.
 
 *Vart vi vill:*
-
+Vi vill nå en stabil arbetsprocess där vi arbetar effektivt, men ändå kommer upp i våra 160h som ett team där alla jobbar lika mycket.
 
 *Hur vi ska ta oss dit:*
-
+Genom att sätta scrumprocessen med task och distrubera dessa på ett jämnt sätt över gruppen se till att alla har lika stor arbetsbelastning och drar sitt strå till stacken.
 
 **14 the sprint review (either in terms of outcome of the current week's exercise or meeting the product owner)**
 
