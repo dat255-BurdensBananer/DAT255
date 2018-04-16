@@ -72,4 +72,4 @@ Jag vill ha förstått hur bra user stories ser ut och påbörjat första sprint
 *Hur ska jag komma dit*
 #Se till att få all information jag kan om produkten och ta reda på vad gruppen behöver. Se till att vara kontaktbar även när jag inte kan närvara på mötena.
 #Sätt mig ned och definiera senarion, vet ej hur det ska bli flera. Samt installera script paketet.
-Bara att börja koda. Läsa igenom förra föreläsningen igen för att se hur user stories ser ut som bäst. Vara delaktig i riktigt möte på måndag. 
+Bara att börja koda. Läsa igenom förra föreläsningen igen för att se hur user stories ser ut som bäst. Vara delaktig i riktigt möte på måndag.
