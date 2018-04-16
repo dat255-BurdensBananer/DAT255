@@ -244,7 +244,7 @@ class SideMenu extends Component {
                         }
                         onPress={() => {
                             if (activeItemKey !== 'TestClass' && activeItemKey != 'Login')
-                                navigate('TestClass');
+                                navigate('Test');
                         }}
                     />
 
