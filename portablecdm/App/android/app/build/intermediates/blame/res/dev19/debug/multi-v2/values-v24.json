@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/Oscar/Documents/GitHub/portablecdm/App/android/app/build/intermediates/incremental/mergeDev19DebugResources/merged.dir/values-v24/values-v24.xml",
+            "outputFile": "/Users/Oscar/Documents/GitHub/DAT255/portablecdm/App/android/app/build/intermediates/incremental/mergeDev19DebugResources/merged.dir/values-v24/values-v24.xml",
             "map": [
                 {
                     "source": "/Users/Oscar/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.0.1.aar/77691f68fc5bbb0e33f52c2969f0ec82/res/values-v24/values-v24.xml",
