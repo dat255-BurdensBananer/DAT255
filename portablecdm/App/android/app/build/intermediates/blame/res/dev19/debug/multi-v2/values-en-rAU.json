@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/Oscar/Documents/GitHub/portablecdm/App/android/app/build/intermediates/incremental/mergeDev19DebugResources/merged.dir/values-en-rAU/values-en-rAU.xml",
+            "outputFile": "/Users/erikgedda/Documents/GitHub/DAT255/portablecdm/App/android/app/build/intermediates/incremental/mergeDev19DebugResources/merged.dir/values-en-rAU/values-en-rAU.xml",
             "map": [
                 {
-                    "source": "/Users/Oscar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.1.aar/25912dbc397cddccbaa70e8a12090117/res/values-en-rAU/values-en-rAU.xml",
+                    "source": "/Users/erikgedda/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.1.aar/cb66cbbefff0e45eae58584727ea046e/res/values-en-rAU/values-en-rAU.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/Oscar/.gradle/caches/transforms-1/files-1.1/exoplayer-r2.0.3.aar/44904dadfb9640fe3a205bb39be94c07/res/values-en-rAU/values-en-rAU.xml",
+                    "source": "/Users/erikgedda/.gradle/caches/transforms-1/files-1.1/exoplayer-r2.0.3.aar/65050c3ab02f30727678766224be7687/res/values-en-rAU/values-en-rAU.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8",
                         "startColumns": "4,4,4,4,4,4,4",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/Users/Oscar/.gradle/caches/transforms-1/files-1.1/play-services-wallet-9.8.0.aar/1900b863f362c2503e2228a04b176afc/res/values-en-rAU/values.xml",
+                    "source": "/Users/erikgedda/.gradle/caches/transforms-1/files-1.1/play-services-wallet-9.8.0.aar/649fd178f4ebddbd4603028682d10df0/res/values-en-rAU/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",

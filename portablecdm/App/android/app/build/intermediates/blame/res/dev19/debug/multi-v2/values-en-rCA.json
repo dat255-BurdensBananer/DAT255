@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/Oscar/Documents/GitHub/portablecdm/App/android/app/build/intermediates/incremental/mergeDev19DebugResources/merged.dir/values-en-rCA/values-en-rCA.xml",
+            "outputFile": "/Users/erikgedda/Documents/GitHub/DAT255/portablecdm/App/android/app/build/intermediates/incremental/mergeDev19DebugResources/merged.dir/values-en-rCA/values-en-rCA.xml",
             "map": [
                 {
-                    "source": "/Users/Oscar/.gradle/caches/transforms-1/files-1.1/play-services-wallet-9.8.0.aar/1900b863f362c2503e2228a04b176afc/res/values-en-rCA/values.xml",
+                    "source": "/Users/erikgedda/.gradle/caches/transforms-1/files-1.1/play-services-wallet-9.8.0.aar/649fd178f4ebddbd4603028682d10df0/res/values-en-rCA/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
