@@ -6,22 +6,22 @@
     density="420dpi"
     format="10"
     plugin-version="3.1.0"
-    timestamp="1523879482776"
+    timestamp="1524037045383"
     token="4562144922257986534"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="36032" />
+        duration="46324" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="733" />
+        duration="5375" />
     <task
         name="verifier"
-        duration="209" />
+        duration="749" />
 
     <artifact
         location="/Users/Oscar/Documents/GitHub/DAT255/portablecdm/App/android/app/build/intermediates/split-apk/dev19/debug/slices/slice_3.apk"
@@ -62,7 +62,7 @@
 
     <build
         build-mode="FULL"
-        timestamp="1523879482776"
+        timestamp="1524037045383"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/Users/Oscar/Documents/GitHub/DAT255/portablecdm/App/android/app/build/intermediates/split-apk/dev19/debug/slices/slice_3.apk"
