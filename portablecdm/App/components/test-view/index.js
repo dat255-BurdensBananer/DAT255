@@ -30,7 +30,7 @@ class TestView extends Component {
             <TopHeader
               firstPage
               navigation={navigation}
-              title="Test"
+              title="Testing"
               />
 
           </View>
