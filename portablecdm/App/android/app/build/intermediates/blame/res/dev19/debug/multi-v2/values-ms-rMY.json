@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/Oscar/Documents/GitHub/portablecdm/App/android/app/build/intermediates/incremental/mergeDev19DebugResources/merged.dir/values-ms-rMY/values-ms-rMY.xml",
+            "outputFile": "/Users/juliaburman/Documents/GitHub/GroupReflection/portablecdm/App/android/app/build/intermediates/incremental/mergeDev19DebugResources/merged.dir/values-ms-rMY/values-ms-rMY.xml",
             "map": [
                 {
-                    "source": "/Users/Oscar/.gradle/caches/transforms-1/files-1.1/exoplayer-r2.0.3.aar/44904dadfb9640fe3a205bb39be94c07/res/values-ms-rMY/values-ms-rMY.xml",
+                    "source": "/Users/juliaburman/.gradle/caches/transforms-1/files-1.1/exoplayer-r2.0.3.aar/c1355418744c515294def837d83ee020/res/values-ms-rMY/values-ms-rMY.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8",
                         "startColumns": "4,4,4,4,4,4,4",

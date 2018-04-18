@@ -1,21 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/Oscar/Documents/GitHub/portablecdm/App/android/app/build/intermediates/incremental/mergeDev19DebugResources/merged.dir/values-v11/values-v11.xml",
+            "outputFile": "/Users/juliaburman/Documents/GitHub/GroupReflection/portablecdm/App/android/app/build/intermediates/incremental/mergeDev19DebugResources/merged.dir/values-v11/values-v11.xml",
             "map": [
                 {
-                    "source": "/Users/Oscar/.gradle/caches/transforms-1/files-1.1/CreditCardEntry-1.4.8.4.aar/f95a76d65420b5541885d0b08465bb18/res/values-v11/values-v11.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "4",
-                        "endColumns": "12",
-                        "endOffsets": "187"
-                    }
-                },
-                {
-                    "source": "/Users/Oscar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.1.aar/25912dbc397cddccbaa70e8a12090117/res/values-v11/values-v11.xml",
+                    "source": "/Users/juliaburman/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.1.aar/ca1f8d3f2b059c3570823f5ce16f75eb/res/values-v11/values-v11.xml",
                     "from": {
                         "startLines": "2,8,14,20,26,32,38,39,43,47,48,52,56,57,61,66,71,76,78,80,81,82,136,191",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -31,6 +20,17 @@
                         "endLines": "10,16,22,28,34,40,41,45,49,50,54,58,59,63,68,73,78,80,82,83,84,138,193,194",
                         "endColumns": "12,12,12,12,12,12,88,12,12,100,12,12,102,12,12,12,12,12,12,70,82,12,12,90",
                         "endOffsets": "606,1031,1459,1885,2312,2737,2826,3072,3321,3422,3674,3929,4032,4285,4693,5113,5535,5642,5771,5842,5925,9950,14118,14209"
+                    }
+                },
+                {
+                    "source": "/Users/juliaburman/.gradle/caches/transforms-1/files-1.1/CreditCardEntry-1.4.8.4.aar/66d5f64d12d61c5402a28821be22bafa/res/values-v11/values-v11.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "187"
                     }
                 }
             ]
