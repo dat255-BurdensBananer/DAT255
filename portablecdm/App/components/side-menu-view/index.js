@@ -5,7 +5,7 @@ import {
   StyleSheet,
   ScrollView,
   TouchableWithoutFeedback,
-  Dimensions, 
+  Dimensions,
   Image
 } from 'react-native';
 
@@ -54,23 +54,23 @@ class SideMenu extends Component {
     const textStyle = haveSelectedPortCall && activeItemKey !== 'Login' ? styles.menuText : [styles.menuText, styles.unavailableMenuText];
     const canBeAccessedEverywhereExceptOnLogin = activeItemKey === 'Login' ? [styles.menuText, styles.unavailableMenuText] : styles.menuText;
     return(
-        <ScrollView style={styles.container}>    
+        <ScrollView style={styles.container}>
             <View style={styles.headerContainer}>
                 {!! vessel &&
                 <Image
-                    style={{ 
+                    style={{
                         width: 3*Dimensions.get('window').width/4-20,
                         height: Dimensions.get('window').height/4,
                         borderRadius: 5,
                         }}
-          
-                source={{uri:vessel.photoURL }} 
+
+                source={{uri:vessel.photoURL }}
                 />}
-                {!!vessel && 
+                {!!vessel &&
                     <Text style={styles.headerText}>{vessel.name}</Text>}
-                {!vessel && 
+                {!vessel &&
                 <Text style={styles.headerText}>Select a Portcall</Text>}
-            </View>    
+            </View>
 
 
             <Divider style={{backgroundColor: colorScheme.secondaryContainerColor, height: 0.7,}}/>
@@ -88,7 +88,7 @@ class SideMenu extends Component {
                         underlayColor={colorScheme.secondaryColor}
                         title={
                             <View style={styles.textContainer}>
-                                <Text style={canBeAccessedEverywhereExceptOnLogin}>Select PortCall</Text>     
+                                <Text style={canBeAccessedEverywhereExceptOnLogin}>Select PortCall</Text>
                             </View>
                         }
                         onPress={() => {
@@ -124,7 +124,7 @@ class SideMenu extends Component {
                         underlayColor={colorScheme.secondaryColor}
                         title={
                             <View style={styles.textContainer}>
-                                <Text style={canBeAccessedEverywhereExceptOnLogin}>Create new port call</Text>     
+                                <Text style={canBeAccessedEverywhereExceptOnLogin}>Create new port call</Text>
                             </View>
                         }
                         onPress={() => {
@@ -138,7 +138,7 @@ class SideMenu extends Component {
                             }
                         }}
                     />}
-     
+
                     <ListItem
                         containerStyle={activeItemKey === 'FavoriteStatesSideMenu' ? [containerStyle, styles.selectedContainer] : containerStyle}
                           leftIcon={{
@@ -149,7 +149,7 @@ class SideMenu extends Component {
                         underlayColor={colorScheme.secondaryColor}
                         title={
                             <View style={styles.textContainer}>
-                                <Text style={textStyle}>Report TimeStamp</Text>     
+                                <Text style={textStyle}>Report TimeStamp</Text>
                             </View>
                         }
                         onPress={() => {
@@ -167,7 +167,7 @@ class SideMenu extends Component {
                         underlayColor={colorScheme.secondaryColor}
                         title={
                             <View style={styles.textContainer}>
-                                <Text style={textStyle}>Port Call Timeline</Text>     
+                                <Text style={textStyle}>Port Call Timeline</Text>
                             </View>
                         }
                         onPress={() => {
@@ -184,7 +184,7 @@ class SideMenu extends Component {
                         underlayColor={colorScheme.secondaryColor}
                         title={
                             <View style={styles.textContainer}>
-                                <Text style={textStyle}>Vessel Info</Text>     
+                                <Text style={textStyle}>Vessel Info</Text>
                             </View>
                         }
                         onPress={() => {
@@ -203,7 +203,7 @@ class SideMenu extends Component {
                         underlayColor={colorScheme.secondaryColor}
                         title={
                             <View style={styles.textContainer}>
-                                <Text style={canBeAccessedEverywhereExceptOnLogin} >Settings</Text>     
+                                <Text style={canBeAccessedEverywhereExceptOnLogin} >Settings</Text>
                             </View>
                         }
                         onPress={() => {
@@ -221,12 +221,29 @@ class SideMenu extends Component {
                         underlayColor={colorScheme.secondaryColor}
                         title={
                             <View style={styles.textContainer}>
-                                <Text style={canBeAccessedEverywhereExceptOnLogin}>About</Text>     
+                                <Text style={canBeAccessedEverywhereExceptOnLogin}>About</Text>
                             </View>
                         }
                         onPress={() => {
                             if (activeItemKey !== 'About' && activeItemKey != 'Login')
                                 navigate('About');
+                        }}
+                    />
+                    <ListItem
+                        containerStyle={activeItemKey === 'TestView' ? [styles.menuContainer, styles.selectedContainer] : styles.menuContainer}
+                        leftIcon={{name:'rowing',
+                        color: 'white'
+                        }}
+                        hideChevron
+                        underlayColor={colorScheme.secondaryColor}
+                        title={
+                            <View style={styles.textContainer}>
+                                <Text style={canBeAccessedEverywhereExceptOnLogin}>TestView</Text>
+                            </View>
+                        }
+                        onPress={() => {
+                            if (activeItemKey !== 'TestView' && activeItemKey != 'Login')
+                                navigate('TestView');
                         }}
                     />
 
@@ -240,7 +257,7 @@ class SideMenu extends Component {
                         underlayColor={colorScheme.secondaryColor}
                         title={
                             <View style={styles.textContainer}>
-                                <Text style={[canBeAccessedEverywhereExceptOnLogin]} >Logout</Text>     
+                                <Text style={[canBeAccessedEverywhereExceptOnLogin]} >Logout</Text>
                             </View>
                         }
                         onPress={() => {
