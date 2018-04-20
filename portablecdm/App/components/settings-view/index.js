@@ -83,6 +83,14 @@ class Settings extends Component {
             <View style={locStyles.container}>
                 <TopHeader title='Settings' firstPage navigation={this.props.navigation} />
                 <ScrollView style={locStyles.scrollContainer}>
+
+                    <Button
+                        backgroundColor={colorScheme.primaryColor}
+                        color={colorScheme.primaryTextColor}
+                        title="Edit My Vessels"
+                        buttonStyle={locStyles.buttonStyle}
+                        onPress={() => navigate('MyVesselsSettings')}
+                    />
                     <Button
                         backgroundColor={colorScheme.primaryColor}
                         color={colorScheme.primaryTextColor}

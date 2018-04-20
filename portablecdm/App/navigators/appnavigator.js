@@ -20,7 +20,6 @@ import ErrorView            from '../components/error-view';
 import BearthList           from '../components/berth-list-view';
 import BerthList            from '../components/berth-list-view';
 import BerthTimeLine        from '../components/berth-timeline-view';
-import TestView             from '../components/test-view';
 
 const BerthViewNavigator = StackNavigator({
     BerthList: { screen: BearthList }, // THIS SHOULD BE FIRST!!
@@ -50,6 +49,7 @@ const SettingsNavigator = StackNavigator({
   SettingsStart: { screen: Settings },
   VesselLists: { screen: VesselLists},
   FavoriteStateSetting: { screen: SelectFavoriteState },
+  MyVesselsSettings: { screen: MyVesselsFilterView},
 }, {
   headerMode: 'none'
 })
@@ -71,7 +71,6 @@ const MainNavigator = DrawerNavigator({
     VesselInfo: { screen: VesselInfo },
     Settings: { screen: SettingsNavigator },
     About: { screen: AboutView },
-    TestView: {screen: TestView},
     Error: { screen: ErrorView },
 }, {
     headerMode: 'none',
