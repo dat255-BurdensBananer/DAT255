@@ -12,9 +12,9 @@ import {
     Alert,
 } from 'react-native'
 
-import { 
-    List, 
-    ListItem, 
+import {
+    List,
+    ListItem,
     Icon,
     Text
 } from 'react-native-elements';
@@ -22,10 +22,10 @@ import {
 import TopHeader from '../top-header-view';
 import OperationView from './sections/operationview';
 
-import { 
-    fetchPortCallEvents, 
-    changeFetchReliability, 
-    removeError, 
+import {
+    fetchPortCallEvents,
+    changeFetchReliability,
+    removeError,
     toggleFavoritePortCall,
     toggleFavoriteVessel,
 } from '../../actions';
@@ -39,7 +39,7 @@ class TimeLineView extends Component {
     constructor(props) {
         super(props);
         const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-        
+
         this.state = {
             dataSource: ds.cloneWithRows(['row 1, row 2']),
             refreshing: false,
@@ -76,10 +76,10 @@ class TimeLineView extends Component {
                         {cancelable: false},
                     );
                 } else {
-                    this.props.navigation.navigate('Error');                   
+                    this.props.navigation.navigate('Error');
                 }
             }
-        }); 
+        });
     }
 
     componentWillUnmount() {
@@ -99,23 +99,23 @@ class TimeLineView extends Component {
 
         return(
             <View style={{flex: 1, backgroundColor: colorScheme.primaryContainerColor}}>
-                <TopHeader 
-                    title = 'Timeline' 
+                <TopHeader
+                    title = 'Timeline1' 
                     firstPage
-                    navigation={this.props.navigation} 
+                    navigation={this.props.navigation}
                     rightIconFunction={this.goToStateList}
                     leftIcons={this.createFavoriteIcons()}
                     selectorIcon={this.createShowHideExpiredIcon()}/>
-                <View 
+                <View
                     style={styles.headerContainer}
                 >
                     <Text style={styles.headerText}>{vesselName}</Text>
-                    {operations.reliability >= 0 && 
+                    {operations.reliability >= 0 &&
                         <Text style={styles.headerTitleText}><Text style={{fontWeight: 'bold'}}>Reliability: </Text>{operations.reliability}%</Text>
                     }
                 </View>
 
-                {loading && <ActivityIndicator 
+                {loading && <ActivityIndicator
                                 color={colorScheme.primaryColor}
                                 style={{alignSelf: 'center'}}
                                 animating={loading}
@@ -123,7 +123,7 @@ class TimeLineView extends Component {
             <ScrollView maximumZoomScale={10} alwaysBounceVertical={false}>
                 {!loading && <ListView
                                 enableEmptySections
-                                dataSource={dataSource} 
+                                dataSource={dataSource}
                                 refreshControl = {
                                     <RefreshControl
                                         refreshing={this.state.refreshing}
@@ -141,13 +141,13 @@ class TimeLineView extends Component {
                                         }
                                     }
                                     if (typeof data == 'number') return null; // disgusting way to not handle operations.reliability as a member of the dataset for operations
-                                    return <OperationView 
+                                    return <OperationView
                                         operation={data}
                                         rowNumber={rowId}
                                         navigation={this.props.navigation}
                                         vesselName={vesselName}
                                         />
-                                    }                
+                                    }
                                 }
                             />
                 }
@@ -163,7 +163,7 @@ class TimeLineView extends Component {
             onPress: () => this.setState({showExpiredStates: !this.state.showExpiredStates}),
         };
     }
-    
+
     createFavoriteIcons() {
 
         const { portCallId, imo } = this.props;
@@ -187,7 +187,7 @@ class TimeLineView extends Component {
                 }
             }
         }
-    } 
+    }
 }
 
 
@@ -227,13 +227,9 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, {
-    changeFetchReliability, 
-    fetchPortCallEvents, 
+    changeFetchReliability,
+    fetchPortCallEvents,
     removeError,
     toggleFavoritePortCall,
     toggleFavoriteVessel,
 })(TimeLineView);
-
-
-
-

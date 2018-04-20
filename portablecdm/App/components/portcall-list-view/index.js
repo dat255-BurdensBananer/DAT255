@@ -270,6 +270,7 @@ const styles = StyleSheet.create({
     },
     titleStyle: {
         color: colorScheme.quaternaryTextColor,
+
     },
     subTitleStyle: {
         color: colorScheme.tertiaryTextColor,
