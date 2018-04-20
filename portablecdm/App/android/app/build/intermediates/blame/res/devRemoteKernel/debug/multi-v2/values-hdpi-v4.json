@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/agneskarlsson/github/DAT255/portablecdm/App/android/app/build/intermediates/incremental/mergeDevRemoteKernelDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
+            "map": [
+                {
+                    "source": "/Users/agneskarlsson/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.1.aar/1d1c78b2bc82d1156c773e3d5703478e/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "13",
+                        "endOffsets": "327"
+                    }
+                }
+            ]
+        }
+    ]
+}

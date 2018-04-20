@@ -1,7 +1,16 @@
-#Wed Apr 11 15:29:39 CEST 2018
-base.0=/Users/Oscar/Documents/GitHub/portablecdm/App/android/app/build/intermediates/transforms/dexMerger/dev19/debug/86
-path.1=classes.dex
-renamed.1=classes2.dex
+#Fri Apr 13 16:00:41 CEST 2018
+path.3=classes4.dex
+path.2=classes3.dex
+path.1=classes2.dex
+renamed.4=classes5.dex
 path.0=classes.dex
+renamed.3=classes4.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
+base.4=/Users/agneskarlsson/github/DAT255/portablecdm/App/android/app/build/intermediates/transforms/dexMerger/dev19/debug/0
 renamed.0=classes.dex
-base.1=/Users/Oscar/Documents/GitHub/portablecdm/App/android/app/build/intermediates/transforms/dexMerger/dev19/debug/87
+base.3=/Users/agneskarlsson/github/DAT255/portablecdm/App/android/app/build/intermediates/transforms/dexMerger/dev19/debug/0
+base.2=/Users/agneskarlsson/github/DAT255/portablecdm/App/android/app/build/intermediates/transforms/dexMerger/dev19/debug/0
+base.1=/Users/agneskarlsson/github/DAT255/portablecdm/App/android/app/build/intermediates/transforms/dexMerger/dev19/debug/0
+base.0=/Users/agneskarlsson/github/DAT255/portablecdm/App/android/app/build/intermediates/transforms/dexMerger/dev19/debug/0
+path.4=classes5.dex

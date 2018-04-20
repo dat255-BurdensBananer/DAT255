@@ -1,0 +1,1 @@
+[{"outputType":{"type":"MERGED_MANIFESTS"},"apkInfo":{"type":"MAIN","splits":[],"versionCode":2,"versionName":"1.2.0","enabled":true,"outputFile":"app-prod-debug.apk","fullName":"prodDebug","baseName":"prod-debug"},"path":"AndroidManifest.xml","properties":{"packageId":"se.viktoria.portablecdm","split":"","minSdkVersion":"19"}}]

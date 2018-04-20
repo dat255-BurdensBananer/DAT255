@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/agneskarlsson/github/DAT255/portablecdm/App/android/app/build/intermediates/incremental/mergeProdDebugResources/merged.dir/values-zh/values-zh.xml",
+            "map": [
+                {
+                    "source": "/Users/agneskarlsson/.gradle/caches/transforms-1/files-1.1/android-image-cropper-2.4.7.aar/4705d0d7ed8b8cc42a2c1303e597f17e/res/values-zh/values-zh.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,107,169,232",
+                        "endColumns": "51,61,62,64",
+                        "endOffsets": "102,164,227,292"
+                    }
+                }
+            ]
+        }
+    ]
+}

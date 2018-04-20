@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="10">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/node_modules/expo/node_modules/lottie-react-native/src/android/build/intermediates/transforms/stripDebugSymbol/release/jars/2000/10/20df33822977aaea2556d85faeed5264c2011b65.jar!/" />
+      <root url="jar://$PROJECT_DIR$/node_modules/expo/node_modules/lottie-react-native/src/android/build/intermediates/transforms/stripDebugSymbol/release/jars/2000/10/8c3b2795dafa88ba7231a89b42c14e0c2ddf4aca.jar!/" />
+      <root url="jar://$PROJECT_DIR$/node_modules/expo/node_modules/lottie-react-native/src/android/build/intermediates/transforms/stripDebugSymbol/release/jars/2000/10/3454ea1868b201b82d20ce10717b4e2caabed4f0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

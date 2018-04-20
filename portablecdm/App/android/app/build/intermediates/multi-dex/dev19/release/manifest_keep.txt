@@ -1,0 +1,3 @@
+# Referenced at /Users/agneskarlsson/github/DAT255/portablecdm/App/android/app/build/intermediates/manifests/full/dev19/release/AndroidManifest.xml:104
+-keep class host.exp.exponent.MainApplication { <init>(...); }
+

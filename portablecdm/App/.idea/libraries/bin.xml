@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="bin">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/node_modules/react-native-scripts/node_modules/@exponent/ngrok/bin/ngrok-stable-win32-x64.zip!/" />
+      <root url="jar://$PROJECT_DIR$/node_modules/react-native-scripts/node_modules/@exponent/ngrok/bin/ngrok-stable-linux-x64.zip!/" />
+      <root url="jar://$PROJECT_DIR$/node_modules/react-native-scripts/node_modules/@exponent/ngrok/bin/ngrok-stable-linux-arm.zip!/" />
+      <root url="jar://$PROJECT_DIR$/node_modules/react-native-scripts/node_modules/@exponent/ngrok/bin/ngrok-stable-darwin-ia32.zip!/" />
+      <root url="jar://$PROJECT_DIR$/node_modules/react-native-scripts/node_modules/@exponent/ngrok/bin/ngrok-stable-freebsd-ia32.zip!/" />
+      <root url="jar://$PROJECT_DIR$/node_modules/react-native-scripts/node_modules/@exponent/ngrok/bin/ngrok-stable-win32-ia32.zip!/" />
+      <root url="jar://$PROJECT_DIR$/node_modules/react-native-scripts/node_modules/@exponent/ngrok/bin/ngrok-stable-freebsd-x64.zip!/" />
+      <root url="jar://$PROJECT_DIR$/node_modules/react-native-scripts/node_modules/@exponent/ngrok/bin/ngrok-stable-darwin-x64.zip!/" />
+      <root url="jar://$PROJECT_DIR$/node_modules/react-native-scripts/node_modules/@exponent/ngrok/bin/ngrok-stable-linux-ia32.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
