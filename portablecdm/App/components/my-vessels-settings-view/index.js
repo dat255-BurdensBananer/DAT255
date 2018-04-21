@@ -318,16 +318,6 @@ class MyVesselsFilterView extends Component {
                     />
 
 
-                    {/*Button - SHOW RESULTS*/}
-                    <View style={{ backgroundColor: colorScheme.primaryColor, marginTop: 10, paddingVertical: 5, }}>
-                        <Button
-                            title="Show Results"
-                            textStyle={{ color: colorScheme.primaryTextColor }}
-                            buttonStyle={{ backgroundColor: colorScheme.primaryColor }}
-                            onPress={this.onDoneIconPressed}
-                        />
-                    </View>
-
                 </ScrollView>
 
                 <Modal
