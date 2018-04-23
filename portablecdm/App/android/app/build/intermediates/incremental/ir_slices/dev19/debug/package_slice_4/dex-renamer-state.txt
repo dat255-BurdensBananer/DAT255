@@ -1,4 +1,4 @@
-#Wed Apr 11 15:22:49 CEST 2018
-base.0=/Users/Oscar/Documents/GitHub/portablecdm/App/android/app/build/intermediates/transforms/dexMerger/dev19/debug/79
+#Wed Apr 18 15:49:50 CEST 2018
+base.0=C\:\\Users\\jessi\\OneDrive\\Dokument\\GitHub\\GroupReflection\\portablecdm\\App\\android\\app\\build\\intermediates\\transforms\\dexMerger\\dev19\\debug\\4
 path.0=classes.dex
 renamed.0=classes.dex

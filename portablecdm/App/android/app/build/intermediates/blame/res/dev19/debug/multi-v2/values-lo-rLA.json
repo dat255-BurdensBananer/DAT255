@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/Oscar/Documents/GitHub/portablecdm/App/android/app/build/intermediates/incremental/mergeDev19DebugResources/merged.dir/values-lo-rLA/values-lo-rLA.xml",
+            "outputFile": "C:\\Users\\jessi\\OneDrive\\Dokument\\GitHub\\GroupReflection\\portablecdm\\App\\android\\app\\build\\intermediates\\incremental\\mergeDev19DebugResources\\merged.dir\\values-lo-rLA\\values-lo-rLA.xml",
             "map": [
                 {
-                    "source": "/Users/Oscar/.gradle/caches/transforms-1/files-1.1/exoplayer-r2.0.3.aar/44904dadfb9640fe3a205bb39be94c07/res/values-lo-rLA/values-lo-rLA.xml",
+                    "source": "C:\\Users\\jessi\\.gradle\\caches\\transforms-1\\files-1.1\\exoplayer-r2.0.3.aar\\b0cde68d0cdc42682461d8385e050150\\res\\values-lo-rLA\\values-lo-rLA.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8",
                         "startColumns": "4,4,4,4,4,4,4",

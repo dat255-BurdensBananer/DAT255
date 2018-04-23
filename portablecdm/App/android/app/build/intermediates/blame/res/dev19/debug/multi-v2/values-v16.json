@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/Oscar/Documents/GitHub/portablecdm/App/android/app/build/intermediates/incremental/mergeDev19DebugResources/merged.dir/values-v16/values-v16.xml",
+            "outputFile": "C:\\Users\\jessi\\OneDrive\\Dokument\\GitHub\\GroupReflection\\portablecdm\\App\\android\\app\\build\\intermediates\\incremental\\mergeDev19DebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "/Users/Oscar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.1.aar/25912dbc397cddccbaa70e8a12090117/res/values-v16/values-v16.xml",
+                    "source": "C:\\Users\\jessi\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.1.aar\\ad304ecb4a15775ac8af4c7f85efa605\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/Oscar/.gradle/caches/transforms-1/files-1.1/support-compat-26.0.1.aar/0ada5b5308dd93615f9ea8e1784dd792/res/values-v16/values-v16.xml",
+                    "source": "C:\\Users\\jessi\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.0.1.aar\\279b96dbb7360e813c9b41840dc1d0c8\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
