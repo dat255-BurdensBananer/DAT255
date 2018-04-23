@@ -140,9 +140,9 @@ class Settings extends Component {
                         title='Use SSL'
                         checked={this.state.useSSL}
                         onPress={this.updateUseSSL}
-                    />    
+                    />
                     }
-            
+
                     <View style={styles.containers.info}>
                         <Text style={styles.texts.headerText} h3>
                             PortCDM connection information
