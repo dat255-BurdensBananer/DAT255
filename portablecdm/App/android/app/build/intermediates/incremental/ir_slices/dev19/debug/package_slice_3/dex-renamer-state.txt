@@ -1,4 +1,4 @@
-#Wed Apr 18 10:36:06 CEST 2018
+#Thu Apr 19 09:34:45 CEST 2018
 base.0=/Users/erikgedda/Documents/GitHub/DAT255/portablecdm/App/android/app/build/intermediates/transforms/dexMerger/dev19/debug/3
 path.0=classes.dex
 renamed.0=classes.dex
