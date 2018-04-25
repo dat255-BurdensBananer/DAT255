@@ -1,4 +1,0 @@
-#Wed Apr 18 15:49:49 CEST 2018
-base.0=C\:\\Users\\jessi\\OneDrive\\Dokument\\GitHub\\GroupReflection\\portablecdm\\App\\android\\app\\build\\intermediates\\transforms\\dexMerger\\dev19\\debug\\2
-path.0=classes.dex
-renamed.0=classes.dex
