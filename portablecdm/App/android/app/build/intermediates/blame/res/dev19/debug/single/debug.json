@@ -12,24 +12,24 @@
         "source": "C:\\Users\\jessi\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.1.aar\\ad304ecb4a15775ac8af4c7f85efa605\\res\\drawable-hdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\Users\\jessi\\OneDrive\\Dokument\\GitHub\\GroupReflection\\portablecdm\\App\\android\\app\\build\\intermediates\\res\\merged\\dev19\\debug\\drawable-xhdpi-v4_messenger_bubble_small_white.png.flat",
-        "source": "C:\\Users\\jessi\\.gradle\\caches\\transforms-1\\files-1.1\\facebook-messenger-4.28.0.aar\\a1ee38417bd5086979e3bf20205cedae\\res\\drawable-xhdpi-v4\\messenger_bubble_small_white.png"
-    },
-    {
         "merged": "C:\\Users\\jessi\\OneDrive\\Dokument\\GitHub\\GroupReflection\\portablecdm\\App\\android\\app\\build\\intermediates\\res\\merged\\dev19\\debug\\drawable-mdpi-v4_abc_ic_star_black_16dp.png.flat",
         "source": "C:\\Users\\jessi\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.1.aar\\ad304ecb4a15775ac8af4c7f85efa605\\res\\drawable-mdpi-v4\\abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "C:\\Users\\jessi\\OneDrive\\Dokument\\GitHub\\GroupReflection\\portablecdm\\App\\android\\app\\build\\intermediates\\res\\merged\\dev19\\debug\\drawable-xhdpi-v4_messenger_bubble_small_white.png.flat",
+        "source": "C:\\Users\\jessi\\.gradle\\caches\\transforms-1\\files-1.1\\facebook-messenger-4.28.0.aar\\a1ee38417bd5086979e3bf20205cedae\\res\\drawable-xhdpi-v4\\messenger_bubble_small_white.png"
     },
     {
         "merged": "C:\\Users\\jessi\\OneDrive\\Dokument\\GitHub\\GroupReflection\\portablecdm\\App\\android\\app\\build\\intermediates\\res\\merged\\dev19\\debug\\drawable-xxxhdpi_pin_white_fade.png.flat",
         "source": "C:\\Users\\jessi\\OneDrive\\Dokument\\GitHub\\GroupReflection\\portablecdm\\App\\android\\app\\src\\main\\res\\drawable-xxxhdpi\\pin_white_fade.png"
     },
     {
-        "merged": "C:\\Users\\jessi\\OneDrive\\Dokument\\GitHub\\GroupReflection\\portablecdm\\App\\android\\app\\build\\intermediates\\res\\merged\\dev19\\debug\\drawable_abc_ic_search_api_material.xml.flat",
-        "source": "C:\\Users\\jessi\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.1.aar\\ad304ecb4a15775ac8af4c7f85efa605\\res\\drawable\\abc_ic_search_api_material.xml"
-    },
-    {
         "merged": "C:\\Users\\jessi\\OneDrive\\Dokument\\GitHub\\GroupReflection\\portablecdm\\App\\android\\app\\build\\intermediates\\res\\merged\\dev19\\debug\\layout_abc_action_bar_view_list_nav_layout.xml.flat",
         "source": "C:\\Users\\jessi\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.1.aar\\ad304ecb4a15775ac8af4c7f85efa605\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\jessi\\OneDrive\\Dokument\\GitHub\\GroupReflection\\portablecdm\\App\\android\\app\\build\\intermediates\\res\\merged\\dev19\\debug\\drawable_abc_ic_search_api_material.xml.flat",
+        "source": "C:\\Users\\jessi\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.1.aar\\ad304ecb4a15775ac8af4c7f85efa605\\res\\drawable\\abc_ic_search_api_material.xml"
     },
     {
         "merged": "C:\\Users\\jessi\\OneDrive\\Dokument\\GitHub\\GroupReflection\\portablecdm\\App\\android\\app\\build\\intermediates\\res\\merged\\dev19\\debug\\raw_gtm_analytics.flat",
@@ -44,12 +44,12 @@
         "source": "C:\\Users\\jessi\\OneDrive\\Dokument\\GitHub\\GroupReflection\\portablecdm\\App\\android\\app\\src\\main\\res\\drawable-xxxhdpi\\big_logo_filled.png"
     },
     {
-        "merged": "C:\\Users\\jessi\\OneDrive\\Dokument\\GitHub\\GroupReflection\\portablecdm\\App\\android\\app\\build\\intermediates\\res\\merged\\dev19\\debug\\drawable-hdpi-v4_spinner_focused_holo_dark.9.png.flat",
-        "source": "C:\\Users\\jessi\\.gradle\\caches\\transforms-1\\files-1.1\\expoview-25.0.0.aar\\0711762a89b8afafb0f7dee0ef49ab6d\\res\\drawable-hdpi-v4\\spinner_focused_holo_dark.9.png"
-    },
-    {
         "merged": "C:\\Users\\jessi\\OneDrive\\Dokument\\GitHub\\GroupReflection\\portablecdm\\App\\android\\app\\build\\intermediates\\res\\merged\\dev19\\debug\\drawable-xhdpi-v4_com_facebook_button_send_icon_white.png.flat",
         "source": "C:\\Users\\jessi\\.gradle\\caches\\transforms-1\\files-1.1\\facebook-share-4.28.0.aar\\3f1f2eae30e3ae3792afc2e721b8756d\\res\\drawable-xhdpi-v4\\com_facebook_button_send_icon_white.png"
+    },
+    {
+        "merged": "C:\\Users\\jessi\\OneDrive\\Dokument\\GitHub\\GroupReflection\\portablecdm\\App\\android\\app\\build\\intermediates\\res\\merged\\dev19\\debug\\drawable-hdpi-v4_spinner_focused_holo_dark.9.png.flat",
+        "source": "C:\\Users\\jessi\\.gradle\\caches\\transforms-1\\files-1.1\\expoview-25.0.0.aar\\0711762a89b8afafb0f7dee0ef49ab6d\\res\\drawable-hdpi-v4\\spinner_focused_holo_dark.9.png"
     },
     {
         "merged": "C:\\Users\\jessi\\OneDrive\\Dokument\\GitHub\\GroupReflection\\portablecdm\\App\\android\\app\\build\\intermediates\\res\\merged\\dev19\\debug\\drawable_com_facebook_auth_dialog_background.xml.flat",
