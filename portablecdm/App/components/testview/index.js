@@ -84,7 +84,8 @@ class LocationSelection extends Component {
                         style: styles.iconStyle,
                     }}
                     backgroundColor = {colorScheme.primaryColor}
-                    //onPress= {() => navigate('FilterMenu')}
+                    onPress= {() => test()}
+                    
                 />
             </View>
         );
@@ -118,6 +119,10 @@ function mapStateToProps(state, ownProps) {
         loading: state.location.loading,
         operations: state.portCalls.selectedPortCallOperations,
     }
+}
+
+function test() {
+  console.log("hello");
 }
 
 export default connect(mapStateToProps, { selectBerthLocation })(LocationSelection);
