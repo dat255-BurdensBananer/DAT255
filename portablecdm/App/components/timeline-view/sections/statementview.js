@@ -74,21 +74,21 @@ class StatementView extends Component {
         const withdrawn = (withdrawSupported && statement.isWithdrawn);
         const additionalStyles = withdrawn ? styles.withdrawn : {};
         // let additionalStyles = {};
-        
+
         return (
             <View style={[styles.stateContainer, additionalStyles]}
-                key={statement.messageId}> 
+                key={statement.messageId}>
                 {/*TitleView*/}
-                <View style={[styles.titleContainer, additionalStyles]}> 
+                <View style={[styles.titleContainer, additionalStyles]}>
                     {stateDef && <Text style={styles.stateTitleText}> {stateDef.Name.replace(/_/g, ' ')} </Text>  }
                     {!stateDef && <Text style={styles.stateTitleText}> {statement.stateDefinition.replace(/_/g, ' ')} </Text>  }
                 </View>
 
                 {/*Dividers that change colors*/}
-                {statement.timeType === 'ACTUAL' && 
+                {statement.timeType === 'ACTUAL' &&
                     <Divider style={{height: 5 , backgroundColor: withdrawn ? 'grey' : colorScheme.actualColor}}/> }
-                {statement.timeType === 'ESTIMATED' &&  
-                    <Divider style={{height: 5, backgroundColor: withdrawn ? 'grey' : colorScheme.estimateColor}}/> } 
+                {statement.timeType === 'ESTIMATED' &&
+                    <Divider style={{height: 5, backgroundColor: withdrawn ? 'grey' : colorScheme.estimateColor}}/> }
                 {!statement.timeType &&
                     <Divider style={{height: 5 , backgroundColor: withdrawn ? 'grey' : colorScheme.secondaryColor}}/>}
 
@@ -96,60 +96,60 @@ class StatementView extends Component {
                 <View style={{flexDirection: 'row'}}>
                     {/*DetailContainer*/}
                     <View style={[styles.detailContainer, {flex: 4}, additionalStyles]}>
-                        <View style={[styles.detailView, additionalStyles]}> 
-                            <Text style={styles.stateSubTitleText}>TIME: </Text> 
+                        <View style={[styles.detailView, additionalStyles]}>
+                            <Text style={styles.stateSubTitleText}>TIME: </Text>
                             <Text style={styles.detailText}>{getDateTimeString(new Date(statement.time))}  </Text>
-                            {statement.timeType === 'ACTUAL' && 
+                            {statement.timeType === 'ACTUAL' &&
                                 <View style={[styles.actualContainer]}>
                                     <Text style={styles.actualText}>A</Text>
                                 </View>  }
-                            {statement.timeType === 'ESTIMATED' && 
+                            {statement.timeType === 'ESTIMATED' &&
                                 <View style={[styles.estimateContainer]}>
                                     <Text style={styles.estimateText}>E</Text>
                                 </View>}
                         </View>
 
-                        {statement.atLocation && 
-                        <View style={[styles.detailView, additionalStyles]}> 
+                        {statement.atLocation &&
+                        <View style={[styles.detailView, additionalStyles]}>
                             <Text style={styles.stateSubTitleText}>AT: </Text>
                             <Text style={styles.detailText}>{statement.atLocation.name}</Text>
                         </View>}
-                        {statement.fromLocation && 
-                        <View style={[styles.detailView, additionalStyles]}> 
+                        {statement.fromLocation &&
+                        <View style={[styles.detailView, additionalStyles]}>
                             <Text style={styles.stateSubTitleText}>FROM: </Text>
-                            <Text style={styles.detailText}>{statement.fromLocation.name}</Text>        
+                            <Text style={styles.detailText}>{statement.fromLocation.name}</Text>
                         </View>}
-                        {statement.toLocation && 
-                        <View style={[styles.detailView, additionalStyles]}> 
+                        {statement.toLocation &&
+                        <View style={[styles.detailView, additionalStyles]}>
                             <Text style={styles.stateSubTitleText}>TO: </Text>
-                            <Text style={styles.detailText}>{statement.toLocation.name}</Text>        
+                            <Text style={styles.detailText}>{statement.toLocation.name}</Text>
                         </View>}
-                        
-                        <View style={[styles.detailView, additionalStyles]}> 
+
+                        <View style={[styles.detailView, additionalStyles]}>
                             <Text style={styles.stateSubTitleText}>REPORTED BY: </Text>
-                            <Text style={styles.detailText}>{cleanURN(statement.reportedBy)} </Text>  
+                            <Text style={styles.detailText}>{cleanURN(statement.reportedBy)} </Text>
                         </View>
-                        <View style={[styles.detailView, additionalStyles]}> 
-                            <Text style={styles.stateSubTitleText}>REPORTED AT: </Text>  
-                            <Text style={styles.detailText}>{getDateTimeString(new Date(statement.reportedAt))}</Text>        
+                        <View style={[styles.detailView, additionalStyles]}>
+                            <Text style={styles.stateSubTitleText}>REPORTED AT: </Text>
+                            <Text style={styles.detailText}>{getDateTimeString(new Date(statement.reportedAt))}</Text>
                         </View>
-                        {!!statement.comment && <View style={[styles.detailView, additionalStyles]}> 
-                            <Text style={styles.stateSubTitleText}>COMMENT: </Text>  
-                            <Text style={styles.detailText}>{statement.comment}</Text>        
+                        {!!statement.comment && <View style={[styles.detailView, additionalStyles]}>
+                            <Text style={styles.stateSubTitleText}>COMMENT: </Text>
+                            <Text style={styles.detailText}>{statement.comment}</Text>
                         </View>
                         }
-                        
+
                         {/* Reliability for the message, and reliability changes  */}
                         {!!statement.reliabilityChanges &&
-                        <View style={[styles.detailView, additionalStyles]}> 
-                            <Text style={styles.stateSubTitleText}>RELIABILITY: </Text>  
-                            <Text style={styles.detailText}>{statement.reliability}%</Text>        
+                        <View style={[styles.detailView, additionalStyles]}>
+                            <Text style={styles.stateSubTitleText}>RELIABILITY: </Text>
+                            <Text style={styles.detailText}>{statement.reliability}%</Text>
                         </View>
                         }
                         {!!statement.reliabilityChanges && statement.reliabilityChanges
                                 .sort((a, b) => a.reliability - b.reliability)
                                 .map((change, i) => (
-                                    <Text 
+                                    <Text
                                         key={i}
                                         style={styles.reliabilityChangeText}
                                     >
@@ -171,7 +171,7 @@ class StatementView extends Component {
                             onPress={() => this.handleWithdrawStatement(statement)}
                         />
                     </View>}
-                </View>     
+                </View>
             </View>
         )
     }
@@ -227,7 +227,7 @@ const styles = StyleSheet.create({
         paddingLeft: 5,
     },
     detailText: {
-        color: colorScheme.quaternaryTextColor, 
+        color: colorScheme.quaternaryTextColor,
         fontSize: 12,
         paddingLeft: 5,
     },
@@ -276,7 +276,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         overflow: 'hidden',
         alignItems: 'center',
-    },  
+    },
     detailView: {
         backgroundColor: colorScheme.primaryContainerColor,
         flexDirection: 'row',
@@ -284,12 +284,12 @@ const styles = StyleSheet.create({
      //   justifyContent: 'space-between',
     },
     warningContainer: {
-        backgroundColor: colorScheme.primaryContainerColor, 
+        backgroundColor: colorScheme.primaryContainerColor,
         flexDirection: 'row',
         marginTop: 10,
         marginLeft: 5,
         marginRight: 5,
-        marginBottom: 0, 
+        marginBottom: 0,
         borderColor: colorScheme.warningColor,
         borderWidth: 1,
         borderRadius: 10,
@@ -299,7 +299,7 @@ const styles = StyleSheet.create({
         paddingRight: 10,
     },
     warningText: {
-        paddingLeft: 10, 
+        paddingLeft: 10,
         color: colorScheme.quaternaryTextColor,
         fontSize: 12,
      //   paddingRight: 10,
@@ -312,7 +312,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'grey'
     },
     withdrawnText: {
-        color: 'red'        
+        color: 'red'
     }
 
 });

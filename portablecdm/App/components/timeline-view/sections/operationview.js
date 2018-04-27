@@ -17,7 +17,7 @@ import {
 } from 'react-native-elements';
 
 import WarningView from './warning-view';
-
+//import testFunction from './testactions';
 import Collapsible from 'react-native-collapsible';
 
 
@@ -60,7 +60,7 @@ class OperationView extends Component {
     this.renderStateRow = this.renderStateRow.bind(this);
     this.addStatement = this.addStatement.bind(this);
   }
-  
+
   _toggleCollapsed() {
     this.setState({isCollapsed: !this.state.isCollapsed})
   }
@@ -115,19 +115,19 @@ class OperationView extends Component {
     let startTime = new Date(!!operation.startTime ? firstStatement.time : null);
     let endTime = new Date(!!operation.endTime ? lastStatement.time : null);
 
-    
+
     let currentTime = new Date();
     let renderRedLine = startTime > 0 && currentTime >= startTime && currentTime <= endTime;
     let redlineStyle = this._calculateRedline(startTime, endTime);
 
     return (
-      
+
       <View style={styles.container} onLayout={(event) => {
             if(renderRedLine) {
                 this.setState({dimensions: {...this.state.dimensions, operation: event.nativeEvent.layout}});
             }
           }}>
-    
+
         {/* Time Display */}
         <View style={styles.timeContainer}>
           {/*Start Time*/}
@@ -156,20 +156,20 @@ class OperationView extends Component {
           <View style={styles.outerDot}>
             <View style={dotStyle} />
           </View>
-          
+
         </View>
 
         {/*Everything to the right of the line*/}
         <View
-          style={{flex: 1, flexDirection: 'column', marginTop: 0, paddingTop: 0, paddingLeft: 15}}>          
-          
+          style={{flex: 1, flexDirection: 'column', marginTop: 0, paddingTop: 0, paddingLeft: 15}}>
+
           {/*Clickable header to expand information*/}
           <TouchableWithoutFeedback
             onPress={this._toggleCollapsed}>
             <View>
               <View style={{flexDirection: 'row'}}>
                 <Text style={styles.operationHeader}>{operation.definitionId.replace(/_/g, ' ')}</Text>
-                {operation.warnings.length > 0 && 
+                {operation.warnings.length > 0 &&
                 <Icon name='warning' color={colorScheme.warningColor}/>
                 }
               </View>
@@ -192,8 +192,8 @@ class OperationView extends Component {
                 onPress={() => this.setState({selectedWarning: warning})}
                 key={index}
                 >
-                    <View  
-                        style={{flexDirection: 'row', alignItems: 'center', paddingTop: 10,}} 
+                    <View
+                        style={{flexDirection: 'row', alignItems: 'center', paddingTop: 10,}}
                         >
                         <Icon name='warning' color={colorScheme.warningColor} size={14} paddingRight={10} />
                         <Text style={{fontSize: 8, paddingLeft: 0, maxWidth: Dimensions.get('window').width/1.4 }}>{getWarningText(warning)}</Text>
@@ -202,13 +202,13 @@ class OperationView extends Component {
               );
             })}
 
-            <List style={{borderTopWidth: 0}}>    
+            <List style={{borderTopWidth: 0}}>
               {
                 Object.keys(reportedStates)
                   .map((stateDef) => this.findMostRelevantStatement(reportedStates[stateDef]))
-                  .sort((a, b) => a.time < b.time ? -1 : 1) 
-                  .map((mostRelevantStatement) => this.renderStateRow(operation, 
-                                                        mostRelevantStatement, 
+                  .sort((a, b) => a.time < b.time ? -1 : 1)
+                  .map((mostRelevantStatement) => this.renderStateRow(operation,
+                                                        mostRelevantStatement,
                                                         reportedStates[mostRelevantStatement.stateDefinition],
                                                         this.props.navigation.navigate,
                                                         getStateDefinition(mostRelevantStatement.stateDefinition)
@@ -217,7 +217,7 @@ class OperationView extends Component {
             </List>
           </Collapsible>
         </View>
-        <WarningView 
+        <WarningView
             operation={operation}
             warning={this.state.selectedWarning}
             onClose={() => this.setState({selectedWarning: undefined})}
@@ -229,10 +229,10 @@ class OperationView extends Component {
 
   _calculateRedline(startTime, endTime) {
         if(!this.state.dimensions.operation || !this.state.dimensions.timeContainer) return null;
-        
+
         //console.log(JSON.stringify(this.state.dimensions));
         let { operation, timeContainer } = this.state.dimensions;
-        let currentTime = new Date();    
+        let currentTime = new Date();
         let top = 100;
         if(this.state.isCollapsed) {
             top = operation.height / 2;
@@ -253,23 +253,26 @@ class OperationView extends Component {
         }
   }
 
-  renderStateRow(operation, mostRelevantStatement, allOfTheseStatements, navigate, stateDef) {
+  renderStateRow(operation, mostRelevantStatement, allOfTheseStatements, navigate, stateDef, testActions) {
     const { warnings } = allOfTheseStatements;
     const stateToDisplay = mostRelevantStatement;
     const reportedTimeAgo = getTimeDifferenceString(new Date(stateToDisplay.reportedAt));
     const { displayOnTimeProbabilityTreshold } = this.props;
    // const stateCount = allOfTheseStatements.length;
     let stateCount = 0;
+
     if (stateToDisplay.timeType === 'ACTUAL') {
       stateCount = allOfTheseStatements.filter((statement)=> statement.timeType === 'ACTUAL').length;
     }
     else if (stateToDisplay.timeType === 'ESTIMATED') {
       stateCount = allOfTheseStatements.filter((statement)=> statement.timeType === 'ESTIMATED').length;
+      //testStateCount = stateCount => {this.props.testactions(stateCount)}
     }
     else {
       stateCount = allOfTheseStatements.length;
     }
-    
+
+
 
     return (
       <ListItem
@@ -286,16 +289,16 @@ class OperationView extends Component {
                         />
         }
         title = {
-            <TouchableWithoutFeedback 
+            <TouchableWithoutFeedback
                 style={{flexDirection:'column'}}
                 onPress={ () => navigate('StateDetails', {operation: operation, statements: allOfTheseStatements} ) }
             >
-              <View>  
+              <View>
                   <View style={{flexDirection: 'row'}}>
                     {!stateDef && <Text style={styles.stateDisplayTitle} >{stateToDisplay.stateDefinition}</Text>}
                     {stateDef && <Text style={styles.stateDisplayTitle} >{stateDef.Name}</Text>}
 
-                    {!!warnings && <Icon name='warning' color={colorScheme.warningColor} size={16} />} 
+                    {!!warnings && <Icon name='warning' color={colorScheme.warningColor} size={16} />}
                   </View>
                   <View style= {{flexDirection: 'row'}} >
                       <Text style = {{color: colorScheme.tertiaryColor, fontWeight: 'bold'}} >{getTimeString(new Date(stateToDisplay.time))} </Text>
@@ -329,12 +332,12 @@ class OperationView extends Component {
                   <Text style = {styles.stateDisplaySubTitle}>TO: </Text>{stateToDisplay.toLocation.name}</Text>}
                 <Text style={{fontSize: 9}}>
                   {/*Doesnt work!*/}
-                  <Text style= {styles.stateDisplaySubTitle}>REPORTED BY: </Text>{cleanURN(stateToDisplay.reportedBy)} 
+                  <Text style= {styles.stateDisplaySubTitle}>REPORTED BY: </Text>{cleanURN(stateToDisplay.reportedBy)}
                   <Text style= {{color: colorScheme.tertiaryColor}} > {reportedTimeAgo} ago</Text> </Text>
                 {(stateToDisplay.reliability >= 0) && <Text style={{fontSize: 9}}>
                   <Text style = {styles.stateDisplaySubTitle}>RELIABILITY: </Text>{stateToDisplay.reliability}%</Text> }
-                  
-                  {(!!allOfTheseStatements.onTimeProbability && allOfTheseStatements.onTimeProbability.accuracy > displayOnTimeProbabilityTreshold) && 
+
+                  {(!!allOfTheseStatements.onTimeProbability && allOfTheseStatements.onTimeProbability.accuracy > displayOnTimeProbabilityTreshold) &&
                     <View>
                       <Text style={{fontSize: 9}}>
                         <Text style = {styles.stateDisplaySubTitle}>ON TIME PROBABILITY: </Text>{allOfTheseStatements.onTimeProbability.probability}%
@@ -347,17 +350,17 @@ class OperationView extends Component {
                       </Text>
                     </View>
                   }
-                    
+
             </View>
         }
         badge = {
-          {value: stateCount, textStyle: {color: 'black', fontSize: 10, fontWeight: 'bold'}, 
+          {value: stateCount, textStyle: {color: 'black', fontSize: 10, fontWeight: 'bold'},
           containerStyle: {backgroundColor: colorScheme.backgroundColor} , // 30
           wrapperStyle: {justifyContent: 'center'},
           }
         }
       />
-    ); 
+    );
   }
 
   renderStatus(status) {
@@ -370,19 +373,19 @@ class OperationView extends Component {
   addStatement(stateDef, mostRelevantStatement) {
     const { operation } = this.state;
     this.props.navigation.navigate('SendPortCall', {
-        stateId: stateDef, 
-        fromLocation: operation.fromLocation, 
-        toLocation: operation.toLocation, 
+        stateId: stateDef,
+        fromLocation: operation.fromLocation,
+        toLocation: operation.toLocation,
         atLocation: operation.atLocation,
         mostRelevantStatement: mostRelevantStatement
     });
   }
 
   /**
-   * Finds the most relevant statement, i.e the latest Estimate or the latest Actual. 
+   * Finds the most relevant statement, i.e the latest Estimate or the latest Actual.
    * Actuals always overwrites estimates
-   * 
-   * @param {[Statement]} statements 
+   *
+   * @param {[Statement]} statements
    *   an array of statements, all with the same statedefinition
    */
   findMostRelevantStatement(statements) {
@@ -396,7 +399,7 @@ class OperationView extends Component {
           if(aTime < bTime) return 1;
           else return 0;
       });
-      
+
       // find the first actual
       for(let i = 0; i < statements.length; i++) {
           if(statements[i].timeType === 'ACTUAL') {
@@ -419,10 +422,15 @@ function mapStateToProps(state) {
   return {
     getStateDefinition: state.states.stateById,
     displayOnTimeProbabilityTreshold: state.settings.displayOnTimeProbabilityTreshold
+
   }
 }
 
-export default connect(mapStateToProps)(OperationView);
+const mapDispatchToProps = dispatch => ({
+  //testactions: data => dispatch(testActions(data))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(OperationView);
 
 const styles = StyleSheet.create({
   container: {
@@ -442,7 +450,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   operationHeader: {
-    fontWeight: 'bold', 
+    fontWeight: 'bold',
     fontSize: 18,
     color: colorScheme.quaternaryTextColor, // Snyggare med EmeraldBlue(queaternaryColor)
   },
@@ -451,7 +459,7 @@ const styles = StyleSheet.create({
     color: colorScheme.quaternaryTextColor
   },
   stateDisplayTitle: {
-    fontWeight: 'bold', 
+    fontWeight: 'bold',
     color: colorScheme.quaternaryTextColor,
   },
   stateDisplaySubTitle: {
@@ -557,7 +565,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     overflow: 'hidden',
     alignItems: 'center',
-  },  
+  },
   targetContainer: {
     backgroundColor: colorScheme.targetColor,
     borderRadius: 10,
@@ -566,7 +574,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     overflow: 'hidden',
     alignItems: 'center',
-  },  
+  },
   recommendedContainer: {
     backgroundColor: colorScheme.recommendedColor,
     borderRadius: 10,
@@ -575,18 +583,18 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     overflow: 'hidden',
     alignItems: 'center',
-  },  
+  },
 });
 
 
 
 
-{/*<Icon 
-  name='font-download' 
+{/*<Icon
+  name='font-download'
   color={colorScheme.tertiaryColor
   } />*/}
 
-  // <Icon 
-  //     name='access-time' 
+  // <Icon
+  //     name='access-time'
   //     color={colorScheme.tertiaryColor
   //   } />

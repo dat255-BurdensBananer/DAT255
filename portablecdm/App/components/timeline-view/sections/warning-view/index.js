@@ -6,10 +6,10 @@ import {
     Text,
     Modal,
 } from 'react-native';
-import { 
-    Icon, 
-    List, 
-    ListItem, 
+import {
+    Icon,
+    List,
+    ListItem,
 } from 'react-native-elements';
 
 import MultipleActualsView from './multipleActualsView';
@@ -18,6 +18,7 @@ import MissingDataView from './missingDataView';
 import MultipleLocationsView from './multipleLocationsView';
 import MiniHeader from '../../../mini-header-view';
 import StateDetails from '../statedetails';
+//import ChangedETA from '../changedETA';
 
 import colorScheme from '../../../../config/colors';
 import ConflictingDataView from './conflictingDataView';
@@ -28,6 +29,7 @@ const WARNING_TYPES = {
     CONFLICTING_DATA: 'CONFLICTING_DATA',
     MISSING_DATA: 'MISSING_DATA',
     VESSEL_AT_MULTIPLE_LOCATIONS: 'VESSEL_AT_MULTIPLE_LOCATIONS',
+    CHANGED_ETA: 'CHANGED_ETA'
 };
 
 
@@ -66,7 +68,7 @@ class WarningView extends Component {
                    <MultipleVesselsAtBerthView warning={warning} getVessel={this.getVessel} formatLocation={this.formatLocation} />
                 );
             case WARNING_TYPES.MULTIPLE_ACTUALS:
-                return <MultipleActualsView operation={this.props.operation} warning={warning} /> 
+                return <MultipleActualsView operation={this.props.operation} warning={warning} />
             case WARNING_TYPES.VESSEL_AT_MULTIPLE_LOCATIONS:
                 return <MultipleLocationsView operation={this.props.operation} warning={warning} allLocations={this.props.allLocations} />
             case WARNING_TYPES.CONFLICTING_DATA:
@@ -92,11 +94,11 @@ class WarningView extends Component {
                 animationType='fade'
                 transparent={false}
             >
-                <MiniHeader 
-                    modal 
+                <MiniHeader
+                    modal
                     hideRightIcon
-                    title={'Warning'} 
-                    leftIconFunction={onClose} 
+                    title={'Warning'}
+                    leftIconFunction={onClose}
                     leftIcons={{first: {name: 'warning', color: 'white'}}}
                     />
                 <View style={styles.mainContainer}>
@@ -123,7 +125,7 @@ const styles = StyleSheet.create({
     },
     description: {
         fontSize: 12,
-        color: colorScheme.quaternaryTextColor, 
+        color: colorScheme.quaternaryTextColor,
         margin: 10,
         textAlign: 'center',
     },
@@ -138,6 +140,7 @@ const descriptions = {
     'MULTIPLE_ACTUALS': 'There exists differing timestamps with type ACTUAL.',
     'VESSEL_AT_MULTIPLE_LOCATIONS': 'The vessel is reported to be at multiple locations at the same time.',
     'CONFLICTING_DATA': 'There is a difference in time in the reported data.',
+    'CHANGED_ETA': 'There has been a change in ETA',
 }
 
 function mapStateToProps(state) {
