@@ -49,6 +49,7 @@ const SettingsNavigator = StackNavigator({
   SettingsStart: { screen: Settings },
   VesselLists: { screen: VesselLists},
   FavoriteStateSetting: { screen: SelectFavoriteState },
+  MyVesselsSettings: { screen: MyVesselsFilterView},
 }, {
   headerMode: 'none'
 })
