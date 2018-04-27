@@ -21,8 +21,8 @@ import {
     CheckBox,
 } from 'react-native-elements';
 
-import MiniHeader from '../../mini-header-view';
-import LocationFilter from './locationFilter';
+import MiniHeader from '../mini-header-view';
+import LocationFilter from './sections/locationfilter';
 
 import {
     updatePortCalls,
@@ -36,9 +36,9 @@ import {
     filterChangeDepartingWithin,
     filterClearArrivingDepartureTime,
     filterChangeOnlyFuturePortCalls,
-} from '../../../actions';
+} from '../../actions';
 
-import colorScheme from '../../../config/colors';
+import colorScheme from '../../config/colors';
 
 const STAGES = [
     'PLANNED',
@@ -176,7 +176,7 @@ class MyVesselsFilterView extends Component {
 
         return (
             <View style={{ flex: 1 }}>
-                <MiniHeader
+  <MiniHeader
                     navigation={this.props.navigation} title="Filter"
                     leftIconFunction={this.onBackIconPressed}
                     rightIconFunction={this.onDoneIconPressed}
@@ -281,36 +281,13 @@ class MyVesselsFilterView extends Component {
                         <Text style={{ fontWeight: 'bold', paddingLeft: 10, }}> Limit: {this.state.limitFilter} portcalls retrieved </Text>
                     </View>}
 
-                    {/* Stage filter - ONLY DISPLAY IF STAGE PROP CAN BE FOUND */}
+{/* Stage filter - ONLY DISPLAY IF STAGE PROP CAN BE FOUND */}
                     {this.props.hasStages && <View style={styles.smallContainer}>
-                        <Text style={styles.textTitle}>Stages</Text>
-                        <View style={styles.stageList}>
-                            {STAGES.map(stage => {
-                                return (
-                                    <CheckBox
-                                        containerStyle={styles.stage}
-                                        key={stage}
-                                        title={stage.replace(/_/g, ' ')}
-                                        checkedColor={colorScheme.primaryColor}
-                                        checked={this.state.stages.includes(stage)}
-                                        onPress={() => {
-                                            let prev = this.state.stages;
-                                            if (prev.includes(stage)) {
-                                                prev.splice(prev.indexOf(stage), 1);
-                                            } else {
-                                                prev.push(stage);
-                                            }
 
-                                            this.setState({stages: prev});
-                                        }}
-                                        />
-                                );
-                            })}
-                        </View>
                     </View>}
 
                     {/* Location filter */}
-                    <Button
+    <Button
                         title="Filter on locations"
                         textStyle={{ color: colorScheme.primaryTextColor }}
                         buttonStyle={{ backgroundColor: colorScheme.primaryColor, marginTop: 20 }}
@@ -441,4 +418,4 @@ export default connect(mapStateToProps, {
     filterClearArrivingDepartureTime,
     filterChangeOnlyFuturePortCalls,
     bufferPortCalls,
-})(FilterMenu);
+})(MyVesselsFilterView);

@@ -9,6 +9,7 @@ import {
     Alert,
     ActivityIndicator,
     Platform,
+    Modal,
 } from 'react-native';
 
 import {
@@ -27,6 +28,11 @@ import { Util } from 'expo';
 
 import TopHeader from '../top-header-view';
 import colorScheme from '../../config/colors';
+
+import LocationFilter from '../my-vessels-settings-view/sections/locationfilter';
+
+
+
 import styles from '../../config/styles';
 
 import {
@@ -48,11 +54,22 @@ class Settings extends Component {
             fetchReliability: props.fetchReliability,
             useSSL: props.useSSL,
             limitCache: props.limitCache,
-            currentTimeZone: null
+            currentTimeZone: null,
+            showLocationModal: false,
         }
 
         this.updateFetchReliability = this.updateFetchReliability.bind(this);
         this.updateUseSSL = this.updateUseSSL.bind(this);
+        this.showLocationModal = this.showLocationModal.bind(this);
+        this.hideLocationModal = this.hideLocationModal.bind(this);
+    }
+
+    showLocationModal() {
+        this.setState({showLocationModal: true});
+    }
+
+    hideLocationModal() {
+        this.setState({showLocationModal: false});
     }
 
     updateFetchReliability() {
@@ -89,7 +106,7 @@ class Settings extends Component {
                         color={colorScheme.primaryTextColor}
                         title="Edit My Vessels"
                         buttonStyle={locStyles.buttonStyle}
-                        onPress={() => navigate('MyVesselsSettings')}
+                        onPress={this.showLocationModal}
                     />
                     <Button
                         backgroundColor={colorScheme.primaryColor}
@@ -204,6 +221,14 @@ class Settings extends Component {
                         {!this.state.currentTimeZone && <ActivityIndicator animating={!this.state.currentTimeZone} small/>}
                     </View>
                 </ScrollView>
+                <Modal
+                    visible={this.state.showLocationModal}
+                    onRequestClose={this.hideLocationModal}
+                    transparent={false}
+                    animationType='slide'
+                >
+                <LocationFilter onBackPress={this.hideLocationModal}/>
+                </Modal>
             </View>
         );
     }
@@ -247,7 +272,48 @@ const locStyles = StyleSheet.create({
     sliderStyle: {
         marginLeft: 20,
         marginRight: 20,
+    },
+    // MODAL
+    modalContainerStyle: {
+        backgroundColor: colorScheme.primaryContainerColor,
+        flex: 1,
+    },
+    modalHeaderStyle: {
+        backgroundColor: colorScheme.primaryContainerColor,
+        flexDirection: 'row',
+        marginTop: 27,
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingLeft: 10,
+        paddingRight: 10,
+        paddingBottom: 5,
+    },
+    modalHeaderTextStyle: {
+        color: colorScheme.quaternaryTextColor,
+        fontSize: 16,
+        fontWeight: 'bold',
+        marginBottom: 5,
+        textAlign: 'center',
+        justifyContent: 'center',
+    },
+    modalSubContainer: {
+        backgroundColor: colorScheme.backgroundColor,
+        flex: 1,
+        borderColor: colorScheme.secondaryContainerColor,
+        borderTopWidth: 1,
+    },
+    stage: {
+        width: '43%',
+        backgroundColor: colorScheme.primaryTextColor,
+        borderColor: colorScheme.primaryTextColor,
+    },
+    stageList: {
+        flex: 1,
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
     }
+
 });
 
 function mapStateToProps(state) {

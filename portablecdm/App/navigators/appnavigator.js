@@ -20,6 +20,8 @@ import ErrorView            from '../components/error-view';
 import BearthList           from '../components/berth-list-view';
 import BerthList            from '../components/berth-list-view';
 import BerthTimeLine        from '../components/berth-timeline-view';
+import MyVesselsFilterView  from '../components/my-vessels-settings-view'
+import MyVesselsView        from '../components/my-vessels-view'
 
 const BerthViewNavigator = StackNavigator({
     BerthList: { screen: BearthList }, // THIS SHOULD BE FIRST!!
@@ -63,6 +65,7 @@ const InitiatePortCallNavigator = StackNavigator({
 });
 
 const MainNavigator = DrawerNavigator({
+    MyVessels: {screen: MyVesselsView}, //My Portcalls first as homepage.
     PortCalls: { screen: PortCallListNavigator }, // THIS SHOULD BE FIRST!!
     Berths: { screen: BerthViewNavigator },
     TimeLine: {screen: TimeLineNavigator},
@@ -72,6 +75,9 @@ const MainNavigator = DrawerNavigator({
     Settings: { screen: SettingsNavigator },
     About: { screen: AboutView },
     Error: { screen: ErrorView },
+    MyVesselsSettings: { screen: MyVesselsFilterView},
+  
+
 }, {
     headerMode: 'none',
     drawerWidth: 3*Dimensions.get('window').width/4,
