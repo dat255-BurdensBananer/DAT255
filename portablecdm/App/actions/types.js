@@ -38,6 +38,7 @@ export const FILTER_CHANGE_DEPARTING_WITHIN = 'filter_change_departing_within';
 export const FILTER_CLEAR_TIME = 'filter_clear_time'
 export const FILTER_ONLY_FUTURE_PORTCALLS = 'filter_only_future_portcalls';
 export const FILTER_CLEAR = 'filter_clear';
+export const FILTER_CHANGE_MY_VESSEL_LIST = 'filter_change_my_vessel_list'; // FÖRSÖK FÖR ATT ÄNDRA MYVESSELLIST
 export const SETTINGS_CHANGE_PORT_UNLOCODE = 'settings_change_port_unlocode';
 export const SETTINGS_CHANGE_PORT = 'settings_change_port';
 export const SETTINGS_CHANGE_HOST = 'settings_change_host';
@@ -76,7 +77,7 @@ export const REMOVE_FAVORITE_PORTCALL = 'remove_favorite_portcall';
 export const ADD_FAVORITE_VESSEL = 'add_favorite_vessel';
 export const REMOVE_FAVORITE_VESSEL = 'remove_favorite_vessel';
 export const CLEAR_FAVORITES = 'clear_favorites';
-
+export const ADD_FAVORITE_MYLOCATIONS = 'add_favorite_mylocation';
 export const ADD_FAVORITE_LOCATIONS = 'add_favorite_location';
 
 /* ERRORS */

@@ -7,6 +7,13 @@ export const filterChangeVesselList = (vesselList) => {
     };
 };
 
+export const filterChangeMyVesselList = (myVesselList) => {
+    return {
+        type: types.FILTER_CHANGE_MY_VESSEL_LIST,
+        payload: myVesselList
+    };
+};
+
 export const filterChangeLimit = (limit) => {
     return {
         type: types.FILTER_CHANGE_LIMIT,
