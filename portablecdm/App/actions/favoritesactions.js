@@ -5,7 +5,27 @@ export const addFavoriteLocations = (favoriteLocations) => {
         type: types.ADD_FAVORITE_LOCATIONS,
         payload: favoriteLocations
     }
-    
+
+}
+
+export const toggleUpdatedPortCall = (portCallId) => {
+    return (dispatch, getState) => {
+        if(getState().updated.portCalls.includes(portCallId)) {
+            dispatch({
+                type: types.REMOVE_UPDATED_PORTCALL,
+                payload: portCallId,
+            });
+
+            return false;
+        }
+
+        dispatch({
+            type: types.ADD_UPDATED_PORTCALL,
+            payload: portCallId,
+        });
+
+        return true;
+    }
 }
 
 export const toggleFavoritePortCall = (portCallId) => {
@@ -23,7 +43,7 @@ export const toggleFavoritePortCall = (portCallId) => {
             type: types.ADD_FAVORITE_PORTCALL,
             payload: portCallId,
         });
-        
+
         return true;
     }
 }

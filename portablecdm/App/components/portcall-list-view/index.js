@@ -8,6 +8,7 @@ import {
     appendPortCalls,
     bufferPortCalls,
     setError,
+    toggleUpdatedPortCall,
  } from '../../actions';
 
 import {
@@ -37,6 +38,10 @@ class PortCallList extends Component {
         refreshing: false,
         numLoadedPortCalls: 20,
     }
+
+    getInitialState(){
+        return { toggle: false};
+      }
 
     componentWillMount() {
         this.loadPortCalls = this.loadPortCalls.bind(this);
@@ -103,6 +108,7 @@ class PortCallList extends Component {
                         onChangeText={text => this.setState({searchTerm: text})}
                         textInputRef='textInput'
                     />
+
                     <Button
                         containerViewStyle={styles.buttonContainer}
                         small
@@ -132,21 +138,53 @@ class PortCallList extends Component {
                         {
 
                             this.search(portCalls, searchTerm).map( (portCall) => (
+
                                 <ListItem
                                     roundAvatar
                                     avatar={portCall.vessel.photoURL ? {uri: portCall.vessel.photoURL} : null}
                                     key={portCall.portCallId}
-                                    title={portCall.vessel.name}
+                                    title = {portCall.vessel.name}
+                                    //title = {{element: this.renderUpdated(portCall)}}
                                     badge={{element: this.renderFavorites(portCall)}}
-                                    titleStyle={styles.titleStyle}
+                                    //badge={{element: this.renderUpdated(portCall)}}
+                                    titleStyle={styles.titleStyle, this.state.toggle && styles.toggleTitleStyle}
+                                    //titleStyle={{element: this.renderUpdated(portCall)}}
                                     subtitle={getDateTimeString(new Date(portCall.startTime))}
                                     subtitleStyle={styles.subTitleStyle}
-                                    // rightTitle={portCall.stage ? portCall.stage.replace(/_/g, ' ') : undefined}
+                                  // rightTitle={'Ey'}
                                     // rightTitleStyle={[styles.subTitleStyle, {fontSize: 9}]}
                                     onPress={() => {
                                         //console.log(JSON.stringify(portCall.vessel));
+
+                                    /*   let temp = portCall.vessel.name;
+                                        console.log(temp);
+
                                         selectPortCall(portCall);
-                                        navigate('TimeLine')
+                                        console.log(portCall.vessel.name);
+                                        console.log('portCallId = ' + portCall.portCallId);
+                                        portCall.vessel.name = 'wow';
+                                        console.log(portCall.vessel.name);
+
+                                        if(portCall.vessel.name === temp){
+                                          console.log('Båtnamnet har inte ändrats');
+                                        }
+                                        else {
+                                          console.log('Båtnamnet har ändrats');
+                                        }
+
+                                        portCall.vessel.name = temp;*/
+
+                                        this.props.toggleFavoritePortCall(portCall.portCallId);
+                                        console.log(portCall.vessel.name);
+                                        //this.setState({toggle: !this.state.toggle})
+
+                                        //this.props.toggleUpdatedPortCall(portCall.portCallId);
+                                        //this.props.updatePortCalls();
+
+                                        //this.title = {portCall.vessel.name.toUpperCase()};
+                                        //this.renderUpdated(portCall);
+                                        //navigate('TimeLine')
+
                                     }}
                                     onLongPress={() => {
                                         Alert.alert(
@@ -180,16 +218,40 @@ class PortCallList extends Component {
         );
     }
 
+   renderUpdated(portCall){
+        //console.log(portCall.vessel.name);
+        let showText = this.props.favoritePortCalls.includes(portCall.portCallId);
+          return (
+
+            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            {showText && <Icon
+                 name='star'
+                 color='gold'
+             />}
+              {<Text style = {styles.toggleTitleStyle}>
+                {portCall.vessel.name}
+              </Text>}
+            </View>
+
+        );
+      }
+
     renderFavorites(portCall) {
+        let showAll = this.props.portCalls.includes(portCall.portCallId);
         let showStar = this.props.favoritePortCalls.includes(portCall.portCallId);
         let showBoat = this.props.favoriteVessels.includes(portCall.vessel.imo);
+
         return (
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                    {showStar && <Icon
+                  {showAll && <icon
+                        name = 'star'
+                        color = 'red'
+                      />}
+                   {showStar && <Icon
                         name='star'
                         color='gold'
                     />}
-                    {showBoat && <Icon
+                    {showBoat &&  <Icon
                         name='directions-boat'
                         color='lightblue'
                     />}
@@ -199,6 +261,7 @@ class PortCallList extends Component {
                 </View>
         );
     }
+
     isFavorite(portCall) {
         return this.props.favoritePortCalls.includes(portCall.portCallId) ||
         this.props.favoriteVessels.includes(portCall.vessel.imo);
@@ -209,7 +272,6 @@ class PortCallList extends Component {
         let bFav = this.isFavorite(b);
         if (aFav && !bFav) return -1;
         if (bFav && !aFav) return 1;
-
         let { filters } = this.props;
         let invert = filters.order === 'ASCENDING';
         if (filters.sort_by === 'LAST_UPDATE') {
@@ -274,6 +336,9 @@ const styles = StyleSheet.create({
     subTitleStyle: {
         color: colorScheme.tertiaryTextColor,
     },
+    toggleTitleStyle: {
+        color: colorScheme.quinaryTextColor,
+    },
 })
 
 function mapStateToProps(state) {
@@ -284,6 +349,7 @@ function mapStateToProps(state) {
         favoriteVessels: state.favorites.vessels,
         showLoadingIcon: state.portCalls.portCallsAreLoading,
         filters: state.filters,
+        //updatedPortCalls: state.updated.portCalls,
         error: state.error,
         isAppendingPortCalls: state.cache.appendingPortCalls
     }
@@ -295,6 +361,7 @@ export default connect(mapStateToProps, {
     selectPortCall,
     toggleFavoritePortCall,
     toggleFavoriteVessel,
+    toggleUpdatedPortCall,
     bufferPortCalls,
     setError,
 })(PortCallList);
