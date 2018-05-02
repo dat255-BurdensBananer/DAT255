@@ -12,11 +12,12 @@ import errorReducer from './errorreducer';
 import favoritesReducer from './favoritesreducer';
 import cacheReducer from './cachereducer';
 import berthReduder from './berthreducer';
+import updateReducer from './updatereducer';
 
 export default persistCombineReducers(
-  { 
-    key: 'primary', 
-    whitelist: ['states', 'settings', 'filters', 'favorites', 'cache'], 
+  {
+    key: 'primary',
+    whitelist: ['states', 'settings', 'filters', 'favorites', 'cache'],
     storage: AsyncStorage
   }, {
   portCalls: portCallReducer,
@@ -25,9 +26,10 @@ export default persistCombineReducers(
   sending: sendingReducer,
   location: locationReducer,
   filters: filterReducer,
-  vessel: vesselReducer,  
+  vessel: vesselReducer,
   error: errorReducer,
   favorites: favoritesReducer,
   cache: cacheReducer,
-  berths: berthReduder
+  berths: berthReduder,
+  updated: updateReducer,
 });

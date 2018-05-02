@@ -5,7 +5,7 @@ export const addFavoriteLocations = (favoriteLocations) => {
         type: types.ADD_FAVORITE_LOCATIONS,
         payload: favoriteLocations
     }
-    
+
 }
 
 export const toggleFavoritePortCall = (portCallId) => {
@@ -23,7 +23,7 @@ export const toggleFavoritePortCall = (portCallId) => {
             type: types.ADD_FAVORITE_PORTCALL,
             payload: portCallId,
         });
-        
+
         return true;
     }
 }

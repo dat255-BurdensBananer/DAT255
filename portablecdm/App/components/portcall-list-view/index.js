@@ -5,6 +5,7 @@ import {
     selectPortCall,
     toggleFavoritePortCall,
     toggleFavoriteVessel,
+    toggleUpdatedPortCall,
     appendPortCalls,
     bufferPortCalls,
     setError,
@@ -146,7 +147,14 @@ class PortCallList extends Component {
                                     onPress={() => {
                                         //console.log(JSON.stringify(portCall.vessel));
                                         selectPortCall(portCall);
-                                        navigate('TimeLine')
+                                        if(portCall.vessel.name === 'Aalborg'){
+                                        console.log(portCall.vessel.name);
+                                      }
+                                        else{
+                                        console.log('Fel båt');
+                                      }
+                                      this.props.toggleUpdatedPortCall(portCall.portCallId);
+                                        //navigate('TimeLine')
                                     }}
                                     onLongPress={() => {
                                         Alert.alert(
@@ -183,6 +191,7 @@ class PortCallList extends Component {
     renderFavorites(portCall) {
         let showStar = this.props.favoritePortCalls.includes(portCall.portCallId);
         let showBoat = this.props.favoriteVessels.includes(portCall.vessel.imo);
+        let showWarning = this.props.updatedPortCalls.includes(portCall.portCallId);
         return (
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                     {showStar && <Icon
@@ -193,6 +202,10 @@ class PortCallList extends Component {
                         name='directions-boat'
                         color='lightblue'
                     />}
+                        {showWarning && <Icon
+                            name='warning'
+                            color='red'
+                        />}
                     {!!portCall.stage && <Text style={[styles.subTitleStyle, {fontSize: 9, marginLeft: 4}]}>
                         {portCall.stage.replace(/_/g, ' ')}
                     </Text>}
@@ -285,6 +298,7 @@ function mapStateToProps(state) {
         showLoadingIcon: state.portCalls.portCallsAreLoading,
         filters: state.filters,
         error: state.error,
+        updatedPortCalls: state.updated.portCalls,
         isAppendingPortCalls: state.cache.appendingPortCalls
     }
 }
@@ -295,6 +309,7 @@ export default connect(mapStateToProps, {
     selectPortCall,
     toggleFavoritePortCall,
     toggleFavoriteVessel,
+    toggleUpdatedPortCall,
     bufferPortCalls,
     setError,
 })(PortCallList);
