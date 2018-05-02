@@ -131,7 +131,6 @@ class PortCallList extends Component {
                     >
                     <List>
                         {
-
                             this.search(portCalls, searchTerm).map( (portCall) => (
                                 <ListItem
                                     roundAvatar
@@ -147,34 +146,44 @@ class PortCallList extends Component {
                                     onPress={() => {
                                         //console.log(JSON.stringify(portCall.vessel));
                                         selectPortCall(portCall);
-                                        if(portCall.vessel.name === 'Aalborg'){
-                                        console.log(portCall.vessel.name);
+                                      /*  if(portCall.stateCount < 10){
+                                          console.log('foo');
+                                        }
+                                        if(this.props.updatedPortCalls.includes(portCall.portCallId)){
+                                        this.props.toggleUpdatedPortCall(portCall.portCallId);
                                       }
-                                        else{
-                                        console.log('Fel båt');
-                                      }
-                                      this.props.toggleUpdatedPortCall(portCall.portCallId);
-                                        //navigate('TimeLine')
+                                        navigate('TimeLine') */
+                                        console.log(portCall.getStateDefinition);
+
                                     }}
+
                                     onLongPress={() => {
                                         Alert.alert(
                                             'Favorite ' + portCall.vessel.name,
                                             'What would you like to do?',
                                             [
                                                 {text: 'Cancel'},
-                                                {
+
+                                               /*{
                                                     text:
                                                         (this.props.favoriteVessels.includes(portCall.vessel.imo) ? 'Unf' : 'F') +
                                                         'avorite vessel',
                                                     onPress: () => {
                                                         this.props.toggleFavoriteVessel(portCall.vessel.imo);
                                                         this.props.updatePortCalls();
-                                                }},
+                                                }},*/
+
                                                 {
                                                     text:
                                                         (this.props.favoritePortCalls.includes(portCall.portCallId) ? 'Unf' : 'F') +
                                                     'avorite port call', onPress: () => {
                                                     this.props.toggleFavoritePortCall(portCall.portCallId);
+                                                }},
+                                                {
+                                                    text:
+                                                        (this.props.updatedPortCalls.includes(portCall.portCallId) ? 'Mark as un' : 'Mark as ') +
+                                                        'read', onPress: () => {
+                                                    this.props.toggleUpdatedPortCall(portCall.portCallId);
                                                 }}
                                             ]
                                         );
@@ -204,8 +213,6 @@ class PortCallList extends Component {
                     />}
                         {showWarning && <Icon
                             name='update'
-                            //type='entypo'
-                            //size=30
                             color='red'
                         />}
                     {!!portCall.stage && <Text style={[styles.subTitleStyle, {fontSize: 9, marginLeft: 4}]}>
@@ -214,6 +221,7 @@ class PortCallList extends Component {
                 </View>
         );
     }
+
     isFavorite(portCall) {
         return this.props.favoritePortCalls.includes(portCall.portCallId) ||
         this.props.favoriteVessels.includes(portCall.vessel.imo);
