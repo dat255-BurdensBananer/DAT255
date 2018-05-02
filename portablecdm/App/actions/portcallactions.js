@@ -43,7 +43,7 @@ export const appendPortCalls = (lastPortCall) => {
             return dispatch(appendPortCallIds(lastPortCall)).then(ids => {
                 return Promise.all(ids.map(id => {
                     return dispatch(fetchPortCall(id));
-                })).then(portCalls => 
+                })).then(portCalls =>
                     dispatch(appendFetchedPortCalls(cache, portCalls)));
             });
         }
@@ -57,7 +57,39 @@ export const appendPortCalls = (lastPortCall) => {
             filterString = `${beforeOrAfter}=${new Date(filters.order === 'DESCENDING' ? lastPortCall.startTime : lastPortCall.endTime).toISOString()}`;
         }
 
-        return dispatch(fetchPortCalls(filterString)).then(() => 
+        return dispatch(fetchPortCalls(filterString)).then(() =>
+            dispatch(appendFetchedPortCalls(cache, getState().portCalls.foundPortCalls)));
+    }
+}
+
+export const appendMyPortCalls = (lastPortCall) => {
+    return (dispatch, getState) => {
+
+        dispatch({
+            type: types.CACHE_APPENDING_PORTCALLS
+        })
+
+        const cache = getState().cache.portCalls;
+
+        if (getState().favorites.mylocations.length > 0) {
+            return dispatch(appendPortCallIds(lastPortCall)).then(ids => {
+                return Promise.all(ids.map(id => {
+                    return dispatch(fetchPortCall(id));
+                })).then(portCalls =>
+                    dispatch(appendFetchedPortCalls(cache, portCalls)));
+            });
+        }
+
+        let filters = getState().filters;
+        let filterString = '';
+        let beforeOrAfter = filters.order === 'DESCENDING' ? 'before' : 'after';
+        if (filters.sort_by === 'LAST_UPDATE') {
+            filterString = `updated_${beforeOrAfter}=${new Date(lastPortCall.lastUpdated).toISOString()}`;
+        } else {
+            filterString = `${beforeOrAfter}=${new Date(filters.order === 'DESCENDING' ? lastPortCall.startTime : lastPortCall.endTime).toISOString()}`;
+        }
+
+        return dispatch(fetchPortCalls(filterString)).then(() =>
             dispatch(appendFetchedPortCalls(cache, getState().portCalls.foundPortCalls)));
     }
 }
@@ -74,7 +106,7 @@ const appendFetchedPortCalls = (cached, newPortCalls) => {
                 type: types.CACHE_ENABLE_APPENDING_PORTCALLS
             });
         }, APPENDING_PORTCALLS_TIMEOUT_MS);
-        
+
         dispatch({
             type: types.CACHE_PORTCALLS,
             payload: cached.concat(toAppend)
@@ -94,12 +126,34 @@ export const updatePortCalls = () => {
             return dispatch(updatePortCallIds(lastUpdated)).then(ids =>
                 Promise.all(ids.map(id =>
                     dispatch(fetchPortCall(id))
-                )).then(portCalls => 
+                )).then(portCalls =>
                     dispatch(updateFetchedPortCalls(cache, portCalls)))
             );
         }
 
-        return dispatch(fetchPortCalls(updatedAfter)).then(() => 
+        return dispatch(fetchPortCalls(updatedAfter)).then(() =>
+            dispatch(updateFetchedPortCalls(cache, getState().portCalls.foundPortCalls)));
+    };
+}
+
+export const updateMyPortCalls = () => {
+    return (dispatch, getState) => {
+        const { portCalls: cache, lastUpdated } = getState().cache;
+
+        // Maybe TODO: Instead use after/before when updating on filter Arrival_Date
+        let updatedAfter = 'updated_after=' + new Date(lastUpdated).toISOString();
+
+        /* Favorite locations? */
+        if (getState().favorites.mylocations.length > 0) {
+            return dispatch(updatePortCallIds(lastUpdated)).then(ids =>
+                Promise.all(ids.map(id =>
+                    dispatch(fetchPortCall(id))
+                )).then(portCalls =>
+                    dispatch(updateFetchedPortCalls(cache, portCalls)))
+            );
+        }
+
+        return dispatch(fetchPortCalls(updatedAfter)).then(() =>
             dispatch(updateFetchedPortCalls(cache, getState().portCalls.foundPortCalls)));
     };
 }
@@ -116,7 +170,7 @@ const updateFetchedPortCalls = (cache, newPortCalls) => (dispatch, getState) => 
             newPortCalls = newPortCalls
             .filter(portCall => !favoritePortCalls.some(favorite => favorite.portCallId === portCall.portCallId))
             .concat(favoritePortCalls);
-            
+
             console.log('Only fetched ' + newPortCalls.length + ' while having ' + cache.length + ' cached port calls.');
 
             let counter = 0;
@@ -219,7 +273,7 @@ export const fetchPortCalls = (additionalFilterString) => {
                         }
                 });
             }
-        });    
+        });
     }
 }
 
@@ -371,7 +425,7 @@ function createFilterString(filters, getState) {
                 filterString += getFilterString('stage', stage, count);
                 count++;
             }
-            
+
             continue;
         }
 
@@ -431,4 +485,3 @@ function applyFilters(portCalls, filters) {
     return portCalls;
 }
 // end helper functions
-

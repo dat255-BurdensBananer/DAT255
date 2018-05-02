@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {
-    updatePortCalls,
+    updateMyPortCalls,
     selectPortCall,
     toggleFavoritePortCall,
     toggleFavoriteVessel,
-    appendPortCalls,
+    appendMyPortCalls,
     bufferPortCalls,
     setError,
  } from '../../actions';
@@ -40,23 +40,23 @@ class MyVesselsView extends Component {
 
     componentWillMount() {
         this.loadPortCalls = this.loadPortCalls.bind(this);
-        this._appendPortCalls = this._appendPortCalls.bind(this);
+        this._appendMyPortCalls = this._appendMyPortCalls.bind(this);
         this.loadPortCalls()
             .then(this.props.bufferPortCalls);
     }
 
     loadPortCalls() {
-        return this.props.updatePortCalls().then(() => {
+        return this.props.updateMyPortCalls().then(() => {
             if(this.props.error.hasError) {
                 navigate('Error');
             }
         });
     }
 
-    _appendPortCalls() {
+    _appendMyPortCalls() {
         let { portCalls, appendPortCalls, isAppendingPortCalls } = this.props;
         if (portCalls.length > 0 && !isAppendingPortCalls) {
-            return appendPortCalls(portCalls[portCalls.length - 1]);
+            return appendMyPortCalls(portCalls[portCalls.length - 1]);
         }
     }
 
@@ -148,7 +148,7 @@ class MyVesselsView extends Component {
                                                         'avorite vessel',
                                                     onPress: () => {
                                                         this.props.toggleFavoriteVessel(portCall.vessel.imo);
-                                                        this.props.updatePortCalls();
+                                                        this.props.updateMyPortCalls();
                                                 }},
                                                 {
                                                     text:
@@ -278,8 +278,8 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, {
-    updatePortCalls,
-    appendPortCalls,
+    updateMyPortCalls,
+    appendMyPortCalls,
     selectPortCall,
     toggleFavoritePortCall,
     toggleFavoriteVessel,

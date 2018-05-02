@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { addFavoriteLocations } from '../../../actions';
+import { addFavoriteMyLocations } from '../../../actions';
 
 import {
     View,
@@ -36,8 +36,8 @@ class LocationFilter extends Component {
             this.state.favoriteLocations.includes(location.URN)
         );
     }
-
-    bubbleSelectedToTop = (a, b) => {
+/*
+   bubbleSelectedToTop = (a, b) => {
         if (this.state.favoriteLocations.includes(a.URN)) {
             return -1;
         }
@@ -52,6 +52,7 @@ class LocationFilter extends Component {
         // Make sure all selected locations are on top
         this.setState({ locations: this.state.locations.sort(this.bubbleSelectedToTop) });
     }
+    */
     onDoneIconPressed() {
         const {
             limitFilter,
@@ -63,13 +64,13 @@ class LocationFilter extends Component {
         } = this.state;
         const {
             filters,
-            updatePortCalls,
+            updateMyPortCalls,
             bufferPortCalls,
             clearCache,
             filterChangeLimit,
             filterChangeSortBy,
             filterChangeOrder,
-            filterChangeVesselList,
+            filterChangeMyVesselList,
             filterChangeArrivingWithin,
             filterChangeDepartingWithin,
             filterClearArrivingDepartureTime,
@@ -102,29 +103,29 @@ class LocationFilter extends Component {
         filterChangeOnlyFuturePortCalls(onlyFetchActivePortCalls);
 
         // Vessel List
-        filterChangeVesselList(this.state.vesselListFilter);
+        filterChangeMyVesselList(this.state.vesselListFilter);
 
         // Stages
 
 
         clearCache();
-        updatePortCalls()
+        updateMyPortCalls()
             .then(bufferPortCalls);
         this.props.navigation.goBack();
     }
 
     render() {
-        const { onBackPress, addFavoriteLocations } = this.props;
+        const { onBackPress, addFavoriteMyLocations } = this.props;
         const { locations } = this.state;
 
         return (
             <View style={styles.container}>
                 <MiniHeader
                     modal
-                    title="Select Locations"
+                    title="Select your locations"
                     leftIconFunction={onBackPress}
                     rightIconFunction={() => {
-                        addFavoriteLocations(this.onDoneIconPressed)
+                        addFavoriteMyLocations(this.onDoneIconPressed)
                         onBackPress();
                     }}
                 />
@@ -216,10 +217,10 @@ function mapStateToProps(state) {
     return {
         locations: state.location.locations,
         loading: state.location.loading,
-        favoriteLocations: state.favorites.locations
+        favoriteLocations: state.favorites.mylocations
     }
 }
 
 export default connect(mapStateToProps, {
-    addFavoriteLocations
+    addFavoriteMyLocations
 })(LocationFilter);

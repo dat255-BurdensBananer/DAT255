@@ -104,7 +104,7 @@ class Settings extends Component {
                     <Button
                         backgroundColor={colorScheme.primaryColor}
                         color={colorScheme.primaryTextColor}
-                        title="Edit My Vessels"
+                        title="Edit My Portcalls"
                         buttonStyle={locStyles.buttonStyle}
                         onPress={this.showLocationModal}
                     />

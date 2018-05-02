@@ -11,6 +11,7 @@ import {
   FILTER_CHANGE_UPDATED_AFTER,
   FILTER_CHANGE_UPDATED_BEFORE,
   FILTER_CLEAR,
+  FILTER_CHANGE_MY_VESSEL_LIST,
 } from '../actions/types';
 
 const INITIAL_STATE = {
@@ -18,6 +19,7 @@ const INITIAL_STATE = {
   sort_by: 'LAST_UPDATE',    // LAST_UPDATE | ARRIVAL_DATE
   order: 'DESCENDING',       // DESCENDING | ASCENDING
   vesselList: 'all',             // name of a vessel list in settingsreducer, or "all" to not use filter
+  myVesselList: 'all',
   arrivingWithin: 0,
   departingWithin: 0,
   onlyFetchActivePortCalls: false,
@@ -41,6 +43,8 @@ const filterReducer = (state=INITIAL_STATE, action) => {
       return { ... state, order: action.payload,  };
     case FILTER_CHANGE_VESSEL_LIST:
       return { ...state, vesselList: action.payload, }
+    case FILTER_CHANGE_MY_VESSEL_LIST:
+      return { ...state, myVesselList: action.payload};
     case FILTER_CHANGE_ARRIVING_WITHIN:
       return { ...state, arrivingWithin: action.payload, departingWithin: 0, }
     case FILTER_CHANGE_DEPARTING_WITHIN:
@@ -49,7 +53,7 @@ const filterReducer = (state=INITIAL_STATE, action) => {
       return { ...state, departingWithin: 0, arrivingWithin: 0,}
     case FILTER_ONLY_FUTURE_PORTCALLS:
       return { ...state, onlyFetchActivePortCalls: action.payload, }
-    case FILTER_CLEAR: 
+    case FILTER_CLEAR:
       return INITIAL_STATE;
     default:
       return state;
