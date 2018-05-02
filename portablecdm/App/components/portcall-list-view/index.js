@@ -203,7 +203,9 @@ class PortCallList extends Component {
                         color='lightblue'
                     />}
                         {showWarning && <Icon
-                            name='warning'
+                            name='update'
+                            //type='entypo'
+                            //size=30
                             color='red'
                         />}
                     {!!portCall.stage && <Text style={[styles.subTitleStyle, {fontSize: 9, marginLeft: 4}]}>
