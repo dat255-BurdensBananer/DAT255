@@ -146,15 +146,10 @@ class PortCallList extends Component {
                                     onPress={() => {
                                         //console.log(JSON.stringify(portCall.vessel));
                                         selectPortCall(portCall);
-                                      /*  if(portCall.stateCount < 10){
-                                          console.log('foo');
-                                        }
                                         if(this.props.updatedPortCalls.includes(portCall.portCallId)){
                                         this.props.toggleUpdatedPortCall(portCall.portCallId);
                                       }
-                                        navigate('TimeLine') */
-                                        console.log(portCall.getStateDefinition);
-
+                                       navigate('TimeLine')
                                     }}
 
                                     onLongPress={() => {
@@ -181,7 +176,7 @@ class PortCallList extends Component {
                                                 }},
                                                 {
                                                     text:
-                                                        (this.props.updatedPortCalls.includes(portCall.portCallId) ? 'Mark as un' : 'Mark as ') +
+                                                        (this.props.updatedPortCalls.includes(portCall.portCallId) ? 'Mark as ' : 'Mark as un') +
                                                         'read', onPress: () => {
                                                     this.props.toggleUpdatedPortCall(portCall.portCallId);
                                                 }}
