@@ -76,11 +76,8 @@ export const REMOVE_FAVORITE_PORTCALL = 'remove_favorite_portcall';
 export const ADD_FAVORITE_VESSEL = 'add_favorite_vessel';
 export const REMOVE_FAVORITE_VESSEL = 'remove_favorite_vessel';
 export const CLEAR_FAVORITES = 'clear_favorites';
-export const ADD_FAVORITE_LOCATIONS = 'add_favorite_location';
 
-/** UPDATES */
-export const ADD_UPDATED_PORTCALL = 'add_updated_portcall';
-export const REMOVE_UPDATED_PORTCALL = 'remove_updated_portcall';
+export const ADD_FAVORITE_LOCATIONS = 'add_favorite_location';
 
 /* ERRORS */
 export const ERR_DISPATCHED = 'dispatched';
