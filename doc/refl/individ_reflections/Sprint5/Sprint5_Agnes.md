@@ -29,5 +29,5 @@
 
 Jag har kommit igång med att koda och har även börjat testa kod. Jag har ännu inte börjat verifiera kod med hoppas på att göra detta framöver. Jag har klarat av ett flertal tasks.
 
-*Nästa veckas mål:* Jag vill få ordning på sista tasken i vår story. Dvs att koppla samman myvesselsview med filtet i inställningar. Jag vill även börja verifiera koden. 
+*Nästa veckas mål:* Jag vill få ordning på sista tasken i vår story. Dvs att koppla samman myvesselsview med filtret i inställningar. Jag vill även börja verifiera koden. 
 
