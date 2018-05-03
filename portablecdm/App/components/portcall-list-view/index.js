@@ -57,7 +57,7 @@ class PortCallList extends Component {
     _appendPortCalls() {
         let { portCalls, appendPortCalls, isAppendingPortCalls } = this.props;
         if (portCalls.length > 0 && !isAppendingPortCalls) {
-            return appendPortCalls(portCalls[portCalls.length - 1]);
+            return appendPortCalls(portCalls[portCalls.length - 1]) &&;
         }
     }
 
