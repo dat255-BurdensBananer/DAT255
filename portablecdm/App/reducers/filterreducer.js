@@ -42,9 +42,9 @@ const filterReducer = (state=INITIAL_STATE, action) => {
     case FILTER_CHANGE_ORDER:
       return { ... state, order: action.payload,  };
     case FILTER_CHANGE_VESSEL_LIST:
-      return { ...state, vesselList: action.payload, }
+      return { ...state, vesselList: action.payload, };
     case FILTER_CHANGE_MY_VESSEL_LIST:
-      return { ...state, myVesselList: action.payload};
+      return { ...state, myVesselList: action.payload, };
     case FILTER_CHANGE_ARRIVING_WITHIN:
       return { ...state, arrivingWithin: action.payload, departingWithin: 0, }
     case FILTER_CHANGE_DEPARTING_WITHIN:
