@@ -4,6 +4,7 @@ import { createTokenHeaders, createLegacyHeaders, getCert } from '../util/portcd
 import pinch from 'react-native-pinch';
 import { appendPortCallIds, updatePortCallIds } from './eventactions';
 import { appendVesselToPortCall } from './vesselactions';
+import { toggleUpdatedPortCall} from './updateactions';
 
 const APPENDING_PORTCALLS_TIMEOUT_MS = 1000;
 
@@ -43,7 +44,7 @@ export const appendPortCalls = (lastPortCall) => {
             return dispatch(appendPortCallIds(lastPortCall)).then(ids => {
                 return Promise.all(ids.map(id => {
                     return dispatch(fetchPortCall(id));
-                })).then(portCalls => 
+                })).then(portCalls =>
                     dispatch(appendFetchedPortCalls(cache, portCalls)));
             });
         }
@@ -57,7 +58,7 @@ export const appendPortCalls = (lastPortCall) => {
             filterString = `${beforeOrAfter}=${new Date(filters.order === 'DESCENDING' ? lastPortCall.startTime : lastPortCall.endTime).toISOString()}`;
         }
 
-        return dispatch(fetchPortCalls(filterString)).then(() => 
+        return dispatch(fetchPortCalls(filterString)).then(() =>
             dispatch(appendFetchedPortCalls(cache, getState().portCalls.foundPortCalls)));
     }
 }
@@ -74,7 +75,7 @@ const appendFetchedPortCalls = (cached, newPortCalls) => {
                 type: types.CACHE_ENABLE_APPENDING_PORTCALLS
             });
         }, APPENDING_PORTCALLS_TIMEOUT_MS);
-        
+
         dispatch({
             type: types.CACHE_PORTCALLS,
             payload: cached.concat(toAppend)
@@ -94,12 +95,12 @@ export const updatePortCalls = () => {
             return dispatch(updatePortCallIds(lastUpdated)).then(ids =>
                 Promise.all(ids.map(id =>
                     dispatch(fetchPortCall(id))
-                )).then(portCalls => 
+                )).then(portCalls =>
                     dispatch(updateFetchedPortCalls(cache, portCalls)))
             );
         }
 
-        return dispatch(fetchPortCalls(updatedAfter)).then(() => 
+        return dispatch(fetchPortCalls(updatedAfter)).then(() =>
             dispatch(updateFetchedPortCalls(cache, getState().portCalls.foundPortCalls)));
     };
 }
@@ -116,12 +117,18 @@ const updateFetchedPortCalls = (cache, newPortCalls) => (dispatch, getState) => 
             newPortCalls = newPortCalls
             .filter(portCall => !favoritePortCalls.some(favorite => favorite.portCallId === portCall.portCallId))
             .concat(favoritePortCalls);
-            
+
             console.log('Only fetched ' + newPortCalls.length + ' while having ' + cache.length + ' cached port calls.');
 
             let counter = 0;
             for (let i = 0; i < newPortCalls.length; i++) { // This mysteriously didn't work with foreach
                 let portCall = newPortCalls[i];
+
+                dispatch({
+                    type: types.ADD_UPDATED_PORTCALL,
+                    payload: portCall.portCallId,
+                });
+
                 let toBeReplaced = cache.find((x) => x.portCallId === portCall.portCallId);
                 if (!!toBeReplaced) {
                     cache.splice(cache.indexOf(toBeReplaced), 1);
@@ -219,7 +226,7 @@ export const fetchPortCalls = (additionalFilterString) => {
                         }
                 });
             }
-        });    
+        });
     }
 }
 
@@ -371,7 +378,7 @@ function createFilterString(filters, getState) {
                 filterString += getFilterString('stage', stage, count);
                 count++;
             }
-            
+
             continue;
         }
 
@@ -431,4 +438,3 @@ function applyFilters(portCalls, filters) {
     return portCalls;
 }
 // end helper functions
-

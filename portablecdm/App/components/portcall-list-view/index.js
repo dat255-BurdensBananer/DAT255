@@ -5,6 +5,7 @@ import {
     selectPortCall,
     toggleFavoritePortCall,
     toggleFavoriteVessel,
+    toggleUpdatedPortCall,
     appendPortCalls,
     bufferPortCalls,
     setError,
@@ -130,7 +131,6 @@ class PortCallList extends Component {
                     >
                     <List>
                         {
-
                             this.search(portCalls, searchTerm).map( (portCall) => (
                                 <ListItem
                                     roundAvatar
@@ -146,27 +146,39 @@ class PortCallList extends Component {
                                     onPress={() => {
                                         //console.log(JSON.stringify(portCall.vessel));
                                         selectPortCall(portCall);
-                                        navigate('TimeLine')
+                                        if(this.props.updatedPortCalls.includes(portCall.portCallId)){
+                                        this.props.toggleUpdatedPortCall(portCall.portCallId);
+                                      }
+                                       navigate('TimeLine')
                                     }}
+
                                     onLongPress={() => {
                                         Alert.alert(
                                             'Favorite ' + portCall.vessel.name,
                                             'What would you like to do?',
                                             [
                                                 {text: 'Cancel'},
-                                                {
+
+                                               /*{
                                                     text:
                                                         (this.props.favoriteVessels.includes(portCall.vessel.imo) ? 'Unf' : 'F') +
                                                         'avorite vessel',
                                                     onPress: () => {
                                                         this.props.toggleFavoriteVessel(portCall.vessel.imo);
                                                         this.props.updatePortCalls();
-                                                }},
+                                                }},*/
+
                                                 {
                                                     text:
                                                         (this.props.favoritePortCalls.includes(portCall.portCallId) ? 'Unf' : 'F') +
                                                     'avorite port call', onPress: () => {
                                                     this.props.toggleFavoritePortCall(portCall.portCallId);
+                                                }},
+                                                {
+                                                    text:
+                                                        (this.props.updatedPortCalls.includes(portCall.portCallId) ? 'Mark as ' : 'Mark as un') +
+                                                        'read', onPress: () => {
+                                                    this.props.toggleUpdatedPortCall(portCall.portCallId);
                                                 }}
                                             ]
                                         );
@@ -183,6 +195,7 @@ class PortCallList extends Component {
     renderFavorites(portCall) {
         let showStar = this.props.favoritePortCalls.includes(portCall.portCallId);
         let showBoat = this.props.favoriteVessels.includes(portCall.vessel.imo);
+        let showWarning = this.props.updatedPortCalls.includes(portCall.portCallId);
         return (
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                     {showStar && <Icon
@@ -193,12 +206,17 @@ class PortCallList extends Component {
                         name='directions-boat'
                         color='lightblue'
                     />}
+                        {showWarning && <Icon
+                            name='update'
+                            color='red'
+                        />}
                     {!!portCall.stage && <Text style={[styles.subTitleStyle, {fontSize: 9, marginLeft: 4}]}>
                         {portCall.stage.replace(/_/g, ' ')}
                     </Text>}
                 </View>
         );
     }
+
     isFavorite(portCall) {
         return this.props.favoritePortCalls.includes(portCall.portCallId) ||
         this.props.favoriteVessels.includes(portCall.vessel.imo);
@@ -285,6 +303,7 @@ function mapStateToProps(state) {
         showLoadingIcon: state.portCalls.portCallsAreLoading,
         filters: state.filters,
         error: state.error,
+        updatedPortCalls: state.updated.portCalls,
         isAppendingPortCalls: state.cache.appendingPortCalls
     }
 }
@@ -295,6 +314,7 @@ export default connect(mapStateToProps, {
     selectPortCall,
     toggleFavoritePortCall,
     toggleFavoriteVessel,
+    toggleUpdatedPortCall,
     bufferPortCalls,
     setError,
 })(PortCallList);

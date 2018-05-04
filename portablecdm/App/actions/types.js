@@ -60,6 +60,7 @@ export const SET_ERROR = 'set_error';
 export const REMOVE_ERROR = 'remove_error';
 export const UPDATE_PROGRESS = 'update_progress';
 
+
 /** BERTH VIEW */
 export const BERTH_SELECT_BERTH = 'berth_select_berth';
 export const BERTH_FETCHING_EVENTS = 'berth_fetching_events';
@@ -76,8 +77,11 @@ export const REMOVE_FAVORITE_PORTCALL = 'remove_favorite_portcall';
 export const ADD_FAVORITE_VESSEL = 'add_favorite_vessel';
 export const REMOVE_FAVORITE_VESSEL = 'remove_favorite_vessel';
 export const CLEAR_FAVORITES = 'clear_favorites';
-
 export const ADD_FAVORITE_LOCATIONS = 'add_favorite_location';
 
 /* ERRORS */
 export const ERR_DISPATCHED = 'dispatched';
+
+/** UPDATE */
+export const ADD_UPDATED_PORTCALL = 'add_uppdated_portcall';
+export const REMOVE_UPDATED_PORTCALL = 'remove_updated_portcall';
