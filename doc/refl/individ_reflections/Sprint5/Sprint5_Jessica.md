@@ -26,7 +26,7 @@ Jag vill förstå countern i koden bättre, som jag påbörjat under denna sprin
 
 
 *Hur skall jag komma dit:*
-Genom att parkoda med en och samma kodpartner. Detta är bra eftersom jag kan bolla idéer med en annan, samt att vi tillsammans kan gräva ner oss i problemet. 
+Genom att parkoda med en och samma kodpartner. Detta är bra eftersom jag kan bolla idéer med en annan, samt att vi tillsammans kan gräva ner oss i problemet.
 
 **What is my contribution towards the team’s application of scrum?**
 
