@@ -85,3 +85,4 @@ export const ERR_DISPATCHED = 'dispatched';
 /** UPDATE */
 export const ADD_UPDATED_PORTCALL = 'add_uppdated_portcall';
 export const REMOVE_UPDATED_PORTCALL = 'remove_updated_portcall';
+export const REMOVE_ALL_UPDATED_PORTCALLS = 'remove_all_updated_portcalls';
