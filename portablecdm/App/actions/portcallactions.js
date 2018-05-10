@@ -124,17 +124,7 @@ const updateFetchedPortCalls = (cache, newPortCalls) => (dispatch, getState) => 
             for (let i = 0; i < newPortCalls.length; i++) { // This mysteriously didn't work with foreach
                 let portCall = newPortCalls[i];
 
-                if(portCall.locationType === 'ANCHORING_AREA'){
-
-
-                dispatch({
-                    type: types.ADD_UPDATED_PORTCALL,
-                    payload: portCall.portCallId,
-                });
-
-
-              }// if
-
+                
                 let toBeReplaced = cache.find((x) => x.portCallId === portCall.portCallId);
                 if (!!toBeReplaced) {
                     cache.splice(cache.indexOf(toBeReplaced), 1);
@@ -154,6 +144,7 @@ const updateFetchedPortCalls = (cache, newPortCalls) => (dispatch, getState) => 
             });
         });
 }
+
 
 export const fetchPortCall = (portCallId) => (dispatch, getState) => {
     dispatch({type: types.FETCH_PORTCALLS});
