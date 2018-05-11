@@ -6,6 +6,7 @@ import {
     toggleFavoritePortCall,
     toggleFavoriteVessel,
     toggleUpdatedPortCall,
+    removeAllUpdatedPortCalls,
     appendPortCalls,
     bufferPortCalls,
     setError,
@@ -116,7 +117,36 @@ class PortCallList extends Component {
                         backgroundColor = {colorScheme.primaryColor}
                         onPress= {() => navigate('FilterMenu')}
                     />
+
                 </View>
+
+                <View style={styles.containerClearButton}>
+                  <Button
+                      small
+                      icon={{
+                        name: 'clear-all',
+                        size: 30,
+                        color: colorScheme.primaryTextColor,
+                    }}
+                    title="Mark all as read"
+                    backgroundColor = {colorScheme.primaryColor}
+                    onPress= {() => {
+                      Alert.alert(
+                        'Mark all portcalls as read',
+                        'Are you sure?',
+                      [
+                        {text:'Yes', onPress: () => {
+                            this.props.removeAllUpdatedPortCalls();
+                        }
+                      },
+                      {text:'Cancel'}
+                      ]
+                    );
+                  }
+                }
+
+                  />
+              </View>
 
                 {/*Render the List of PortCalls*/}
                 <ScrollView
@@ -176,7 +206,7 @@ class PortCallList extends Component {
                                                 }},
                                                 {
                                                     text:
-                                                        (this.props.updatedPortCalls.includes(portCall.portCallId) ? 'Mark as ' : 'Mark as un') +
+                                                        (this.props.updatedPortCalls.includes(portCall.portCallId) ? 'Mark portcall as ' : 'Mark portcall as un') +
                                                         'read', onPress: () => {
                                                     this.props.toggleUpdatedPortCall(portCall.portCallId);
                                                 }}
@@ -269,6 +299,13 @@ const styles = StyleSheet.create({
         paddingLeft: 15,
         paddingRight: 0,
     },
+    containerClearButton: {
+        flexDirection: 'row',
+        alignItems:'flex-start',
+        marginTop: 0,
+        paddingLeft: 0,
+        paddingRight: 0,
+    },
     searchBarContainer: {
         backgroundColor: colorScheme.primaryColor,
         flex: 4,
@@ -315,6 +352,7 @@ export default connect(mapStateToProps, {
     toggleFavoritePortCall,
     toggleFavoriteVessel,
     toggleUpdatedPortCall,
+    removeAllUpdatedPortCalls,
     bufferPortCalls,
     setError,
 })(PortCallList);

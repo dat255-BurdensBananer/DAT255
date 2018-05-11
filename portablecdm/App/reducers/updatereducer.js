@@ -1,6 +1,7 @@
 import {
     ADD_UPDATED_PORTCALL,
     REMOVE_UPDATED_PORTCALL,
+    REMOVE_ALL_UPDATED_PORTCALLS,
 } from '../actions/types';
 
 const INITIAL_STATE = {
@@ -16,6 +17,8 @@ const updateReducer = (state = INITIAL_STATE, action) => {
             const portCallsCopy = state.portCalls.slice();
             portCallsCopy.splice(portCallsCopy.indexOf(action.payload), 1);
             return {...state, portCalls: portCallsCopy};
+        case REMOVE_ALL_UPDATED_PORTCALLS:
+          return {...state, portCalls: []};
         default:
             return state;
     }
