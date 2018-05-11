@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { addFavoriteMyLocations } from '../../../actions';
+import { addFavoriteMyLocations } from '../../actions';
+import { filterChangeMyVesselList } from '../../actions';
 
 import {
     View,
@@ -20,23 +21,31 @@ import {
     Button
 } from 'react-native-elements';
 
-import MiniHeader from '../../mini-header-view';
-import colorScheme from '../../../config/colors';
+import MiniHeader from '../mini-header-view';
+import colorScheme from '../../config/colors';
 
-class LocationFilter extends Component {
-    state = {
+class LocationFilterSettings extends Component {
+  state = {
         searchTerm: '',
         locations: this.props.locations,
         favoriteLocations: this.props.favoriteLocations,
+        //vesselListFilter: this.props.filters.myVesselList,
     }
 
+
+
+    //console.log(JSON.stringify(this.state.favoriteLocations));
+
     search(locations, searchTerm) {
+
         return locations.filter(location => location.name.toUpperCase().includes(searchTerm.toUpperCase()) ||
             location.locationType.toUpperCase().includes(searchTerm.toUpperCase()) ||
             this.state.favoriteLocations.includes(location.URN)
+
         );
     }
-/*
+
+
    bubbleSelectedToTop = (a, b) => {
         if (this.state.favoriteLocations.includes(a.URN)) {
             return -1;
@@ -52,8 +61,8 @@ class LocationFilter extends Component {
         // Make sure all selected locations are on top
         this.setState({ locations: this.state.locations.sort(this.bubbleSelectedToTop) });
     }
-    */
-    onDoneIconPressed() {
+
+  /*  onDoneIconPressed() {
         const {
             limitFilter,
             selectedSortByIndex,
@@ -113,7 +122,7 @@ class LocationFilter extends Component {
             .then(bufferPortCalls);
         this.props.navigation.goBack();
     }
-
+*/
     render() {
         const { onBackPress, addFavoriteMyLocations } = this.props;
         const { locations } = this.state;
@@ -125,7 +134,9 @@ class LocationFilter extends Component {
                     title="Select your locations"
                     leftIconFunction={onBackPress}
                     rightIconFunction={() => {
-                        addFavoriteMyLocations(this.onDoneIconPressed)
+                        addFavoriteMyLocations(this.state.favoriteLocations)
+                        //filterChangeMyVesselList(this.state.vesselListFilter); //nyyy
+                        //updateMyPortCalls();
                         onBackPress();
                     }}
                 />
@@ -161,6 +172,9 @@ class LocationFilter extends Component {
                                     subtitle={`${location.locationType.replace(/_/g, " ")}`}
                                     rightIcon={<CheckBox
                                         checkedColor={colorScheme.primaryColor}
+
+                                        //console.log(JSON.stringify(location.URN));
+
                                         checked={this.state.favoriteLocations.indexOf(location.URN) >= 0}
                                         containerStyle={{ backgroundColor: colorScheme.primaryTextColor, borderColor: colorScheme.primaryTextColor }}
                                         onPress={() => {
@@ -217,10 +231,10 @@ function mapStateToProps(state) {
     return {
         locations: state.location.locations,
         loading: state.location.loading,
-        favoriteLocations: state.favorites.mylocations
+        favoriteLocations: state.favorites.mylocations // när denna ändras till mylocations blir inte filterna kopplade men det blir fel när man går in i edt my portcalls direkt
     }
 }
 
 export default connect(mapStateToProps, {
     addFavoriteMyLocations
-})(LocationFilter);
+})(LocationFilterSettings);

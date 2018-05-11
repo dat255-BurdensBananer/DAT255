@@ -5,7 +5,7 @@ public class DetachBuildConstants {
 
 
 
-    public static final String DEVELOPMENT_URL = "exp432e0186c47243658eeef37602b6c1c4://9v-wb8.terminal2.app.exp.direct:80";
+    public static final String DEVELOPMENT_URL = "exp432e0186c47243658eeef37602b6c1c4://ax-3j7.pilsnerphilster.app.exp.direct:80";
 
 
 

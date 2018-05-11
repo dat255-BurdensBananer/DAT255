@@ -29,7 +29,7 @@ import { Util } from 'expo';
 import TopHeader from '../top-header-view';
 import colorScheme from '../../config/colors';
 
-import LocationFilter from '../my-vessels-settings-view/sections/locationfilter';
+import LocationFilterSettings from '../my-vessels-settings-view/locationFilterSettings';
 
 
 
@@ -56,12 +56,14 @@ class Settings extends Component {
             limitCache: props.limitCache,
             currentTimeZone: null,
             showLocationModal: false,
+          //  vesselListFilter: props.filters.vesselList,
         }
 
         this.updateFetchReliability = this.updateFetchReliability.bind(this);
         this.updateUseSSL = this.updateUseSSL.bind(this);
         this.showLocationModal = this.showLocationModal.bind(this);
         this.hideLocationModal = this.hideLocationModal.bind(this);
+
     }
 
     showLocationModal() {
@@ -227,7 +229,7 @@ class Settings extends Component {
                     transparent={false}
                     animationType='slide'
                 >
-                <LocationFilter onBackPress={this.hideLocationModal}/>
+                <LocationFilterSettings onBackPress={this.hideLocationModal}/>
                 </Modal>
             </View>
         );

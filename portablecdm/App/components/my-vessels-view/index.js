@@ -40,7 +40,7 @@ class MyVesselsView extends Component {
 
     componentWillMount() {
         this.loadPortCalls = this.loadPortCalls.bind(this);
-        this._appendMyPortCalls = this._appendMyPortCalls.bind(this);
+        this.appendMyPortCalls = this.appendMyPortCalls.bind(this);
         this.loadPortCalls()
             .then(this.props.bufferPortCalls);
     }
@@ -53,8 +53,8 @@ class MyVesselsView extends Component {
         });
     }
 
-    _appendMyPortCalls() {
-        let { portCalls, appendPortCalls, isAppendingPortCalls } = this.props;
+    appendMyPortCalls() {
+        let { portCalls, appendMyPortCalls, isAppendingPortCalls } = this.props;
         if (portCalls.length > 0 && !isAppendingPortCalls) {
             return appendMyPortCalls(portCalls[portCalls.length - 1]);
         }
@@ -67,9 +67,9 @@ class MyVesselsView extends Component {
             let numLoaded = this.state.numLoadedPortCalls;
 
              this.setState({numLoadedPortCalls: numLoaded + 20});
-             let { portCalls, appendPortCalls } = this.props;
+             let { portCalls, appendMyPortCalls } = this.props;
              if(numLoaded >= portCalls.length) {
-                this._appendPortCalls();
+                this.appendMyPortCalls();
              } else {
                  console.log('Loading more local port calls. Showing ' + numLoaded + ' of ' + portCalls.length + ' port calls.');
              }
