@@ -124,9 +124,9 @@ const updateFetchedPortCalls = (cache, newPortCalls) => (dispatch, getState) => 
             for (let i = 0; i < newPortCalls.length; i++) { // This mysteriously didn't work with foreach
                 let portCall = newPortCalls[i];
 
-              if(portCall.stage=== 'PLANNED' ){
+              if((portCall.stage=== 'UNDER_WAY' ) || (portCall.stage=== 'PLANNED')){
                 //{console.log(portCall.stage)}
-//TODO: Få "under way" att funka också, just nu funkar bara planned. 
+//TODO: Få "under way" att funka också, just nu funkar bara planned.
 
                 dispatch({
                     type: types.ADD_UPDATED_PORTCALL,
