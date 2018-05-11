@@ -1,0 +1,33 @@
+Vi jobbade bara en dag förra veckan och den dagen låg jag hemma sjuk. Resterande dagar krigade vi kandidatarbete i princip hela dagarna. 
+Därför blir har jag inte kommit längre än jag hade gjort vid förra veckans reflection:
+**what do I want to learn or understand better?**
+
+*Var jag är:* Jag gjorde framsteg i koden fredags (från förra sprinten), då jag och Anton var ganska nära på att lösa en task. Sedan kraschade tyvärr min dator och hela måndagen gick åt att försöka få igång den. På onsdag var den igång igen, och då lyckades Jakob ta sig förbi en grej jag och Anton kört fast på, vilket gjorde att vi nu kan markera Skepp med rött när ETA uppdateras! 
+
+*Vart jag vill:* Jag vill uppdatera mig om hur koden ser ut nu för den User Storyn jag och Anton jobbade på förut. Jag vill förstå hur man får den att ändras när enbart ETA ändras, och inte om exempelvis ETB ändras. 
+
+*Hur jag ska ta mig dit:* Fortsätta undersöka koden och kolla med Jakob och Korshavn som fixade med den senast.
+
+**how can I help someone else, or the entire team, to learn something new?**
+
+*Var jag är:* Jag är delaktig i att diskutera koden och uppgiften vilket jag anser ökar förståelsen hos de andra. Jag har varit extra insatt i user story två, och kan dela med mig av den kunskapen till andra, men nu är jag inte riktigt med på det senaste som hänt på den user storyn.  
+
+*Vart jag vill:* Ha koll på User Story 2 och kunna hjälpa de andra med den. 
+
+*Hur jag ska ta mig dit:* Samma som hur-frågan ovan. 
+
+**what is my contribution towards the team’s application of scrum?**
+
+*Var jag är:* Jag är närvarande på våra möten och jobbar aktivt med daily scrum. På KPI-fronten pratade vi med Burden om vår KPI som handlar om defekter i koden, och han höll med om att det i dagsläget kanske inte är givande att mäta just defekter eftersom vi har skriver i utvecklingsbranscher och det ständigt växlar mellan 0 och 1000 defekter. När vi däremot börjar mergea branscher kanske defekterna blir mer aktuellt att mäta! 
+
+*Vart jag vill:* Fortsätta arbeta med de tasks vi har på ett strukturerat sätt. Jag vill vara en del av att ta tag i de problem som vi tar upp under scrummötena.
+
+*Hur jag ska ta mig dit:* Vara lyhörd för de problem som tas upp och våga ifrågasätta vårt arbetssätt. 
+
+**what is my contribution towards the team’s deliveries? That means that for the personal learning objective you will each week write down what you have achieved in relation to last week's ambition (technologies, concepts and skills learnt as well as how this was achieved), what you would like to achieve for the next week and how to make the change happen. The first week of the course you describe the current situation by motivating a learning objective. It is perfectly fine to change objective/s each week as long as you can motivate the change and you evaluate the outcome of the previous week (e.g. describing the current situation).**
+
+*Förra veckans mål:* Till nästa vecka vill jag lära mig mer om react native och redux, samt kodens syntaxt för att på egen hand eller i par kunna göra större förändringar i koden än vad jag kan i nuläget.
+
+Jag har blivit bättre på react native, redux och Javascript-syntax - men har fortfarande mycket att lära på området! 
+*Nästa veckas mål:* Kommer främst sitta med kandidatarbetet nästa vecka men ska åtminstone försöka uppdatera mig om hur vi löste User Story 2. 
+
