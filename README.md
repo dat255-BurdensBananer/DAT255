@@ -3,7 +3,7 @@
 
 ## Directory
 ### portablecdm
-The source code for the app. 
+The original source code for the app. 
 ### Src
 ### Doc
 #### Team reflections
