@@ -16,4 +16,5 @@ Here the weekly individual reflections can be found.
 **Timelog:** https://docs.google.com/spreadsheets/d/1i_3xwAawf7rHihl11vYXfVMEUH4o_xx8f_35tCxusaU/edit#gid=954558218
 ### Miscellaneous tools used
  **Trello *(Scrum board)*:** https://trello.com/b/Ml2Ummm8/scrum-board-dat255
- **Google Drive:** https://drive.google.com/drive/folders/1PGx-BejWCTIrwSBwZ2hYOi0_Hq0REofX
+
+**Google Drive:** https://drive.google.com/drive/folders/1PGx-BejWCTIrwSBwZ2hYOi0_Hq0REofX
