@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {
     updateMyPortCalls,
+    //updateMyPortCallIds,
     selectPortCall,
     toggleFavoritePortCall,
     toggleFavoriteVessel,
     appendMyPortCalls,
-    bufferPortCalls,
+    bufferMyPortCalls,
     setError,
  } from '../../actions';
 
@@ -40,9 +41,9 @@ class MyVesselsView extends Component {
 
     componentWillMount() {
         this.loadPortCalls = this.loadPortCalls.bind(this);
-        this.appendMyPortCalls = this.appendMyPortCalls.bind(this);
+        this._appendMyPortCalls = this._appendMyPortCalls.bind(this);
         this.loadPortCalls()
-            .then(this.props.bufferPortCalls);
+            .then(this.props.bufferMyPortCalls);
     }
 
     loadPortCalls() {
@@ -53,7 +54,7 @@ class MyVesselsView extends Component {
         });
     }
 
-    appendMyPortCalls() {
+    _appendMyPortCalls() {
         let { portCalls, appendMyPortCalls, isAppendingPortCalls } = this.props;
         if (portCalls.length > 0 && !isAppendingPortCalls) {
             return appendMyPortCalls(portCalls[portCalls.length - 1]);
@@ -69,7 +70,7 @@ class MyVesselsView extends Component {
              this.setState({numLoadedPortCalls: numLoaded + 20});
              let { portCalls, appendMyPortCalls } = this.props;
              if(numLoaded >= portCalls.length) {
-                this.appendMyPortCalls();
+                this._appendMyPortCalls();
              } else {
                  console.log('Loading more local port calls. Showing ' + numLoaded + ' of ' + portCalls.length + ' port calls.');
              }
@@ -148,7 +149,7 @@ class MyVesselsView extends Component {
                                                         'avorite vessel',
                                                     onPress: () => {
                                                         this.props.toggleFavoriteVessel(portCall.vessel.imo);
-                                                        this.props.updateMyPortCalls();
+
                                                 }},
                                                 {
                                                     text:
@@ -190,6 +191,10 @@ class MyVesselsView extends Component {
     isFavorite(portCall) {
         return this.props.favoritePortCalls.includes(portCall.portCallId) ||
         this.props.favoriteVessels.includes(portCall.vessel.imo);
+    }
+
+    isFavoriteLocation(portCall) {
+      return this.props.mylocations.includes(portCall.toLocation)
     }
 
     sortFilters(a,b) {
@@ -279,10 +284,11 @@ function mapStateToProps(state) {
 
 export default connect(mapStateToProps, {
     updateMyPortCalls,
+    //updateMyPortCallIds,
     appendMyPortCalls,
     selectPortCall,
     toggleFavoritePortCall,
     toggleFavoriteVessel,
-    bufferPortCalls,
+    bufferMyPortCalls,
     setError,
 })(MyVesselsView);

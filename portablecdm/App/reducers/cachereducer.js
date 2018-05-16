@@ -1,5 +1,6 @@
 import {
     CACHE_PORTCALLS,
+    CACHE_MYPORTCALLS,
     CACHE_UPDATE,
     CACHE_CLEAR,
     CACHE_APPENDING_PORTCALLS,
@@ -8,6 +9,7 @@ import {
 
 const INITIAL_STATE = {
     portCalls: [],
+    myPortCalls: [],
     lastUpdated: 0,
 
     appendingPortCalls: false,
@@ -17,6 +19,8 @@ const cacheReducer = (state=INITIAL_STATE, action) => {
     switch(action.type) {
         case CACHE_PORTCALLS:
             return {...state, portCalls: action.payload };
+        case CACHE_MYPORTCALLS:
+            return {...state, myPortCalls: action.payload };
         case CACHE_UPDATE:
             return { ...state, lastUpdated: action.payload };
         case CACHE_CLEAR:

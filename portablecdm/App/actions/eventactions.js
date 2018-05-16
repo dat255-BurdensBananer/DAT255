@@ -12,11 +12,27 @@ export const appendPortCallIds = (lastPortCall) => {
     }
 }
 
+export const appendMyPortCallIds = (lastPortCall) => {
+    return (dispatch, getEvent) => {
+        dispatch({ type: types.FETCH_PORTCALLS });
+
+        return dispatch(fetchMyPortCallIds());
+    }
+}
+
 export const updatePortCallIds = (lastUpdated) => {
     return (dispatch, getEvent) => {
         let updatedAfter = '&updated_after=' + new Date(lastUpdated).toISOString();
 
-        return dispatch(fetchPortCallIds(updatedAfter));
+        return dispatch(fetchPortCallIds(updatedAfter)); //OBsOBSOBSOBSOBS
+    }
+}
+
+export const updateMyPortCallIds = (lastUpdated) => {
+    return (dispatch, getEvent) => {
+        let updatedAfter = '&updated_after=' + new Date(lastUpdated).toISOString();
+
+        return dispatch(fetchMyPortCallIds(updatedAfter)); //OBsOBSOBSOBSOBS
     }
 }
 
@@ -67,7 +83,53 @@ export const fetchPortCallIds = (filterString) => {
     }
 }
 
+export const fetchMyPortCallIds = (filterString) => {
+    return (dispatch, getState) => {
+        const connection = getState().settings.connection;
+        const token = getState().settings.token;
+        const { mylocations } = getState().favorites;//OBSOBSOBS
+        const { arrivingWithin, departingWithin } = getState().filters;
+        const timeParameters = getTimeParameters(arrivingWithin, departingWithin);
+        const locationParams = getLocationParameters(mylocations);
+        console.log(JSON.stringify(mylocations));
+        const url = `${connection.scheme + connection.host}:${connection.port}/pcb/event?${timeParameters}${locationParams}${filterString ? filterString : ''}`;
 
+        console.log('Fetching events: ' + url);
+
+        return pinch.fetch(url,
+            {
+                method: 'GET',
+                headers: connection.username ? createLegacyHeaders(connection) : createTokenHeaders(token, connection.host),
+                sslPinning: getCert(connection),
+            })
+            .then(result => {
+                let err = checkResponse(result);
+                if (!err) {
+                    return JSON.parse(result.bodyString);
+                }
+
+                dispatch({type: types.SET_ERROR, payload: err});
+                throw new Error(types.ERR_DISPATCHED);
+            }).then(result => Promise.all(result.map(element => element.portCallId)))
+            .then(result => result.filter((elem, index) => result.indexOf(elem) === index))
+            .catch(err => {
+                if (!err.message != types.ERR_DISPATCHED) {
+                    dispatch({
+                        type: types.SET_ERROR,
+                        payload: {
+                            description: err.message,
+                            title: 'Unable to fetch events for locations!',
+                        }
+                    });
+
+                    dispatch({
+                        type: types.ADD_FAVORITE_MYLOCATIONS,
+                        payload: []
+                    });
+                }
+            })
+    }
+}
 
 
 // Helper functions
@@ -102,8 +164,11 @@ function getLocationParameters(locations) {
         parameters += `&location=${location}`;
     }
 
+    //console.log(JSON.stringify(parameters));
+
     return parameters;
 }
+
 
 /**
  * Fetches all operations for the port call with the specified id
@@ -142,7 +207,7 @@ export const fetchPortCallEvents = (portCallId) => {
             .then((operations) => {
                 if (!getState().settings.fetchReliability) {
                     return operations;
-                } 
+                }
 
                 return fetchReliability(operations, headers, connection, portCallId);
             })
@@ -171,7 +236,7 @@ export const fetchPortCallEvents = (portCallId) => {
 async function fetchReliability(operations, headers, connection, portCallId) {
     if (operations.length <= 0) {
         return operations;
-    } 
+    }
 
     await pinch.fetch(`${connection.scheme + connection.host}:${connection.port}/dqa/reliability/${portCallId}`,
         {
@@ -271,7 +336,7 @@ function extendLocations(operations, locations) {
         if (operation.to) {
             operation.toLocation = locations.find(location => location.URN.toUpperCase() === operation.to.toUpperCase());
         }
-        
+
         operation.statements.map(statement => {
             if (statement.at) {
                 // Actually case sensitive, so keep in mind
@@ -288,4 +353,3 @@ function extendLocations(operations, locations) {
         return operation;
     });
 }
-
