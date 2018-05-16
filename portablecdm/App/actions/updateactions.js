@@ -19,3 +19,11 @@ export const toggleUpdatedPortCall = (portCallId) => {
         return true;
     }
 }
+
+export const removeAllUpdatedPortCalls = () => {
+    return (dispatch) => {
+      dispatch({
+        type: types.REMOVE_ALL_UPDATED_PORTCALLS,
+      })
+    }
+  }
