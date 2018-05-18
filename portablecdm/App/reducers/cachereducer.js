@@ -9,7 +9,6 @@ import {
 const INITIAL_STATE = {
     portCalls: [],
     lastUpdated: 0,
-
     appendingPortCalls: false,
 }
 

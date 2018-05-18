@@ -249,7 +249,8 @@ class PortCallList extends Component {
 
     isFavorite(portCall) {
         return this.props.favoritePortCalls.includes(portCall.portCallId) ||
-        this.props.favoriteVessels.includes(portCall.vessel.imo);
+        this.props.favoriteVessels.includes(portCall.vessel.imo) ||
+        this.props.updatedPortCalls.includes(portCall.portCallId);
     }
 
     sortFilters(a,b) {
@@ -257,7 +258,7 @@ class PortCallList extends Component {
         let bFav = this.isFavorite(b);
         if (aFav && !bFav) return -1;
         if (bFav && !aFav) return 1;
-
+      
         let { filters } = this.props;
         let invert = filters.order === 'ASCENDING';
         if (filters.sort_by === 'LAST_UPDATE') {
