@@ -20,6 +20,7 @@ import {
     RefreshControl,
     Alert,
     Modal,
+    TouchableOpacity,
 } from 'react-native';
 
 import {
@@ -28,12 +29,22 @@ import {
     List,
     ListItem,
     Icon,
+
 } from 'react-native-elements';
 
 import colorScheme from '../../config/colors';
 import TopHeader from '../top-header-view';
 import { getDateTimeString } from '../../util/timeservices';
 import LocationFilter from './sections/locationFilter';
+
+const STAGES = [
+    'PLANNED',
+    'ARRIVED',
+    'BERTHED',
+    'ANCHORED',
+    'UNDER_WAY',
+    'SAILED',
+];
 
 class PortCallList extends Component {
   constructor(props) {
@@ -43,6 +54,7 @@ class PortCallList extends Component {
         refreshing: false,
         numLoadedPortCalls: 20,
         showLocationModal: false,
+        //stages: props.filters.stages
     }
     this.showLocationModal = this.showLocationModal.bind(this);
     this.hideLocationModal = this.hideLocationModal.bind(this);
@@ -111,47 +123,10 @@ class PortCallList extends Component {
         return(
             <View style={styles.container}>
                 <TopHeader title="My Port calls" navigation={this.props.navigation} firstPage/>
-                {/*Render the search/filters header*/}
-                <View style={styles.containerRow}>
-                    <SearchBar
-                        autoCorrect={false}
-                        containerStyle = {styles.searchBarContainer}
-                        showLoadingIcon={showLoadingIcon}
-                        clearIcon
-                        inputStyle = {{backgroundColor: colorScheme.primaryContainerColor}}
-                        lightTheme
-                        placeholder='Search by name, IMO or MMSI number'
-                        placeholderTextColor = {colorScheme.tertiaryTextColor}
-                        onChangeText={text => this.setState({searchTerm: text})}
-                        textInputRef='textInput'
-                    />
-                    <Button
-                        containerViewStyle={styles.buttonContainer}
-                        small
-                        icon={{
-                            name: 'edit-location',
-                            size: 30,
-                            color: colorScheme.primaryTextColor,
-                            style: styles.iconStyle,
-                        }}
-                        backgroundColor = {colorScheme.primaryColor}
-                        onPress= {this.showLocationModal}
-                    />
-                    <Button
-                        containerViewStyle={styles.buttonContainer}
-                        small
-                        icon={{
-                            name: 'filter-list',
-                            size: 30,
-                            color: colorScheme.primaryTextColor,
-                            style: styles.iconStyle,
-                        }}
-                        backgroundColor = {colorScheme.primaryColor}
-                        onPress= {() => navigate('FilterMenu')}
-                    />
 
-                </View>
 
+
+              {/*Button to unmark all updated portcalls*/}
                 <View style={styles.containerClearButton}>
                   <Button
                       small
@@ -160,7 +135,7 @@ class PortCallList extends Component {
                         size: 30,
                         color: colorScheme.primaryTextColor,
                     }}
-                    title="Mark all as read"
+                    title="Unmark all"
                     backgroundColor = {colorScheme.primaryColor}
                     onPress= {() => {
                       Alert.alert(
@@ -176,9 +151,68 @@ class PortCallList extends Component {
                     );
                   }
                 }
-
+                  />
+                  <Button
+                      containerViewStyle={styles.buttonContainer}
+                      small
+                      icon={{
+                          name: 'edit-location',
+                          size: 30,
+                          color: colorScheme.primaryTextColor,
+                          style: styles.iconStyle,
+                      }}
+                      title="Locations"
+                      backgroundColor = {colorScheme.primaryColor}
+                      onPress= {this.showLocationModal}
+                  />
+                  <Button
+                      containerViewStyle={styles.buttonContainer}
+                      small
+                      icon={{
+                          name: 'filter-list',
+                          size: 30,
+                          color: colorScheme.primaryTextColor,
+                          style: styles.iconStyle,
+                      }}
+                      title="Filter"
+                      backgroundColor = {colorScheme.primaryColor}
+                      onPress= {() => navigate('FilterMenu')}
                   />
               </View>
+
+                {/*Render the search/filters header*/}
+              <View style={styles.containerRow}>
+                  <SearchBar
+                      autoCorrect={false}
+                      containerStyle = {styles.searchBarContainer}
+                      showLoadingIcon={showLoadingIcon}
+                      clearIcon
+                      inputStyle = {{backgroundColor: colorScheme.primaryContainerColor}}
+                      lightTheme
+                      placeholder='Search by name, IMO or MMSI number'
+                      placeholderTextColor = {colorScheme.tertiaryTextColor}
+                      onChangeText={text => this.setState({searchTerm: text})}
+                      textInputRef='textInput'
+                  />
+
+
+              </View>
+
+              {/*Create buttons for stages*/}
+             <View style={styles.containerClearButton}>
+
+              <TouchableOpacity
+                style={styles.tabContainer}
+                activeOpacity = { .5 }
+                onPress={() => navigate('FilterMenu') }
+                  >
+
+              <Text style={styles.TextStyle}> Planned </Text>
+
+              </TouchableOpacity>
+
+
+          </View>
 
                 {/*Render the List of PortCalls*/}
                 <ScrollView
@@ -369,6 +403,20 @@ const styles = StyleSheet.create({
     },
     subTitleStyle: {
         color: colorScheme.tertiaryTextColor,
+    },
+    tabContainer: {
+      flex: 1,
+      backgroundColor: colorScheme.secondaryColor,
+      borderColor: 'white',
+      borderRadius: 10,
+      borderWidth: 1,
+      marginRight: 0,
+      marginLeft: 0,
+      alignSelf: 'stretch',
+    },
+    TextStyle:{
+    color:'#fff',
+    textAlign:'center',
     },
 })
 
