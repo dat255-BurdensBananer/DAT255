@@ -19,6 +19,7 @@ import {
     ScrollView,
     RefreshControl,
     Alert,
+    Modal,
 } from 'react-native';
 
 import {
@@ -32,12 +33,31 @@ import {
 import colorScheme from '../../config/colors';
 import TopHeader from '../top-header-view';
 import { getDateTimeString } from '../../util/timeservices';
+import LocationFilter from './sections/locationFilter';
 
 class PortCallList extends Component {
-    state = {
+  constructor(props) {
+      super(props)
+    this.state = {
         searchTerm: '',
         refreshing: false,
         numLoadedPortCalls: 20,
+        showLocationModal: false,
+    }
+    this.showLocationModal = this.showLocationModal.bind(this);
+    this.hideLocationModal = this.hideLocationModal.bind(this);
+  }
+
+    showLocationModal() {
+        this.setState({showLocationModal: true});
+    }
+
+    hideLocationModal() {
+        this.setState({showLocationModal: false});
+    }
+
+    setModalStagesVisible(visible) {
+        this.setState({ modalStagesVisible: visible });
     }
 
     componentWillMount() {
@@ -90,7 +110,7 @@ class PortCallList extends Component {
 
         return(
             <View style={styles.container}>
-                <TopHeader title="Port calls" navigation={this.props.navigation} firstPage/>
+                <TopHeader title="My Port calls" navigation={this.props.navigation} firstPage/>
                 {/*Render the search/filters header*/}
                 <View style={styles.containerRow}>
                     <SearchBar
@@ -104,6 +124,18 @@ class PortCallList extends Component {
                         placeholderTextColor = {colorScheme.tertiaryTextColor}
                         onChangeText={text => this.setState({searchTerm: text})}
                         textInputRef='textInput'
+                    />
+                    <Button
+                        containerViewStyle={styles.buttonContainer}
+                        small
+                        icon={{
+                            name: 'edit-location',
+                            size: 30,
+                            color: colorScheme.primaryTextColor,
+                            style: styles.iconStyle,
+                        }}
+                        backgroundColor = {colorScheme.primaryColor}
+                        onPress= {this.showLocationModal}
                     />
                     <Button
                         containerViewStyle={styles.buttonContainer}
@@ -218,6 +250,14 @@ class PortCallList extends Component {
                         }
                     </List>
                 </ScrollView>
+                <Modal
+                    visible={this.state.showLocationModal}
+                    onRequestClose={this.hideLocationModal}
+                    transparent={false}
+                    animationType='slide'
+                >
+                    <LocationFilter onBackPress={this.hideLocationModal}/>
+                </Modal>
             </View>
         );
     }
@@ -258,7 +298,7 @@ class PortCallList extends Component {
         let bFav = this.isFavorite(b);
         if (aFav && !bFav) return -1;
         if (bFav && !aFav) return 1;
-      
+
         let { filters } = this.props;
         let invert = filters.order === 'ASCENDING';
         if (filters.sort_by === 'LAST_UPDATE') {
