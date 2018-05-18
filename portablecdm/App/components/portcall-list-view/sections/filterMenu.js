@@ -327,7 +327,7 @@ class FilterMenu extends Component {
                             onPress={this.onDoneIconPressed}
                         />
                     </View>
-                    
+
                 </ScrollView>
 
                 <Modal
@@ -341,7 +341,7 @@ class FilterMenu extends Component {
             </View>
         ); //Return
     } //Render
-}; //Class FilterMenu 
+}; //Class FilterMenu
 
 const styles = StyleSheet.create({
     container: {
@@ -417,7 +417,7 @@ const styles = StyleSheet.create({
     },
     stage: {
         width: '43%',
-        backgroundColor: colorScheme.primaryTextColor, 
+        backgroundColor: colorScheme.primaryTextColor,
         borderColor: colorScheme.primaryTextColor,
     },
     stageList: {
