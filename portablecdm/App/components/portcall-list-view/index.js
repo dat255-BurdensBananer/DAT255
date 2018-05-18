@@ -54,7 +54,11 @@ class PortCallList extends Component {
         refreshing: false,
         numLoadedPortCalls: 20,
         showLocationModal: false,
-        //stages: props.filters.stages
+        stages: this.props.filters.stages,
+        all: true,
+        planned: false,
+        under_way: false,
+        berthed: false,
     }
     this.showLocationModal = this.showLocationModal.bind(this);
     this.hideLocationModal = this.hideLocationModal.bind(this);
@@ -110,8 +114,9 @@ class PortCallList extends Component {
          }
     }
 
+
     render() {
-        const {navigation, showLoadingIcon, portCalls, selectPortCall} = this.props;
+        const {navigation, showLoadingIcon, portCalls, selectPortCall, filters} = this.props;
         const {navigate} = navigation;
         const {searchTerm} = this.state;
 
@@ -124,14 +129,13 @@ class PortCallList extends Component {
             <View style={styles.container}>
                 <TopHeader title="My Port calls" navigation={this.props.navigation} firstPage/>
 
-
-
               {/*Button to unmark all updated portcalls*/}
                 <View style={styles.containerClearButton}>
                   <Button
+                      containerViewStyle={styles.buttonContainer}
                       small
                       icon={{
-                        name: 'clear-all',
+                        name: 'clear',
                         size: 30,
                         color: colorScheme.primaryTextColor,
                     }}
@@ -200,15 +204,107 @@ class PortCallList extends Component {
 
               {/*Create buttons for stages*/}
              <View style={styles.containerClearButton}>
-
               <TouchableOpacity
-                style={styles.tabContainer}
+                style={ this.state.all ? styles.activeTabContainer : styles.tabContainer}
                 activeOpacity = { .5 }
-                onPress={() => navigate('FilterMenu') }
+                onPress={() => {
+                  this.setState({all: true,planned:false,berthed:false,under_way:false});
+                  let prev = this.state.stages;
+                  if(!prev.includes("PLANNED"))
+                  prev.push("PLANNED");
+                  if(!prev.includes("SAILED"))
+                  prev.push("SAILED");
+                  if(!prev.includes("ANCHORED"))
+                  prev.push("ANCHORED");
+                  if(!prev.includes("UNDER_WAY"))
+                  prev.push("UNDER_WAY");
+                  if(!prev.includes("BERTHED"))
+                  prev.push("BERTHED");
+                  if(!prev.includes("ARRIVED"))
+                  prev.push("ARRIVED");
+
+                  this.setState({stages: prev});
+                }}
                   >
 
-              <Text style={styles.TextStyle}> Planned </Text>
+              <Text style={styles.TextStyle}> All </Text>
+              </TouchableOpacity>
 
+              <TouchableOpacity
+                style={this.state.planned ? styles.activeTabContainer : styles.tabContainer}
+                activeOpacity = { .5 }
+                onPress={() => {
+                    this.setState({all: false,planned:true,berthed:false,under_way:false});
+                      let prev = this.state.stages;
+
+                      prev.splice(prev.indexOf("SAILED"), 1);
+                      prev.splice(prev.indexOf("ARRIVED"), 1);
+                      prev.splice(prev.indexOf("UNDER_WAY"), 1);
+                      prev.splice(prev.indexOf("BERTHED"), 1);
+                      prev.splice(prev.indexOf("ANCHORED"), 1);
+
+                      if(!prev.includes("PLANNED")){
+                      prev.push("PLANNED");
+                    }
+
+                  this.setState({stages: prev});
+                  }
+                }
+                  >
+
+
+              <Text style={styles.TextStyle}> Planned </Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                style={this.state.under_way ? styles.activeTabContainer : styles.tabContainer}
+                activeOpacity = { .5 }
+                onPress={() => {
+                  this.setState({all: false,planned:false,berthed:false,under_way:true});
+
+                  let prev = this.state.stages;
+
+                  prev.splice(prev.indexOf("SAILED"), 1);
+                  prev.splice(prev.indexOf("ARRIVED"), 1);
+                  prev.splice(prev.indexOf("PLANNED"), 1);
+                  prev.splice(prev.indexOf("BERTHED"), 1);
+                  prev.splice(prev.indexOf("ANCHORED"), 1);
+
+                  if(!prev.includes("UNDER_WAY")){
+                  prev.push("UNDER_WAY");
+                }
+
+              this.setState({stages: prev});
+              }
+                }
+                  >
+
+              <Text style={styles.TextStyle}> Under way </Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                style={this.state.berthed ? styles.activeTabContainer : styles.tabContainer}
+                activeOpacity = { .5 }
+                onPress={() => {
+                  this.setState({all: false,planned:false,berthed:true,under_way:false});
+                  let prev = this.state.stages;
+
+                  prev.splice(prev.indexOf("SAILED"), 1);
+                  prev.splice(prev.indexOf("ARRIVED"), 1);
+                  prev.splice(prev.indexOf("UNDER_WAY"), 1);
+                  prev.splice(prev.indexOf("PLANNED"), 1);
+                  prev.splice(prev.indexOf("ANCHORED"), 1);
+
+                  if(!prev.includes("BERTHED")){
+                  prev.push("BERTHED");
+                }
+
+              this.setState({stages: prev});
+              }
+                }
+                  >
+
+              <Text style={styles.TextStyle}> Berthed </Text>
               </TouchableOpacity>
 
 
@@ -296,6 +392,14 @@ class PortCallList extends Component {
         );
     }
 
+    isActive(tabName){
+      return tabName == this.state.activeTabName;
+    }
+
+    activeTab(tabName){
+      this.setState({activeTab: tabName});
+    }
+
     renderFavorites(portCall) {
         let showStar = this.props.favoritePortCalls.includes(portCall.portCallId);
         let showBoat = this.props.favoriteVessels.includes(portCall.vessel.imo);
@@ -311,7 +415,7 @@ class PortCallList extends Component {
                         color='lightblue'
                     />}
                         {showWarning && <Icon
-                            name='update'
+                            name='fiber-new'
                             color='red'
                         />}
                     {!!portCall.stage && <Text style={[styles.subTitleStyle, {fontSize: 9, marginLeft: 4}]}>
@@ -323,8 +427,8 @@ class PortCallList extends Component {
 
     isFavorite(portCall) {
         return this.props.favoritePortCalls.includes(portCall.portCallId) ||
-        this.props.favoriteVessels.includes(portCall.vessel.imo) ||
-        this.props.updatedPortCalls.includes(portCall.portCallId);
+        this.props.favoriteVessels.includes(portCall.vessel.imo);
+      //  ||  this.props.updatedPortCalls.includes(portCall.portCallId);
     }
 
     sortFilters(a,b) {
@@ -370,8 +474,8 @@ const styles = StyleSheet.create({
     containerRow: {
         flexDirection: 'row',
         alignItems:'center',
-        marginTop: 10,
-        paddingLeft: 15,
+        marginTop: 0,
+        paddingLeft: 0,
         paddingRight: 0,
     },
     containerClearButton: {
@@ -391,9 +495,11 @@ const styles = StyleSheet.create({
     // Filter button container
     buttonContainer: {
         flex: 1,
-        marginRight: 0,
-        marginLeft: 0,
+        marginRight: 0.5,
+        marginLeft: 0.5,
         alignSelf: 'stretch',
+        borderColor: 'white',
+        borderWidth: 1,
     },
     iconStyle: {
         alignSelf: 'stretch',
@@ -406,12 +512,28 @@ const styles = StyleSheet.create({
     },
     tabContainer: {
       flex: 1,
+      backgroundColor: colorScheme.primaryColor,
+      borderColor: 'white',
+      borderRadius: 10,
+      borderWidth: 1,
+      marginRight: 0,
+      marginLeft: 0,
+      //marginTop: 2,
+      marginBottom: 1,
+      padding: 5,
+      alignSelf: 'stretch',
+    },
+    activeTabContainer: {
+      flex: 1,
       backgroundColor: colorScheme.secondaryColor,
       borderColor: 'white',
       borderRadius: 10,
       borderWidth: 1,
       marginRight: 0,
       marginLeft: 0,
+    //  marginTop: 2,
+      marginBottom: 1,
+      padding: 5,
       alignSelf: 'stretch',
     },
     TextStyle:{
