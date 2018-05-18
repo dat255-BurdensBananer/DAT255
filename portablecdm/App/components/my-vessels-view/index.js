@@ -55,9 +55,9 @@ class MyVesselsView extends Component {
     }
 
     _appendMyPortCalls() {
-        let { portCalls, appendMyPortCalls, isAppendingPortCalls } = this.props;
-        if (portCalls.length > 0 && !isAppendingPortCalls) {
-            return appendMyPortCalls(portCalls[portCalls.length - 1]);
+        let { myPortCalls, appendMyPortCalls, isAppendingPortCalls } = this.props;
+        if (myPortCalls.length > 0 && !isAppendingPortCalls) {
+            return appendMyPortCalls(myPortCalls[myPortCalls.length - 1]);
         }
     }
 
@@ -68,23 +68,23 @@ class MyVesselsView extends Component {
             let numLoaded = this.state.numLoadedPortCalls;
 
              this.setState({numLoadedPortCalls: numLoaded + 20});
-             let { portCalls, appendMyPortCalls } = this.props;
-             if(numLoaded >= portCalls.length) {
+             let { myPortCalls, appendMyPortCalls } = this.props;
+             if(numLoaded >= myPortCalls.length) {
                 this._appendMyPortCalls();
              } else {
-                 console.log('Loading more local port calls. Showing ' + numLoaded + ' of ' + portCalls.length + ' port calls.');
+                 console.log('Loading more local port calls. Showing ' + numLoaded + ' of ' + myPortCalls.length + ' port calls.');
              }
          }
     }
 
     render() {
-        const {navigation, showLoadingIcon, portCalls, selectPortCall} = this.props;
+        const {navigation, showLoadingIcon, myPortCalls, selectPortCall} = this.props;
         const {navigate} = navigation;
         const {searchTerm} = this.state;
 
         // Quick fix for having 1 element with null value
-        if (portCalls.length === 1) {
-            portCalls.splice(0,1);
+        if (myPortCalls.length === 1) {
+            myPortCalls.splice(0,1);
         }
 
         return(
@@ -120,42 +120,42 @@ class MyVesselsView extends Component {
                     <List>
                         {
 
-                            this.search(portCalls, searchTerm).map( (portCall) => (
+                            this.search(myPortCalls, searchTerm).map( (myPortCall) => (
                                 <ListItem
                                     roundAvatar
-                                    avatar={portCall.vessel.photoURL ? {uri: portCall.vessel.photoURL} : null}
-                                    key={portCall.portCallId}
-                                    title={portCall.vessel.name}
-                                    badge={{element: this.renderFavorites(portCall)}}
+                                    avatar={myPortCall.vessel.photoURL ? {uri: myPortCall.vessel.photoURL} : null}
+                                    key={myPortCall.portCallId}
+                                    title={myPortCall.vessel.name}
+                                    badge={{element: this.renderFavorites(myPortCall)}}
                                     titleStyle={styles.titleStyle}
-                                    subtitle={getDateTimeString(new Date(portCall.startTime))}
+                                    subtitle={getDateTimeString(new Date(myPortCall.startTime))}
                                     subtitleStyle={styles.subTitleStyle}
                                     // rightTitle={portCall.stage ? portCall.stage.replace(/_/g, ' ') : undefined}
                                     // rightTitleStyle={[styles.subTitleStyle, {fontSize: 9}]}
                                     onPress={() => {
                                         //console.log(JSON.stringify(portCall.vessel));
-                                        selectPortCall(portCall);
+                                        selectPortCall(myPortCall);
                                         navigate('TimeLine')
                                     }}
                                     onLongPress={() => {
                                         Alert.alert(
-                                            'Favorite ' + portCall.vessel.name,
+                                            'Favorite ' + myPortCall.vessel.name,
                                             'What would you like to do?',
                                             [
                                                 {text: 'Cancel'},
                                                 {
                                                     text:
-                                                        (this.props.favoriteVessels.includes(portCall.vessel.imo) ? 'Unf' : 'F') +
+                                                        (this.props.favoriteVessels.includes(myPortCall.vessel.imo) ? 'Unf' : 'F') +
                                                         'avorite vessel',
                                                     onPress: () => {
-                                                        this.props.toggleFavoriteVessel(portCall.vessel.imo);
+                                                        this.props.toggleFavoriteVessel(myPortCall.vessel.imo);
 
                                                 }},
                                                 {
                                                     text:
-                                                        (this.props.favoritePortCalls.includes(portCall.portCallId) ? 'Unf' : 'F') +
+                                                        (this.props.favoritePortCalls.includes(myPortCall.portCallId) ? 'Unf' : 'F') +
                                                     'avorite port call', onPress: () => {
-                                                    this.props.toggleFavoritePortCall(portCall.portCallId);
+                                                    this.props.toggleFavoritePortCall(myPortCall.portCallId);
                                                 }}
                                             ]
                                         );
@@ -169,9 +169,9 @@ class MyVesselsView extends Component {
         );
     }
 
-    renderFavorites(portCall) {
-        let showStar = this.props.favoritePortCalls.includes(portCall.portCallId);
-        let showBoat = this.props.favoriteVessels.includes(portCall.vessel.imo);
+    renderFavorites(myPortCall) {
+        let showStar = this.props.favoritePortCalls.includes(myPortCall.portCallId);
+        let showBoat = this.props.favoriteVessels.includes(myPortCall.vessel.imo);
         return (
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                     {showStar && <Icon
@@ -182,19 +182,19 @@ class MyVesselsView extends Component {
                         name='directions-boat'
                         color='lightblue'
                     />}
-                    {!!portCall.stage && <Text style={[styles.subTitleStyle, {fontSize: 9, marginLeft: 4}]}>
-                        {portCall.stage.replace(/_/g, ' ')}
+                    {!!myPortCall.stage && <Text style={[styles.subTitleStyle, {fontSize: 9, marginLeft: 4}]}>
+                        {myPortCall.stage.replace(/_/g, ' ')}
                     </Text>}
                 </View>
         );
     }
-    isFavorite(portCall) {
-        return this.props.favoritePortCalls.includes(portCall.portCallId) ||
-        this.props.favoriteVessels.includes(portCall.vessel.imo);
+    isFavorite(myPortCall) {
+        return this.props.favoritePortCalls.includes(myPortCall.portCallId) ||
+        this.props.favoriteVessels.includes(myPortCall.vessel.imo);
     }
 
-    isFavoriteLocation(portCall) {
-      return this.props.mylocations.includes(portCall.toLocation)
+    isFavoriteLocation(myPortCall) {
+      return this.props.mylocations.includes(myPortCall.toLocation)
     }
 
     sortFilters(a,b) {
@@ -218,14 +218,14 @@ class MyVesselsView extends Component {
         return 0;
     }
 
-    search(portCalls, searchTerm) {
+    search(myPortCalls, searchTerm) {
         let { filters } = this.props;
 
-        return portCalls.filter(portCall => {
-            return (portCall.vessel.name.toUpperCase().includes(searchTerm.toUpperCase()) ||
-            portCall.vessel.imo.split('IMO:')[1].startsWith(searchTerm) ||
-            portCall.vessel.mmsi.split('MMSI:')[1].startsWith(searchTerm)) &&
-            (!portCall.stage || filters.stages.includes(portCall.stage));
+        return myPortCalls.filter(myPortCall => {
+            return (myPortCall.vessel.name.toUpperCase().includes(searchTerm.toUpperCase()) ||
+            myPortCall.vessel.imo.split('IMO:')[1].startsWith(searchTerm) ||
+            myPortCall.vessel.mmsi.split('MMSI:')[1].startsWith(searchTerm)) &&
+            (!myPortCall.stage || filters.stages.includes(myPortCall.stage));
         }).sort((a,b) => this.sortFilters(a,b))//.sort((a,b) => a.status !== 'OK' ? -1 : 1)
         .slice(0, this.state.numLoadedPortCalls);
     }
@@ -271,7 +271,7 @@ const styles = StyleSheet.create({
 
 function mapStateToProps(state) {
     return {
-        portCalls: state.cache.portCalls,
+        myPortCalls: state.cache.myPortCalls,
         cacheLimit: state.cache.limit,
         favoritePortCalls: state.favorites.portCalls,
         favoriteVessels: state.favorites.vessels,

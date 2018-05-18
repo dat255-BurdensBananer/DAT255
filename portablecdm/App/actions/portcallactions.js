@@ -39,7 +39,7 @@ export const bufferMyPortCalls = () => {
 
         const beforeFetching = myPortCalls.length;
         if (myPortCalls.length < limit && myPortCalls.length > 0) {
-            dispatch(appendMyPortCalls(/*kanvaknas*/ myPortCalls[myPortCalls.length - 1])).then(() => {
+            dispatch(appendMyPortCalls(/*kanvaknas*/ portCalls[myPortCalls.length - 1])).then(() => {
                 if (beforeFetching < getState().cache.myPortCalls.length) {
                     dispatch(bufferMyPortCalls());
                 }
@@ -474,6 +474,20 @@ function createFilterString(filters, getState) {
             }
             continue;
         }
+
+        if (filter === 'myVesselList') {
+            const myVesselListStr = filters[filter];
+            if (myVesselListStr === 'all') {
+                continue;
+            }
+            let myVesselList = getState().settings.vesselLists[vesselListStr];
+            for (vessel of myVesselList) {
+                filterString += getFilterString('vessel', vessel.imo);
+                count++;
+            }
+            continue;
+        }
+
         if (filter === 'arrivingWithin') {
             let arrivingFilter = filters[filter];
             if (arrivingFilter === 0) continue;
