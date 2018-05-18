@@ -8,6 +8,23 @@ export const addFavoriteLocations = (favoriteLocations) => {
 
 }
 
+export const toggleFilterOnOff = (onOffString) =>{
+
+    if (onOffString == 'on'){
+      return {
+          type: types.TOGGLE_ON,
+          payload: onOffString
+      }
+    }
+
+    if (onOffString == 'off'){
+      return {
+          type: types.TOGGLE_OFF,
+          payload: onOffString
+      }
+    }
+}
+
 export const toggleFavoritePortCall = (portCallId) => {
     return (dispatch, getState) => {
         if(getState().favorites.portCalls.includes(portCallId)) {

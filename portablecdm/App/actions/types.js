@@ -53,6 +53,7 @@ export const SETTINGS_CHANGE_FAVORITE_STATE_LIST = 'settings_change_favorite_sta
 export const SETTINGS_FETCH_INSTANCE = 'settings_fetch_instance';
 export const SETTINGS_UPDATE_VERSION = 'settings_update_version';
 export const SETTINGS_CLEAR = 'settings_clear';
+
 export const FETCH_VESSEL = 'fetch_vessel';
 export const FETCH_VESSEL_SUCCESS = 'fetch_vessel_success';
 export const FETCH_VESSEL_CLEAR = 'fetch_vessel_clear';
@@ -78,6 +79,8 @@ export const ADD_FAVORITE_VESSEL = 'add_favorite_vessel';
 export const REMOVE_FAVORITE_VESSEL = 'remove_favorite_vessel';
 export const CLEAR_FAVORITES = 'clear_favorites';
 export const ADD_FAVORITE_LOCATIONS = 'add_favorite_location';
+export const TOGGLE_ON = 'toggle_on';
+export const TOGGLE_OFF = 'toggle_off';
 
 /* ERRORS */
 export const ERR_DISPATCHED = 'dispatched';

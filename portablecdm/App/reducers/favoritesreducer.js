@@ -5,11 +5,15 @@ import {
     REMOVE_FAVORITE_VESSEL,
     CLEAR_FAVORITES,
     ADD_FAVORITE_LOCATIONS,
+    TOGGLE_ON,
+    TOGGLE_OFF,
 } from '../actions/types';
 
 const INITIAL_STATE = {
     vessels: [],
+    tempVessels: [],
     portCalls: [],
+    tempLocations: [],
     locations: [],
     test: 0,
 }
@@ -34,6 +38,10 @@ const favoritesReducer = (state = INITIAL_STATE, action) => {
             return {...state, locations: action.payload};
         case CLEAR_FAVORITES:
             return INITIAL_STATE;
+        case TOGGLE_OFF:
+            return {...state, tempLocations : state.locations, tempVessels : state.vessels, locations: [], vessels : []};
+        case TOGGLE_ON:
+            return {...state, locations : state.tempLocations, vessels : state.tempVessels};
         default:
             return state;
     }

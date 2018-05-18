@@ -10,6 +10,7 @@ import {
     appendPortCalls,
     bufferPortCalls,
     setError,
+    toggleFilterOnOff,
  } from '../../actions';
 
 import {
@@ -30,10 +31,12 @@ import {
     Icon,
 } from 'react-native-elements';
 
+
 import colorScheme from '../../config/colors';
 import TopHeader from '../top-header-view';
 import { getDateTimeString } from '../../util/timeservices';
 import LocationFilter from './sections/locationFilter';
+
 
 class PortCallList extends Component {
   constructor(props) {
@@ -43,6 +46,8 @@ class PortCallList extends Component {
         refreshing: false,
         numLoadedPortCalls: 20,
         showLocationModal: false,
+        toggle: false,
+
     }
     this.showLocationModal = this.showLocationModal.bind(this);
     this.hideLocationModal = this.hideLocationModal.bind(this);
@@ -98,10 +103,24 @@ class PortCallList extends Component {
          }
     }
 
+    _onPress() {
+
+
+
+      const newState = !this.state.toggle;
+      this.setState({toggle:newState});
+
+
+    }
+
     render() {
         const {navigation, showLoadingIcon, portCalls, selectPortCall} = this.props;
         const {navigate} = navigation;
         const {searchTerm} = this.state;
+        const {toggle} = this.state;
+        //const colorValue = toggle?'white':'black';
+        const iconValue = toggle?'filter-outline':'filter-remove-outline';
+        const toggleString = toggle?'on':'off';
 
         // Quick fix for having 1 element with null value
         if (portCalls.length === 1) {
@@ -129,13 +148,18 @@ class PortCallList extends Component {
                         containerViewStyle={styles.buttonContainer}
                         small
                         icon={{
-                            name: 'edit-location',
+                            name: iconValue,
                             size: 30,
                             color: colorScheme.primaryTextColor,
                             style: styles.iconStyle,
+                            type: 'material-community',
                         }}
                         backgroundColor = {colorScheme.primaryColor}
-                        onPress= {this.showLocationModal}
+                        onPress= {()=> {
+                          this._onPress()
+                          this.props.toggleFilterOnOff(toggleString)
+                          console.log(JSON.Stringify(favorites.locations))
+                        }}
                     />
                     <Button
                         containerViewStyle={styles.buttonContainer}
@@ -250,14 +274,7 @@ class PortCallList extends Component {
                         }
                     </List>
                 </ScrollView>
-                <Modal
-                    visible={this.state.showLocationModal}
-                    onRequestClose={this.hideLocationModal}
-                    transparent={false}
-                    animationType='slide'
-                >
-                    <LocationFilter onBackPress={this.hideLocationModal}/>
-                </Modal>
+
             </View>
         );
     }
@@ -378,6 +395,7 @@ function mapStateToProps(state) {
         cacheLimit: state.cache.limit,
         favoritePortCalls: state.favorites.portCalls,
         favoriteVessels: state.favorites.vessels,
+        favorites: state.favorites,
         showLoadingIcon: state.portCalls.portCallsAreLoading,
         filters: state.filters,
         error: state.error,
@@ -396,4 +414,5 @@ export default connect(mapStateToProps, {
     removeAllUpdatedPortCalls,
     bufferPortCalls,
     setError,
+    toggleFilterOnOff,
 })(PortCallList);
