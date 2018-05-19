@@ -1,0 +1,31 @@
+**what do I want to learn or understand better?**
+
+*Var jag är:*  Jag försökte återigen få vår "ändrad tid"-symbol att endast dyka upp när ETA har ändrats, men det är svårt. I nuläget kan den i vissa lägen dyka upp även när ETB ändras.
+
+*Vart jag vill:* Jag vill förstå hur jag får vår "ändrad tid"-funktion att bero på vilken location tiden har ändrats på. Då hade vi kunnat göra så att om location är funktionen enbart gäller om timestampet gäller den plats dit fartygen Arrives. 
+
+*Hur jag ska ta mig dit:* Jag var borta i onsdags, och ska börja med att kolla upp med mina gruppmedlemmar om de har kommit längre, annars får jag kolla med Pontus. 
+
+**how can I help someone else, or the entire team, to learn something new?**
+
+*Var jag är:* Jag måste kolla upp om någon har kommit längre med buggen i "Ändrad tid"-symbolen, annars får jag ta vid där jag var senast och försöka få med mig något i letandet efter lösningen.
+
+*Vart jag vill:* Jag tror att de andra i gruppen också förstått att vi har en liten liten bugg där, men nu måste vi bara se till att vi sätter oss och löser det.
+
+*Hur jag ska ta mig dit:* Jobba tillsammans, och fråga Pontus. 
+
+**what is my contribution towards the team’s application of scrum?**
+
+*Var jag är:* Jag är närvarande på våra möten och har varit involverad i att utvärdera vårt arbetssätt. 
+
+*Vart jag vill:* Fortsätta som innan. Hoppas att jag ska kunna lära mig mer om scrum och varför metodiken ser ut som den gör.
+
+*Hur jag ska ta mig dit:* Samma som ovan. 
+
+**what is my contribution towards the team’s deliveries? That means that for the personal learning objective you will each week write down what you have achieved in relation to last week's ambition (technologies, concepts and skills learnt as well as how this was achieved), what you would like to achieve for the next week and how to make the change happen. The first week of the course you describe the current situation by motivating a learning objective. It is perfectly fine to change objective/s each week as long as you can motivate the change and you evaluate the outcome of the previous week (e.g. describing the current situation).**
+
+*Förra veckans mål:* Jag jobbade med kandidaten hela förra sprinten. 
+
+
+*Nästa veckas mål:* Löst buggen, gemensamt med de andra ha mergat allt till mastern och fått en färdig app. 
+
