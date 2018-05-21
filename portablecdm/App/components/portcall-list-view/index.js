@@ -19,6 +19,8 @@ import {
     ScrollView,
     RefreshControl,
     Alert,
+    Modal,
+    TouchableOpacity,
 } from 'react-native';
 
 import {
@@ -27,17 +29,51 @@ import {
     List,
     ListItem,
     Icon,
+
 } from 'react-native-elements';
 
 import colorScheme from '../../config/colors';
 import TopHeader from '../top-header-view';
 import { getDateTimeString } from '../../util/timeservices';
+import LocationFilter from './sections/locationFilter';
+
+const STAGES = [
+    'PLANNED',
+    'ARRIVED',
+    'BERTHED',
+    'ANCHORED',
+    'UNDER_WAY',
+    'SAILED',
+];
 
 class PortCallList extends Component {
-    state = {
+  constructor(props) {
+      super(props)
+    this.state = {
         searchTerm: '',
         refreshing: false,
         numLoadedPortCalls: 20,
+        showLocationModal: false,
+        stages: this.props.filters.stages,
+        all: true,
+        planned: false,
+        under_way: false,
+        berthed: false,
+    }
+    this.showLocationModal = this.showLocationModal.bind(this);
+    this.hideLocationModal = this.hideLocationModal.bind(this);
+  }
+
+    showLocationModal() {
+        this.setState({showLocationModal: true});
+    }
+
+    hideLocationModal() {
+        this.setState({showLocationModal: false});
+    }
+
+    setModalStagesVisible(visible) {
+        this.setState({ modalStagesVisible: visible });
     }
 
     componentWillMount() {
@@ -78,8 +114,9 @@ class PortCallList extends Component {
          }
     }
 
+
     render() {
-        const {navigation, showLoadingIcon, portCalls, selectPortCall} = this.props;
+        const {navigation, showLoadingIcon, portCalls, selectPortCall, filters} = this.props;
         const {navigate} = navigation;
         const {searchTerm} = this.state;
 
@@ -90,45 +127,19 @@ class PortCallList extends Component {
 
         return(
             <View style={styles.container}>
-                <TopHeader title="Port calls" navigation={this.props.navigation} firstPage/>
-                {/*Render the search/filters header*/}
-                <View style={styles.containerRow}>
-                    <SearchBar
-                        autoCorrect={false}
-                        containerStyle = {styles.searchBarContainer}
-                        showLoadingIcon={showLoadingIcon}
-                        clearIcon
-                        inputStyle = {{backgroundColor: colorScheme.primaryContainerColor}}
-                        lightTheme
-                        placeholder='Search by name, IMO or MMSI number'
-                        placeholderTextColor = {colorScheme.tertiaryTextColor}
-                        onChangeText={text => this.setState({searchTerm: text})}
-                        textInputRef='textInput'
-                    />
-                    <Button
-                        containerViewStyle={styles.buttonContainer}
-                        small
-                        icon={{
-                            name: 'filter-list',
-                            size: 30,
-                            color: colorScheme.primaryTextColor,
-                            style: styles.iconStyle,
-                        }}
-                        backgroundColor = {colorScheme.primaryColor}
-                        onPress= {() => navigate('FilterMenu')}
-                    />
+                <TopHeader title="My Port calls" navigation={this.props.navigation} firstPage/>
 
-                </View>
-
+              {/*Button to unmark all updated portcalls*/}
                 <View style={styles.containerClearButton}>
                   <Button
+                      containerViewStyle={styles.buttonContainer}
                       small
                       icon={{
-                        name: 'clear-all',
+                        name: 'clear',
                         size: 30,
                         color: colorScheme.primaryTextColor,
                     }}
-                    title="Mark all as read"
+                    title="Unmark all"
                     backgroundColor = {colorScheme.primaryColor}
                     onPress= {() => {
                       Alert.alert(
@@ -144,9 +155,160 @@ class PortCallList extends Component {
                     );
                   }
                 }
-
+                  />
+                  <Button
+                      containerViewStyle={styles.buttonContainer}
+                      small
+                      icon={{
+                          name: 'edit-location',
+                          size: 30,
+                          color: colorScheme.primaryTextColor,
+                          style: styles.iconStyle,
+                      }}
+                      title="Locations"
+                      backgroundColor = {colorScheme.primaryColor}
+                      onPress= {this.showLocationModal}
+                  />
+                  <Button
+                      containerViewStyle={styles.buttonContainer}
+                      small
+                      icon={{
+                          name: 'filter-list',
+                          size: 30,
+                          color: colorScheme.primaryTextColor,
+                          style: styles.iconStyle,
+                      }}
+                      title="Filter"
+                      backgroundColor = {colorScheme.primaryColor}
+                      onPress= {() => navigate('FilterMenu')}
                   />
               </View>
+
+                {/*Render the search/filters header*/}
+              <View style={styles.containerRow}>
+                  <SearchBar
+                      autoCorrect={false}
+                      containerStyle = {styles.searchBarContainer}
+                      showLoadingIcon={showLoadingIcon}
+                      clearIcon
+                      inputStyle = {{backgroundColor: colorScheme.primaryContainerColor}}
+                      lightTheme
+                      placeholder='Search by name, IMO or MMSI number'
+                      placeholderTextColor = {colorScheme.tertiaryTextColor}
+                      onChangeText={text => this.setState({searchTerm: text})}
+                      textInputRef='textInput'
+                  />
+
+
+              </View>
+
+              {/*Create buttons for stages*/}
+             <View style={styles.containerClearButton}>
+              <TouchableOpacity
+                style={ this.state.all ? styles.activeTabContainer : styles.tabContainer}
+                activeOpacity = { .5 }
+                onPress={() => {
+                  this.setState({all: true,planned:false,berthed:false,under_way:false});
+                  let prev = this.state.stages;
+                  if(!prev.includes("PLANNED"))
+                  prev.push("PLANNED");
+                  if(!prev.includes("SAILED"))
+                  prev.push("SAILED");
+                  if(!prev.includes("ANCHORED"))
+                  prev.push("ANCHORED");
+                  if(!prev.includes("UNDER_WAY"))
+                  prev.push("UNDER_WAY");
+                  if(!prev.includes("BERTHED"))
+                  prev.push("BERTHED");
+                  if(!prev.includes("ARRIVED"))
+                  prev.push("ARRIVED");
+
+                  this.setState({stages: prev});
+                }}
+                  >
+
+              <Text style={styles.TextStyle}> All </Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                style={this.state.planned ? styles.activeTabContainer : styles.tabContainer}
+                activeOpacity = { .5 }
+                onPress={() => {
+                    this.setState({all: false,planned:true,berthed:false,under_way:false});
+                      let prev = this.state.stages;
+
+                      prev.splice(prev.indexOf("SAILED"), 1);
+                      prev.splice(prev.indexOf("ARRIVED"), 1);
+                      prev.splice(prev.indexOf("UNDER_WAY"), 1);
+                      prev.splice(prev.indexOf("BERTHED"), 1);
+                      prev.splice(prev.indexOf("ANCHORED"), 1);
+
+                      if(!prev.includes("PLANNED")){
+                      prev.push("PLANNED");
+                    }
+
+                  this.setState({stages: prev});
+                  }
+                }
+                  >
+
+
+              <Text style={styles.TextStyle}> Planned </Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                style={this.state.under_way ? styles.activeTabContainer : styles.tabContainer}
+                activeOpacity = { .5 }
+                onPress={() => {
+                  this.setState({all: false,planned:false,berthed:false,under_way:true});
+
+                  let prev = this.state.stages;
+
+                  prev.splice(prev.indexOf("SAILED"), 1);
+                  prev.splice(prev.indexOf("ARRIVED"), 1);
+                  prev.splice(prev.indexOf("PLANNED"), 1);
+                  prev.splice(prev.indexOf("BERTHED"), 1);
+                  prev.splice(prev.indexOf("ANCHORED"), 1);
+
+                  if(!prev.includes("UNDER_WAY")){
+                  prev.push("UNDER_WAY");
+                }
+
+              this.setState({stages: prev});
+              }
+                }
+                  >
+
+              <Text style={styles.TextStyle}> Under way </Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                style={this.state.berthed ? styles.activeTabContainer : styles.tabContainer}
+                activeOpacity = { .5 }
+                onPress={() => {
+                  this.setState({all: false,planned:false,berthed:true,under_way:false});
+                  let prev = this.state.stages;
+
+                  prev.splice(prev.indexOf("SAILED"), 1);
+                  prev.splice(prev.indexOf("ARRIVED"), 1);
+                  prev.splice(prev.indexOf("UNDER_WAY"), 1);
+                  prev.splice(prev.indexOf("PLANNED"), 1);
+                  prev.splice(prev.indexOf("ANCHORED"), 1);
+
+                  if(!prev.includes("BERTHED")){
+                  prev.push("BERTHED");
+                }
+
+              this.setState({stages: prev});
+              }
+                }
+                  >
+
+              <Text style={styles.TextStyle}> Berthed </Text>
+              </TouchableOpacity>
+
+
+          </View>
 
                 {/*Render the List of PortCalls*/}
                 <ScrollView
@@ -218,8 +380,24 @@ class PortCallList extends Component {
                         }
                     </List>
                 </ScrollView>
+                <Modal
+                    visible={this.state.showLocationModal}
+                    onRequestClose={this.hideLocationModal}
+                    transparent={false}
+                    animationType='slide'
+                >
+                    <LocationFilter onBackPress={this.hideLocationModal}/>
+                </Modal>
             </View>
         );
+    }
+
+    isActive(tabName){
+      return tabName == this.state.activeTabName;
+    }
+
+    activeTab(tabName){
+      this.setState({activeTab: tabName});
     }
 
     renderFavorites(portCall) {
@@ -237,7 +415,7 @@ class PortCallList extends Component {
                         color='lightblue'
                     />}
                         {showWarning && <Icon
-                            name='update'
+                            name='fiber-new'
                             color='red'
                         />}
                     {!!portCall.stage && <Text style={[styles.subTitleStyle, {fontSize: 9, marginLeft: 4}]}>
@@ -249,8 +427,8 @@ class PortCallList extends Component {
 
     isFavorite(portCall) {
         return this.props.favoritePortCalls.includes(portCall.portCallId) ||
-        this.props.favoriteVessels.includes(portCall.vessel.imo) ||
-        this.props.updatedPortCalls.includes(portCall.portCallId);
+        this.props.favoriteVessels.includes(portCall.vessel.imo);
+      //  ||  this.props.updatedPortCalls.includes(portCall.portCallId);
     }
 
     sortFilters(a,b) {
@@ -258,7 +436,7 @@ class PortCallList extends Component {
         let bFav = this.isFavorite(b);
         if (aFav && !bFav) return -1;
         if (bFav && !aFav) return 1;
-      
+
         let { filters } = this.props;
         let invert = filters.order === 'ASCENDING';
         if (filters.sort_by === 'LAST_UPDATE') {
@@ -296,8 +474,8 @@ const styles = StyleSheet.create({
     containerRow: {
         flexDirection: 'row',
         alignItems:'center',
-        marginTop: 10,
-        paddingLeft: 15,
+        marginTop: 0,
+        paddingLeft: 0,
         paddingRight: 0,
     },
     containerClearButton: {
@@ -317,9 +495,11 @@ const styles = StyleSheet.create({
     // Filter button container
     buttonContainer: {
         flex: 1,
-        marginRight: 0,
-        marginLeft: 0,
+        marginRight: 0.5,
+        marginLeft: 0.5,
         alignSelf: 'stretch',
+        borderColor: 'white',
+        borderWidth: 1,
     },
     iconStyle: {
         alignSelf: 'stretch',
@@ -329,6 +509,36 @@ const styles = StyleSheet.create({
     },
     subTitleStyle: {
         color: colorScheme.tertiaryTextColor,
+    },
+    tabContainer: {
+      flex: 1,
+      backgroundColor: colorScheme.primaryColor,
+      borderColor: 'white',
+      borderRadius: 10,
+      borderWidth: 1,
+      marginRight: 0,
+      marginLeft: 0,
+      //marginTop: 2,
+      marginBottom: 1,
+      padding: 5,
+      alignSelf: 'stretch',
+    },
+    activeTabContainer: {
+      flex: 1,
+      backgroundColor: colorScheme.secondaryColor,
+      borderColor: 'white',
+      borderRadius: 10,
+      borderWidth: 1,
+      marginRight: 0,
+      marginLeft: 0,
+    //  marginTop: 2,
+      marginBottom: 1,
+      padding: 5,
+      alignSelf: 'stretch',
+    },
+    TextStyle:{
+    color:'#fff',
+    textAlign:'center',
     },
 })
 

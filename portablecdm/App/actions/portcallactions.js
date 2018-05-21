@@ -125,13 +125,13 @@ const updateFetchedPortCalls = (cache, newPortCalls) => (dispatch, getState) => 
                 let portCall = newPortCalls[i];
 
             if(cache.length != 0){
-              if((portCall.stage === 'UNDER_WAY' ) || (portCall.stage === 'PLANNED')){
+              //if((portCall.stage === 'UNDER_WAY' ) || (portCall.stage === 'PLANNED')){
 
                   dispatch({
                     type: types.ADD_UPDATED_PORTCALL,
                     payload: portCall.portCallId,
                   });
-              }
+              //}
           }
 
                 let toBeReplaced = cache.find((x) => x.portCallId === portCall.portCallId);
