@@ -3,9 +3,7 @@
 
 ## Directory
 ### portablecdm
-The original source code for the app. 
-### Src
-New developed source code.  
+The source code for our project.  
 ### Doc
 #### Team reflections
 Here the weekly team reflections can be found. 
