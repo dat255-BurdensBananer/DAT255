@@ -1,4 +1,3 @@
-
 # DAT255, group BurdensBananer.
 
 
@@ -16,6 +15,6 @@ Here the weekly individual reflections can be found.
  
  
 ### Commits and pair programming 
-Oscar (okorshavn) was responsible for importing the source code for the app to Github at the start of the project, and thus has a disproportionate amount of contribution to the master branch. 
+Oscar (okorshavn) was responsible for importing the source code for the app to Github at the start of the project, and thus has a disproportionate amount of contributions to the master branch. 
 
-We have also used pair programming during the project, and thus some of the members contribution haven't been recorded in Github since they've been working "through" other people. 
+We have also used pair programming during the project, and thus some of the members contributions haven't been recorded in Github since they've been working "through" other people. 
