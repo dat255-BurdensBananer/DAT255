@@ -12,7 +12,8 @@ Here the weekly individual reflections can be found.
 
 ### Other tools used
  **Trello *(Scrum board)*:** https://trello.com/b/Ml2Ummm8/scrum-board-dat255
-  **Marvel app *(Demo application)*:**  https://marvelapp.com/2ii79h2
+
+**Marvel app *(Demo application)*:**  https://marvelapp.com/2ii79h2
 
  
 ### Commits and pair programming 
