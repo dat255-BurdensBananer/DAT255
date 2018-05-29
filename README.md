@@ -7,6 +7,8 @@ The source code for our project.
 ### Doc
 #### Team reflections
 Here the weekly team reflections can be found. 
+*The last reflection is by the form of a report and is named Final_Reflection_DAT255.pdf.*
+
 #### Individual reflections
 Here the weekly individual reflections can be found. 
 
